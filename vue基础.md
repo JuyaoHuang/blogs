@@ -1,16 +1,12 @@
 ---
 author: Alen
-cover: ''
-description: vue框架基础知识和架构理解
+description: 'vue框架基础知识和架构理解'
 draft: false
-first_level_category: 编程
-licenseName: ''
-licenseUrl: ''
+first_level_category: '编程'
 published: 2025-10-09
-second_level_category: vue
-tags:
-- vue
-title: VUE框架
+second_level_category: 'vue'
+tags: ['vue']
+title: 'VUE框架'
 ---
 # VUE基础知识
 
