@@ -476,7 +476,7 @@ sudo systemctl status cron
 
 ## 12.配置clash
 
-1. ```
+1. ```bash
    nano ~/.bashrc
    ```
 
@@ -484,17 +484,15 @@ sudo systemctl status cron
 
 2. 添加
 
-   ```
+   ```bash
    export http_proxy=http://127.0.0.1:7890
    export https_proxy=http://127.0.0.1:7890
    export no_proxy="localhost,127.0.0.1,*.local,*.bupt.edu.cn"
    ```
 
-   
+   检查服务状态
 
-3. 检查服务状态
-
-   ```
+   ```bash
    sudo systemctl status clash
    ```
 
@@ -520,10 +518,10 @@ sudo systemctl status cron
 
 2. 添加内容：镜像源
 
-   ```
+   ```json
    {
     "registry-mirrors": [
-    https://kbnxxtib546zgm.xuanyuan.run
+    	"https://xuanyuan.run"//轩辕镜像
        "https://docker.1panel.live",
        "https://docker.m.daocloud.io",
        "https://docker-0.unsee.tech"
@@ -560,13 +558,13 @@ sudo systemctl status cron
 
 8. 查看docker容器
 
-   ```
+   ```bash
    docker ps -a
    ```
 
 9. 查看日志
 
-   ```
+   ```bash
    docker logs sim_backend --tail 100
    docker logs sim_nginx --tail 100
    docker logs sim_backend -f
@@ -577,42 +575,55 @@ sudo systemctl status cron
 
 11. 在树莓派上配置 pnpm 镜像
 
-       pnpm config set registry https://registry.npmmirror.com
+    ```bash
+    pnpm config set registry https://registry.npmmirror.com
+    ```
 
 12. 查看配置
 
-       pnpm config get registry
-
-13. ```
-     ls ~/blog/lingLong/lingLong/src/contents/posts/
-     ls  ~/blog/lingLong/lingLong/dist/posts
+    ```bash
+    pnpm config get registry
     ```
 
-14. 查看堆栈使用情况
+13. 查看堆栈使用情况
 
-     ```
+     ```bash
      top -bn1 | grep node
      ```
 
-15. cloudflare 配置证书
+14. cloudflared 配置证书
 
      ```
      /home/alen/.cloudflared/cert.pem
      ```
 
-18. 查看后端容器是否构建文章
+15. 查看容器是否构建文章
 
+     ```bash
+     docker exec sim_backend ls /code/lingLong/dist/posts/ | grep 测试
      ```
-      docker exec sim_backend ls /code/lingLong/dist/posts/ | grep 测试
-     ```
 
-19. docker exec sim_backend ls /code/lingLong/src/contents/posts/ | grep 测试
+16. 清除无用的、悬空的旧镜像
 
-20. docker system prune清除无用的、悬空的旧镜像
+    ```bash
+    docker system prune
+    ```
 
-21. docker images 查看已有的镜像文件
+17. 查看已有的镜像文件
 
-22. docker rm img_name 清除指定镜像
+    ```bash
+    docker images 
+    ```
+
+    清除指定镜像
+
+    ```bash
+    docker rm img_name 
+    ```
+
+    ---
+
+    
 
 ## 14.配置cloudflare
 
@@ -627,47 +638,53 @@ sudo systemctl status cron
 
   3. 下载 ARM64 版本
 
-     ```
+     ```shell
      wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64
      ```
 
   4. 安装
 
-     ```
-       sudo mv cloudflared-linux-arm64 /usr/local/bin/cloudflared
-       sudo chmod +x /usr/local/bin/cloudflared
+     ```shell
+     sudo mv cloudflared-linux-arm64 /usr/local/bin/cloudflared
+     sudo chmod +x /usr/local/bin/cloudflared
      ```
 
   5. 验证安装
 
+      ```shell
       cloudflared --version
+      ```
 
   6. 登录并创建隧道
 
-       1. 登录 Cloudflare     cloudflared tunnel login
+       1. 登录 Cloudflare    
+
+          ```shell
+          cloudflared tunnel login
+          ```
 
        2. 创建隧道（假设域名是 example.com）
 
-          ```
-            cloudflared tunnel create myblog
+          ```shell
+          cloudflared tunnel create myblog
           ```
 
   7. 配置隧道路由
 
-     ```
-       cloudflared tunnel route dns myblog blog.example.com
+     ```shell
+     cloudflared tunnel route dns myblog blog.example.com
      ```
 
   8. 创建配置文件
 
-     ```
-       sudo mkdir -p /etc/cloudflared
-       sudo nano /etc/cloudflared/config.yml
+     ```shell
+     sudo mkdir -p /etc/cloudflared
+     sudo nano /etc/cloudflared/config.yml
      ```
 
        填入以下内容：
 
-     ```
+     ```shell
        tunnel: 你的tunnel ID
        credentials-file: /home/alen/.cloudflared/dawdawddwa12312311.json
      
@@ -681,9 +698,9 @@ sudo systemctl status cron
   9. 设置开机自启
 
      ```
-       sudo cloudflared service install
-       sudo systemctl enable cloudflared
-       sudo systemctl start cloudflared
+     sudo cloudflared service install
+     sudo systemctl enable cloudflared
+     sudo systemctl start cloudflared
      ```
 
 
