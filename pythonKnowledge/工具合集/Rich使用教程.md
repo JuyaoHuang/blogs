@@ -3,8 +3,8 @@ title: Rich库-命令行页面美化
 author: Alen
 published: 2025-10-10
 description: "命令行页面美化工具Rich库的介绍"
-first_level_category: "编程"
-second_level_category: "python"
+first_level_category: "python"
+second_level_category: "开发工具"
 tags: ['python']
 draft: false
 ---

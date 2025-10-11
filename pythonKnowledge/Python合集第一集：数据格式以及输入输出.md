@@ -3,8 +3,8 @@ title: python语法合集-数据格式
 author: Alen
 published: 2025-10-10
 description: "Python合集第一集：数据格式以及输入输出"
-first_level_category: "编程"
-second_level_category: "python"
+first_level_category: "python"
+second_level_category: "基础语法"
 tags: ['python']
 draft: false
 ---

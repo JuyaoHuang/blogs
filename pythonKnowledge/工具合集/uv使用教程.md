@@ -3,8 +3,8 @@ title: uv-包环境管理
 author: Alen
 published: 2025-10-10
 description: "包环境管理工具UV的介绍"
-first_level_category: "编程"
-second_level_category: "python"
+first_level_category: "python"
+second_level_category: "开发工具"
 tags: ['python']
 draft: false
 ---
