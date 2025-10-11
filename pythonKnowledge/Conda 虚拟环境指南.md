@@ -285,18 +285,18 @@ Conda 会询问你是否继续，输入 y 并回车确认。
 
 ## 常用指令总结
 
-| 指令                                | 作用                               | 示例                             |
-| ----------------------------------- | ---------------------------------- | -------------------------------- |
-| conda create -n <name> python=<ver> | 创建新的虚拟环境，指定 Python 版本 | conda create -n myenv python=3.9 |
-| conda activate <name>               | 激活指定虚拟环境                   | conda activate myenv             |
-| conda deactivate                    | 停用当前虚拟环境                   | conda deactivate                 |
-| conda install <package>             | 在当前激活环境中安装包             | conda install numpy              |
-| pip install <package>               | 在当前激活环境中安装 PyPI 上的包   | pip install requests             |
-| conda list                          | 列出当前激活环境中所有已安装的包   | conda list                       |
-| conda update <package>              | 更新当前激活环境中的包             | conda update pandas              |
-| conda remove <package>              | 删除当前激活环境中的包             | conda remove scipy               |
-| conda env list / conda info --envs  | 列出所有 Conda 虚拟环境            | conda env list                   |
-| conda env remove -n <name>          | 删除指定的虚拟环境                 | conda env remove -n myenv        |
-| conda env export > environment.yml  | 导出当前激活环境的配置到 YAML 文件 | conda env export > env.yml       |
-| conda env create -f environment.yml | 从 YAML 文件创建环境               | conda env create -f env.yml      |
+| 指令                                  | 作用                               | 示例                             |
+| ------------------------------------- | ---------------------------------- | -------------------------------- |
+| `conda create -n <name> python=<ver>` | 创建新的虚拟环境，指定 Python 版本 | conda create -n myenv python=3.9 |
+| `conda activate <name>`               | 激活指定虚拟环境                   | conda activate myenv             |
+| `conda deactivate`                    | 停用当前虚拟环境                   | conda deactivate                 |
+| `conda install <package>`             | 在当前激活环境中安装包             | conda install numpy              |
+| `pip install <package>`               | 在当前激活环境中安装 PyPI 上的包   | pip install requests             |
+| `conda list`                          | 列出当前激活环境中所有已安装的包   | conda list                       |
+| `conda update <package>`              | 更新当前激活环境中的包             | conda update pandas              |
+| `conda remove <package>`              | 删除当前激活环境中的包             | conda remove scipy               |
+| `conda env list / conda info --envs`  | 列出所有 Conda 虚拟环境            | conda env list                   |
+| `conda env remove -n <name>`          | 删除指定的虚拟环境                 | conda env remove -n myenv        |
+| `conda env export > environment.yml`  | 导出当前激活环境的配置到 YAML 文件 | conda env export > env.yml       |
+| `conda env create -f environment.yml` | 从 YAML 文件创建环境               | conda env create -f env.yml      |
 
