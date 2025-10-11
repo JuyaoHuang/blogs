@@ -7,12 +7,10 @@ first_level_category: 编程
 licenseName: ''
 licenseUrl: ''
 published: 2025-09-26
-second_level_category: 前端Astro
+second_level_category: 'Astro'
 slug: pagefind详解
 sourceLink: ''
-tags:
-- Astro
-- pagefind
+tags: ['Astro','pagefind']
 title: pagefind详解
 ---
 

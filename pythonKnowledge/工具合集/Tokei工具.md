@@ -3,8 +3,8 @@ title: tokei-代码统计工具
 author: Alen
 published: 2025-10-10
 description: "代码统计工具Tokei的介绍"
-first_level_category: "编程"
-second_level_category: "python"
+first_level_category: "python"
+second_level_category: "开发工具"
 tags: ['python']
 draft: false
 ---

@@ -521,7 +521,7 @@ sudo systemctl status cron
    ```json
    {
     "registry-mirrors": [
-    	"https://xuanyuan.run"//轩辕镜像
+    	 "https://xuanyuan.run",//轩辕镜像
        "https://docker.1panel.live",
        "https://docker.m.daocloud.io",
        "https://docker-0.unsee.tech"

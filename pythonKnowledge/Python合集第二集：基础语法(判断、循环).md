@@ -3,8 +3,8 @@ title: python语法合集-基础语法
 author: Alen
 published: 2025-10-10
 description: "Python合集第二集：基础语法(判断、循环)"
-first_level_category: "编程"
-second_level_category: "python"
+first_level_category: "python"
+second_level_category: "基础语法"
 tags: ['python']
 draft: false
 ---
