@@ -1,8 +1,8 @@
 ---
-title: python语法合集-数据格式
+title: 数据类型
 author: Alen
 published: 2025-10-10
-description: "Python合集第一集：数据格式以及输入输出"
+description: "Python合集第一集：数据类型以及输入输出"
 first_level_category: "python"
 second_level_category: "基础语法"
 tags: ['python']

@@ -1,15 +1,15 @@
 ---
-title: python语法合集-基础语法
+title: 基础结构语句
 author: Alen
 published: 2025-10-10
-description: "Python合集第二集：基础语法(判断、循环)"
+description: "Python合集第二集：基础语句(判断、循环)"
 first_level_category: "python"
 second_level_category: "基础语法"
 tags: ['python']
 draft: false
 ---
 
-# Python合集第二集：基础语法(判断、循环)
+# Python合集第二集：基础语句(判断、循环)
 
 ## Bool 类型和比较运算符
 
