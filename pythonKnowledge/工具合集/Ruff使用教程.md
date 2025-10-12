@@ -1,8 +1,8 @@
 ---
-title: Ruff库-代码美化工具
+title: Ruff库
 author: Alen
 published: 2025-10-10
-description: "代码美化工具Ruff库的介绍"
+description: "代码美化工具：Ruff库的介绍"
 first_level_category: "python"
 second_level_category: "开发工具"
 tags: ['python']

@@ -1,5 +1,5 @@
 ---
-title: python语法合集-函数
+title: 函数
 author: Alen
 published: 2025-10-10
 description: "Python合集第三集：函数的基本语法"
