@@ -1,0 +1,513 @@
+---
+title: Pandas
+author: Alen
+published: 2025-10-12
+description: "表格-数据分析工具：Pandas介绍"
+first_level_category: "AI"
+second_level_category: "机器学习"
+tags: ['机器学习','pandas']
+draft: false
+---
+
+Pandas 是建立在 NumPy 之上的，是 Python 中进行数据处理和分析**最核心、最流行**的库。如果你需要处理表格数据（比如 Excel 表格、CSV 文件或数据库中的表），Pandas 就是你的首选工具。
+
+### 什么是 Pandas？
+
+Pandas 的名字来源于 "Panel Data"（面板数据），是计量经济学中的一个术语。它提供了两种主要的数据结构，使得处理带标签的、异构类型的数据变得非常简单和直观。
+
+1. **Series**：一维带标签的数组。
+2. **DataFrame**：二维带标签的表格型数据结构，也是 Pandas 中最常用的。
+
+**为什么需要 Pandas？**
+
+NumPy 擅长处理同类型的数值数组，但现实世界的数据往往更复杂：
+
+- **数据类型混合**：一个表格中通常既有数字，也有文本、日期等。
+- **需要标签**：我们需要通过行名（索引）和列名来引用数据，而不是仅仅通过数字位置。
+- **缺失数据**：真实数据中经常有缺失值，需要方便地处理。
+- **需要高级操作**：如分组、聚合、合并、重塑等。
+
+Pandas 完美地解决了这些问题，可以被看作是 Python 版的 Excel 或 SQL。
+
+------
+
+### Pandas 的核心数据结构
+
+首先，导入 Pandas 库，通常简写为 pd。
+
+```py
+import numpy as np 
+import pandas as pd # 通常与 NumPy 一起使用
+```
+#### 1. Series
+
+`Series` 就像一个带索引的**一维**数组或字典。它由两部分组成：
+
+*   `values`：一组数据（一个 NumPy 数组）。
+*   `index`：一个与 `values` 相关联的标签数组。
+
+```python
+# 从列表创建 Series，索引默认为 0, 1, 2...
+s1 = pd.Series([10, 20, 30, 40])
+print(s1)
+# 输出:
+# 0    10
+# 1    20
+# 2    30
+# 3    40
+# dtype: int64
+
+# 自定义索引
+s2 = pd.Series([1.75, 1.80, 1.65], index=['Alice', 'Bob', 'Charlie'])
+print(s2)
+# 输出:
+# Alice      1.75
+# Bob        1.80
+# Charlie    1.65
+# dtype: float64
+
+# 像字典一样使用
+print(s2['Bob'])      # 输出: 1.80
+print('Alice' in s2) # 输出: True
+  
+```
+
+#### 2. DataFrame
+
+DataFrame 是 Pandas 的核心。它是一个二维表格，每列可以是不同的数据类型。你可以把它想象成一个 Excel 电子表格或一个 SQL 表。它也有行索引和列索引。
+
+**创建 DataFrame**
+
+最常见的方式是从一个**字典**创建，其中**字典的键成为列名，值（列表或数组）成为列数据**。
+
+```python
+    data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'age': [25, 30, 35, 28],
+    'city': ['New York', 'Los Angeles', 'Chicago', 'Houston']
+}
+
+df = pd.DataFrame(data)
+print(df)
+# 输出:	
+#       name  age         city
+# 0    Alice   25     New York
+# 1      Bob   30  Los Angeles
+# 2  Charlie   35      Chicago
+# 3    David   28      Houston
+  
+```
+
+**Dataframe的属性**
+
+```python
+import pandas as pd
+import numpy as np
+
+# 创建一个示例 DataFrame，内容是学生信息和成绩
+data = {
+    '姓名': ['张三', '李四', '王五', '赵六', '孙七'],
+    '专业': ['计算机', '物理', '计算机', '数学', '物理'],
+    '年龄': [20, 21, 22, 21, 20],
+    '期中成绩': [85, 92, 78, 88, 95],
+    '期末成绩': [90, 88, 82, 94, 91]
+}
+# 使用自定义索引
+df = pd.DataFrame(data, index=['s001', 's002', 's003', 's004', 's005'])
+
+print("示例 DataFrame:")
+print(df)
+```
+
+**属性 (Attributes)**
+
+属性是 DataFrame 固有的特性，就像一个人的身高、体重一样。它们描述了 DataFrame 的结构和元数据，访问它们时后面**不加括号 ()**。
+
+1. **.index (行索引)**
+
+   描述：获取 DataFrame 的行索引（或称行标签）。行索引用于标识和访问每一行。
+
+   就像：Excel 表格中最左侧的行号 (1, 2, 3...) 或你为每一行指定的唯一名称。
+
+   ```python
+   print(df.index)
+   ```
+
+   **输出**：
+
+   ```bash
+   Index(['s001', 's002', 's003', 's004', 's005'], dtype='object')
+   ```
+
+   **一句话总结**：查看或操作行的标签。
+
+2. .**columns (列索引)**
+
+   描述：获取 DataFrame 的列索引（或称列标签、列名）。
+   就像：Excel 表格中最顶部的列名 (A, B, C...)。
+
+   ```python
+   print(df.columns)
+   ```
+
+   输出：
+
+   ```bash
+   Index(['姓名', '专业', '年龄', '期中成绩', '期末成绩'], dtype='object')
+   ```
+
+   **一句话总结**：查看或操作列的标签。
+
+3. **.shape (形状)**
+
+   描述：返回一个元组 (tuple)，表示 DataFrame 的维度，格式为 (行数, 列数)。这是**极其常用**的属性。
+   就像：告诉你这个表格有多大，有多少行、多少列。
+
+   ```python
+   print(df.shape)
+   ```
+
+   **一句话总结**：快速了解数据有多少行、多少列。
+
+4. **.size (元素总数)**
+
+   描述：返回 DataFrame 中元素的总数量，即 行数 * 列数。
+
+   ```bash
+   print(df.size)
+   ```
+
+   **一句话总结**：告诉你 DataFrame 里总共有多少个数据点。
+
+5. `.ndim` (维度)
+
+   描述：返回数据的维度。对于 DataFrame，这个值永远是 `2`（因为它是一个二维表格）。对于 Series，它是 `1`。
+
+   ```python
+   print(df.ndim)
+   ```
+
+   **一句话总结**：确认这是个二维的表格。
+
+6. **dtypes (数据类型)**
+    描述：返回一个 Series，其中包含了每一列的数据类型。这对于检查数据是否被正确加载非常重要。
+    常见类型：int64 (整数), float64 (浮点数), object (通常是字符串), bool (布尔值), datetime64 (日期时间)。
+    
+    ```python
+    print(df.dtypes)
+    ```
+    **一句话总结**：检查每一列都存的是什么类型的数据。
+    
+7. **.values (数据值)**
+   描述：  将 DataFrame 中的数据以 NumPy N 维数组 (ndarray) 的形式返回。这个过程会**丢弃**行和列的索引信息，只保留纯数据。
+   用途：  当你需要将数据传递给 Scikit-learn 或其他只接受 NumPy 数组的库时，这个属性非常有用。
+   
+    ```python
+    print(df.values)
+    ```
+    **一句话总结** ：只取数据，不要行列标签，得到一个 NumPy 数组。
+
+需要注意的是，若列表中的每个元素为一个字典，则每个元素代表一行，字典中的 key 为列索引
+
+------
+
+
+### 常用操作
+
+#### 1. 数据的读取与写入
+
+Pandas 可以轻松读取多种格式的数据。最常用的是 CSV 文件。
+
+```python
+# 假设有一个名为 'data.csv' 的文件
+df = pd.read_csv('data.csv')
+
+# 将 DataFrame 写入 CSV 文件
+df.to_csv('output.csv', index=False) # index=False 表示不将行索引写入文件
+  	
+```
+
+#### 2. 查看与检查数据
+
+当你拿到一个 DataFrame 后，首先需要了解它的基本情况。
+
+```Python
+# 查看前5行
+print(df.head())
+
+# 查看后5行
+print(df.tail())
+
+# 查看 DataFrame 的简要信息（索引、列、非空值数量、内存使用等）
+print(df.info())
+
+# 获取描述性统计信息（计数、均值、标准差、最小值、四分位数、最大值）
+print(df.describe())
+
+# 查看形状（行数, 列数）
+print(df.shape)
+
+# 查看列名
+print(df.columns)
+```
+
+**方法 (Methods)**
+    方法是 DataFrame 可以执行的动作或计算。它们后面**需要加括号 ()**，并且可以接受参数。
+
+1. **head(n=5)** (查看头部数据)
+   描述：  返回 DataFrame 的前 n 行。默认情况下 n=5。这是加载数据后，**第一个要使用的命令**，用于快速预览数据内容和格式。
+
+   ```
+   # 查看默认的前5行
+   print(df.head())
+   
+   # 查看指定的前3行
+   print(df.head(3))
+   ```
+
+2. **tail(n=5)** (查看尾部数据)
+   描述：与 head() 相对，返回 DataFrame 的后 n 行。默认情况下 n=5。
+   用途：可以用来检查数据是否完整加载，或者数据是否有序。
+
+   ```
+   # 查看指定的后2行
+   print(df.tail(2))
+   ```
+
+3. **info()** (查看简要信息)
+   描述：打印 DataFrame 的一个简明摘要。这是**极其重要**的方法，提供了大量关键信息。
+   信息包括：
+
+     - DataFrame 的类型。
+     - 行索引的范围和类型。
+     - 每列的名称。
+     - 每列的**非空值 (Non-Null) 数量** (这是发现**缺失值**的最快方法)。
+     - 每列的数据类型 (Dtype)。
+     - 内存使用情况。
+
+   ```
+   df.info()
+   ```
+
+   **一句话总结**：对 DataFrame 进行一次全面的“体检”，快速发现缺失值和类型问题。
+
+4. **describe()** (获取描述性统计)
+   描述：针对**数值类型**的列，生成描述性统计信息。
+   信息包括：
+
+   - count: 非空值的数量
+   - mean: 平均值
+   - std: 标准差
+   - min: 最小值
+   - 25%: 第1四分位数
+   - 50%: 中位数（第2四分位数）
+   - 75%: 第3四分位数
+   - max: 最大值
+
+   ```
+   print(df.describe())
+   ```
+
+   **一句话总结**：快速了解数值列的统计特征（均值、分布、离散程度等）。
+
+**总结**
+
+在任何数据分析项目中，当你加载完数据得到一个 DataFrame 后，标准的检查流程就是：
+
+1. **df.head()** - 看一眼数据长什么样。
+2. **df.shape** - 了解数据有多大。
+3. **df.info()** - 进行“体检”，检查缺失值和数据类型。
+4. **df.describe()** - 分析数值型数据的统计特征。
+
+#### 3. 数据选择与索引
+
+这是 Pandas 中最重要、最灵活的部分。
+
+**a. 选择列**
+
+```Python
+# 选择单列，返回一个 Series
+ages = df['age']
+print(ages)
+
+# 选择多列，返回一个新的 DataFrame
+subset = df[['name', 'city']]
+print(subset)
+```
+
+**b. 使用 .loc 和 .iloc 选择行和列**
+
+这是最规范、最不会引起混淆的选择方式。
+
+- **.loc (Label-based selection)**：   基于**标签**（行索引名、列名）进行选择。
+- **.iloc (Integer-based selection)**：    基于**整数位置**（从0开始）进行选择。
+
+```Python
+# 设置 'name' 列为新的行索引，方便演示 .loc
+df_indexed = df.set_index('name')
+print(df_indexed)
+# 输出:
+#          age         city
+# name
+# Alice     25     New York
+# Bob       30  Los Angeles
+# Charlie   35      Chicago
+# David     28      Houston
+
+# --- 使用 .loc ---
+# 选择单行
+print(df_indexed.loc['Bob'])
+
+# 选择多行
+print(df_indexed.loc[['Alice', 'David']])
+
+# 选择行和列
+print(df_indexed.loc['Charlie', 'city']) # 输出: Chicago
+print(df_indexed.loc[['Alice', 'Bob'], ['age', 'city']])
+
+# --- 使用 .iloc ---
+# 选择第一行（位置0）
+print(df.iloc[0])
+
+# 选择前两行
+print(df.iloc[0:2]) # 注意：不包含位置2，和Python切片一样
+
+# 选择特定位置的元素（第2行，第1列）
+print(df.iloc[2, 1]) # 输出: 35
+
+# 选择特定的行和列
+print(df.iloc[[0, 3], [0, 2]]) # 选择第0,3行和第0,2列
+  
+```
+
+**c. 布尔索引 (Boolean Indexing)**
+
+根据条件进行数据筛选，这在数据分析中极其常用。
+
+```Python
+# 筛选出年龄大于30的行
+print(df[df['age'] > 30])
+
+# 筛选出城市为 'New York' 的行
+print(df[df['city'] == 'New York'])
+
+# 组合多个条件（使用 & 表示'与'，| 表示'或'，条件需用括号括起来）
+print(df[(df['age'] < 30) & (df['city'] == 'New York')])
+  
+```
+
+#### 4. 数据清洗
+
+**a. 处理缺失值**
+
+在 Pandas 中，缺失值通常表示为 NaN (Not a Number)。
+
+```Python
+data_missing = {
+    'A': [1, 2, np.nan, 4],
+    'B': [5, np.nan, 7, 8],
+    'C': ['x', 'y', 'z', 'w']
+}
+df_miss = pd.DataFrame(data_missing)
+
+# 检查哪些是缺失值
+print(df_miss.isnull())
+
+# 删除任何包含缺失值的行
+df_dropped = df_miss.dropna()
+print(df_dropped)
+
+# 填充缺失值
+# 用一个常数填充
+df_filled = df_miss.fillna(0)
+print(df_filled)
+
+# 用每列的平均值填充（只对数值列有效）
+df_filled_mean = df_miss.fillna(df_miss.mean(numeric_only=True))
+print(df_filled_mean)
+  
+```
+
+> **提示**：在你实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。你可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
+
+**b. 删除重复行**
+
+```Python
+data_dup = {'A': [1, 2, 2, 3], 'B': ['a', 'b', 'b', 'c']}
+df_dup = pd.DataFrame(data_dup)
+
+# 删除重复行
+df_no_dup = df_dup.drop_duplicates()
+print(df_no_dup)
+```
+
+#### 5. 数据操作与转换
+
+**a. 添加/修改列**
+
+```Python
+# 添加一个新列
+df['country'] = 'USA'
+
+# 基于现有列计算新列
+df['age_in_10_years'] = df['age'] + 10
+print(df)
+```
+
+**b. 应用函数 (.apply)**
+
+可以对行或列应用一个自定义函数。
+
+```Python
+def get_age_group(age):
+    if age < 30:
+        return 'Young'
+    else:
+        return 'Senior'
+
+# 对 'age' 列的每个元素应用函数
+df['age_group'] = df['age'].apply(get_age_group)
+print(df)
+  
+```
+
+#### 6. 分组与聚合
+
+这是 Pandas 最强大的功能之一，遵循 "split-apply-combine"（拆分-应用-合并）的模式。
+
+即能够按照某个键-值对的值，进行特定 列的筛查和聚合
+
+```Python
+data_sales = {
+    'store': ['A', 'B', 'A', 'B', 'A', 'C'],
+    'product': ['apple', 'orange', 'apple', 'grape', 'orange', 'apple'],
+    'sales': [100, 150, 120, 80, 200, 90]
+}
+df_sales = pd.DataFrame(data_sales)
+
+# 按 'store' 分组，并计算每个商店的总销售额
+store_sales = df_sales.groupby('store')['sales'].sum()
+print(store_sales)
+# 输出:
+# store
+# A    410
+# B    230
+# C     90
+# Name: sales, dtype: int64
+
+# 按 'store' 和 'product' 分组，并计算多种聚合统计
+multi_group = df_sales.groupby(['store', 'product'])['sales'].agg(['mean', 'sum', 'count'])
+print(multi_group)
+  
+```
+
+### 总结
+
+Pandas 是进行探索性数据分析（EDA）、数据清洗和数据预处理的瑞士军刀。
+
+- **Series 和 DataFrame** 是两大核心数据结构。
+- **数据读写** (read_csv) 是起点。
+- **查看与检查** (head, info, describe) 是了解数据的第一步。
+- **数据选择** ([], .loc, .iloc, 布尔索引) 是最常用、最重要的技能。
+- **数据清洗** (dropna, fillna) 是保证数据质量的关键。
+- **分组聚合** (groupby) 是进行复杂数据分析和洞察发现的强大工具。
