@@ -425,8 +425,6 @@ ax.legend(['My Custom Label']) # 自定义图例
 plt.show()
 ```
 
-
-
 ### 总结
 
 Matplotlib 是一个极其强大的库，虽然初看起来有些复杂，但掌握了其核心的**面向对象**接口（Figure 和 Axes）后，你就能自如地创建和定制各种图表。
@@ -441,3 +439,4 @@ Matplotlib 是一个极其强大的库，虽然初看起来有些复杂，但掌
   - **任务 (4)**：使用 ax.imshow() (或 seaborn.heatmap) 绘制混淆矩阵。
 
 从简单的图表开始，逐步添加定制元素，是学习 Matplotlib 的最佳路径。
+
