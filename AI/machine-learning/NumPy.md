@@ -269,6 +269,79 @@ print(data)
 
 这是 NumPy 高性能的核心。简单来说，就是对**整个数组执行操作**，而不需要编写显式的 for 循环。
 
+1. **基础算术运算**：
+
+   - np.add(x1, x2):                  元素级加法 (相当于 x1 + x2)
+   - np.subtract(x1, x2):          元素级减法 (相当于 x1 - x2)
+   - np.multiply(x1, x2):          元素级乘法 (相当于 x1 * x2)--**数组乘法，与严格的矩阵乘法 @不同，有广播机制**
+   - np.divide(x1, x2):              元素级浮点除法 (相当于 x1 / x2)
+   - np.floor_divide(x1, x2):    元素级整除 (相当于 x1 // x2)
+   - np.power(x1, x2):              元素级指数运算 (相当于 x1 ** x2)
+   - np.sqrt(x):                           计算每个元素的平方根
+   - np.abs(x) 或 np.absolute(x):             计算每个元素的绝对值
+   - np.negative(x):                     取每个元素的负数 (相当于 -x)
+
+2. **三角函数**：
+
+      输入参数默认为**弧度**
+
+   - np.sin(x), np.cos(x), np.tan(x):                     标准三角函数
+   - np.arcsin(x), np.arccos(x), np.arctan(x):    反三角函数
+   - np.degrees(x):                                               将弧度转换为角度
+   - np.radians(x):                                                将角度转换为弧度
+   - np.hypot(x1, x2):                                          计算斜边 $\sqrt{x_1^2+x_2^2}$
+
+3. **指数和对数**
+
+   - np.exp(x):       计算每个元素的自然指数 $e^x$
+   - np.log(x):        计算每个元素的自然对数 $ln(x)$
+   - np.log2(x):      计算每个元素的以2为底的对数 $log_2(x)$
+   - np.log10(x):    计算每个元素的以10为底的对数
+
+4. **舍入与取余**
+
+   - np.round(x, decimals=0):        四舍五入到指定小数位数
+   - np.floor(x):                                 向下取整，返回不大于输入参数的最大整数
+   - np.ceil(x):                                    向上取整，返回不小于输入参数的最小整数
+   - np.trunc(x):                                截断小数部分，只保留整数部分
+   - np.mod(x1, x2) 或 np.remainder(x1, x2):               元素级求余数 (相当于 x1 % x2)
+
+5. **统计函数**
+
+   - np.sum(a, axis=None):                          计算数组元素的和
+
+   - np.prod(a, axis=None):                         计算数组元素的积
+
+   - np.mean(a, axis=None):                        计算算术平均值
+
+   - np.median(a, axis=None):                     计算中位数
+
+   - np.std(a, axis=None):                             计算标准差
+
+   - np.var(a, axis=None):                             计算方差
+
+   - np.min(a, axis=None):                            找出最小值
+
+   - np.max(a, axis=None):                           找出最大值
+
+   - np.argmin(a, axis=None):                      找出最小值的索引
+
+   - np.argmax(a, axis=None):                     找出最大值的索引
+
+   - np.percentile(a, q, axis=None):             计算q-百分位数
+
+   - np.cumsum(a, axis=None):                    计算元素的累积和
+
+   - np.cumprod(a, axis=None):                    计算元素的累积积
+
+   - 参数 axis：
+
+     - axis=None (默认): 对整个数组进行计算。
+
+     - axis=0: 沿**列**的方向进行计算。
+
+     - axis=1: 沿**行**的方向进行计算。
+
 ```Python
 arr = np.array([[1, 2, 3], [4, 5, 6]])
 
@@ -351,15 +424,34 @@ print(demeaned_arr)
 
 广播使得我们无需创建 mean_row 的显式副本，非常高效。
 
-#### 4.线性代数运算
+### 高级计算
+
+#### 1. 线性代数运算
 
 处理向量和矩阵的数学运算，这些运算在 `np.linalg` 模块中。
 
-- np.dot() / @ 运算符：矩阵乘法。
-- np.linalg.inv()：计算矩阵的逆。
-- np.linalg.solve()：求解线性方程组（例如 Ax = b）。
-- np.linalg.eig()：计算特征值和特征向量。
-- np.linalg.svd()：奇异值分解 (SVD)。
+- np.dot(a, b):                             矩阵/向量点积
+
+- np.matmul(a, b):                     矩阵乘法 (在Python 3.5+中，更推荐使用 @ 运算符, a @ b)
+
+  注意：当使用 @进行矩阵乘法时，如果其中一个操作数是 2D 矩阵 (M x N)，另一个是 1D 数组 (长度为 N)，NumPy 会自动将这个 1D 数组**当作一个列向量 (N x 1)** 来进行计算。
+
+  1. numpy发现第二个矩阵是一个一维数组$1*N$，会自动转为$N*1$的列矩阵，但是由于输入 arr1 是一个 1D 数组，所以最终输出是一个一维数组$[val1,val2]$，而不是
+
+     ```bash
+     [[val1]
+      [val2]]
+     ```
+
+- np.transpose(a) 或 a.T:          矩阵转置
+
+- np.linalg.inv(a):                       计算矩阵的逆
+
+- np.linalg.det(a):                       计算矩阵的行列式
+
+- np.linalg.eig(a):                        计算矩阵的特征值和特征向量
+
+- np.linalg.solve(a, b):                求解线性方程组 ax = b
 
 **示例**
 
@@ -387,7 +479,7 @@ print(f"解为 x = {x[0]}, y = {x[1]}") # 输出: 解为 x = 2.6, y = 2.8
 # 验证: 2*2.6 + 2.8 = 8.0,  2.6 + 3*2.8 = 11.0
 ```
 
-#### 5.傅里叶变换与信号处理
+#### 2. 傅里叶变换与信号处理
 
 信号从时域（或空间域）转换到频域，看到信号由哪些频率的波组成，这些运算在 `np.fft` 模块中。
 
@@ -418,7 +510,7 @@ print(f"信号的主频率大约是: {abs(strongest_freq):.1f} Hz") # 输出: �
 
 ```
 
-#### 6.复杂的统计与随机数生成
+#### 3. 复杂的统计与随机数生成
 
 生成满足特定分布（如多元正态分布）的随机数，进行蒙特卡洛模拟等。
 
