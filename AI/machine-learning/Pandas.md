@@ -293,7 +293,7 @@ print(df.tail(2))
 df.info()
 ```
 
-**一句话总结**：对 DataFrame 进行一次全面的“体检”，快速发现缺失值和类型问题。
+**总结**：对 DataFrame 进行一次全面的“体检”，快速发现缺失值和类型问题。
 
 #### describe() (获取描述性统计)
 
@@ -313,7 +313,15 @@ df.info()
 print(df.describe())
 ```
 
-**一句话总结**：快速了解数值列的统计特征（均值、分布、离散程度等）。
+**总结**：快速了解数值列的统计特征（均值、分布、离散程度等）。
+
+#### .shape --获取行数和列数
+
+#### .columns 获取列名
+
+#### len() 函数可直接获取行数
+
+python 的len() 函数可直接作用 DataFrame，返回行数
 
 #### 总结
 
@@ -407,35 +415,100 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
 
 1. isnull()：  检查缺失值
 
-在 Pandas 中，缺失值通常表示为 NaN (Not a Number)。
+   在 Pandas 中，缺失值通常表示为 NaN (Not a Number)。
 
-```Python
-data_missing = {
-    'A': [1, 2, np.nan, 4],
-    'B': [5, np.nan, 7, 8],
-    'C': ['x', 'y', 'z', 'w']
-}
-df_miss = pd.DataFrame(data_missing)
+   ```python
+   data_missing = {
+       'A': [1, 2, np.nan, 4],
+       'B': [5, np.nan, 7, 8],
+       'C': ['x', 'y', 'z', 'w']
+   }
+   df_miss = pd.DataFrame(data_missing)
+   
+   # 检查哪些是缺失值
+   print(df_miss.isnull())
+   
+   # 删除任何包含缺失值的行
+   df_dropped = df_miss.dropna()
+   print(df_dropped)
+   
+   # 填充缺失值
+   # 用一个常数填充
+   df_filled = df_miss.fillna(0)
+   print(df_filled)
+   
+   # 用每列的平均值填充（只对数值列有效）
+   df_filled_mean = df_miss.fillna(df_miss.mean(numeric_only=True))
+   print(df_filled_mean)
+   ```
 
-# 检查哪些是缺失值
-print(df_miss.isnull())
+   > **提示**：在你实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。你可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
 
-# 删除任何包含缺失值的行
-df_dropped = df_miss.dropna()
-print(df_dropped)
+2. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是填充缺失值。
 
-# 填充缺失值
-# 用一个常数填充
-df_filled = df_miss.fillna(0)
-print(df_filled)
+   在Pandas中，缺失值通常用 NaN (Not a Number) 来表示。fillna() 方法会找到这些 NaN 值，并用指定的值或方法来替换它们。
 
-# 用每列的平均值填充（只对数值列有效）
-df_filled_mean = df_miss.fillna(df_miss.mean(numeric_only=True))
-print(df_filled_mean)
-  
-```
+   ```python
+   dataframe_or_series.fillna(value, inplace=False)
+   ```
 
-> **提示**：在你实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。你可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
+   - value: 填充 NaN 的值。这个值可以是：
+
+     - 一个具体的数值（如 0, 100）。
+     - 一个字符串（如 'Unknown'）。
+     - 一个字典（可以为不同的列指定不同的填充值）。
+     - 一个计算出来的结果，比如均值、中位数或者众数
+
+   - inplace=False (默认):    这是一个非常重要的参数。
+
+     - inplace=False (默认值): fillna() 会创建一个新的、填充好值的DataFrame或Series并返回它，而原始的DataFrame保持不变。
+     - inplace=True: fillna() 会直接修改原始的DataFrame，并且不返回任何东西 (返回 None)
+
+     
+
+   通常推荐使用 inplace=False 的方式，然后将结果重新赋值给原来的变量，这样做更安全：
+
+   ```python
+   df['age'] = df['age'].fillna(some_value)
+   ```
+
+3. **数据填充的选择**
+
+   **选择的填充方法，必须最符合该特征的数据类型和其分布特点，以最大程度地减少对原始数据信息的扭曲**
+
+   1. **均值**
+
+      例如 age 是数值型数据，并且其分布可能受到异常值（极端值）的影响，中位数对异常值不敏感，是比均值更稳健、更安全的“中心”衡量标准。
+
+      - 优点:
+        - 实现简单，计算速度快。
+        - 保持了数据集的整体均值不变。
+      - 缺点:
+        - 降低了数据的方差：因为用一个相同的值替换了许多不同的未知值，这使得数据的波动性（方差）减小了。
+        - 对异常值敏感：如果数据中有极端值，均值会被拉高或拉低，用这个被污染的均值去填充可能会引入偏差。
+        - 忽略了特征之间的相关性。
+
+   2. **中位数**
+
+      - 方法: 
+
+        ```python
+        df['age'] = fillna(df['age'].median())
+        ```
+
+      - 适用场景:     当数据分布是**偏斜的**或存在异常值时，中位数比均值更具代表性，是更稳健的选择。因为它**不受或很少受**数据集两端的极端值影响
+
+   3. **众数**
+
+      - 方法: (注意：.mode()返回一个Series，所以要取第一个元素 [0])
+
+        ```python
+        df['embarked'] = fillna(df['embarked'].mode()[0]) 
+        ```
+
+      - 适用场景: 
+
+        ​	主要用于填充**分类型特征**，例如 embarked（登船港口）。用出现次数最多的港口来填充缺失的两个值是合理的。
 
 #### b. 删除重复行 .drop
 
@@ -466,7 +539,7 @@ print(df_no_dup)
 
 ### 5. 数据操作与转换
 
-#### a. 添加/修改列
+#### 1. 添加/修改列
 
 ```Python
 # 添加一个新列
@@ -477,7 +550,7 @@ df['age_in_10_years'] = df['age'] + 10
 print(df)
 ```
 
-#### b. 应用函数 (.apply)
+#### 2. 应用函数 (.apply)
 
 可以对行或列应用一个自定义函数。
 
@@ -493,6 +566,51 @@ df['age_group'] = df['age'].apply(get_age_group)
 print(df)
   
 ```
+
+#### 3. 布尔列转换为数值(.astype())
+
+大多数机器学习模型（如逻辑回归、神经网络）都需要**数值型**输入，它们无法直接处理 True 或 False 这样的布尔值。
+
+因此，在将数据喂给模型之前，需要将布尔列转换为 **1** 和 **0**。
+
+1. 使用 **.astype(int)**
+
+   它会直接将 True 转换为 1，False 转换为 0
+
+   ```python
+   df['alone'] = df['alone'].astype(int)
+   print(df['alone'].value_counts())
+   ```
+
+   ```python
+   alone
+   1    537
+   0    354
+   Name: count, dtype: int64
+   ```
+
+2. 自定义函数实现
+
+   当不记得这函数时，手动实现布尔类型的转换
+
+   ```python
+   def turn_to_int(alone):
+       if alone == 1:
+           return 1
+       elif alone == 0:
+           return 0
+   df['alone'] = df['alone'].apply(turn_to_int)
+   print(df['alone'].value_counts())
+   ```
+
+   ```bash
+   alone
+   1    537
+   0    354
+   Name: count, dtype: int64
+   ```
+
+   
 
 ### 6. 分组与聚合
 
