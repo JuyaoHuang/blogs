@@ -444,7 +444,13 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
 
    > **提示**：在你实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。你可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
 
-2. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是填充缺失值。
+2. **dropna()**  主要作用是移除缺失值
+
+   在 Pandas 中，缺失值通常用 NaN 来表示。对一个 Series 调用 .dropna() 时，它会遍历这个 Series 中的每一个元素，检查它是否是 NaN。如果某个元素是 NaN，它就会被丢弃。
+
+   最终，这个方法会返回一个新的 Series，这个新的 Series 只包含原始 Series 中所有非缺失的值。
+
+3. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是填充缺失值。
 
    在Pandas中，缺失值通常用 NaN (Not a Number) 来表示。fillna() 方法会找到这些 NaN 值，并用指定的值或方法来替换它们。
 
@@ -472,7 +478,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
    df['age'] = df['age'].fillna(some_value)
    ```
 
-3. **数据填充的选择**
+4. **数据填充的选择**
 
    **选择的填充方法，必须最符合该特征的数据类型和其分布特点，以最大程度地减少对原始数据信息的扭曲**
 
@@ -636,7 +642,7 @@ print(store_sales)
 # C     90
 # Name: sales, dtype: int64
 
-# 按 'store' 和 'product' 分组，并计算多种聚合统计
+# 按 'store' 和 'product' 分组，并计算多种聚合统计(agg)
 multi_group = df_sales.groupby(['store', 'product'])['sales'].agg(['mean', 'sum', 'count'])
 print(multi_group)
 # 输出
@@ -648,6 +654,139 @@ print(multi_group)
 #       orange   150.0  150      1
 # C     apple     90.0   90      1
 ```
+
+#### 数据分箱 .cut
+
+**作用**：
+
+将连续的数值型数据，根据指定的边界（bins），切割成一系列离散的、不重叠的区间（类别）
+
+```python
+pandas.cut(x, bins, right=True, labels=None, include_lowest=False)
+```
+
+1. x
+
+   要进行分箱操作的一维数组或Series
+
+2. bins
+
+   核心参数，定义了如何进行切割。它有多种提供方式：
+
+   1. 一个整数：表示将 x 的整个范围（从最小值到最大值）等宽地切分成多少个箱。
+
+   2. 一个序列：可以精确地定义每个箱的边界
+
+      ```python
+      bin_edges = [0, 18, 35, 60, 100]
+      pd.cut(ages, bins=bin_edges)
+      # 结果会按照定义的边界来切分:
+      # (0, 18]
+      # (18, 35]
+      # (35, 60]
+      # (60, 100]
+      ```
+
+3. right
+
+   决定了区间的闭合方向
+
+   - right=True (默认): 区间是左开右闭的，形式为 (a, b]
+
+     ```python
+     # 边界 [0, 18, 60]
+     pd.cut(pd.Series([18]), bins=[0, 18, 60], right=True)
+     # 输出: (0.0, 18.0] -> 18被包含在第一个区间
+     ```
+
+   - right=False: 区间是左闭右开的，形式为 [a, b)
+
+4. labels (列表或 False, 默认为 None)
+
+   为生成的新箱指定自定义的名称，让结果更具可读性
+
+   - labels=False:    只返回代表每个箱的整数索引，而不是区间对象。
+   - 提供一个列表: 列  表的长度必须**比箱的边界数量少1**（因为 N 个边界会产生 N-1 个箱）
+
+5. include_lowest (布尔值, 默认为 False)
+
+   当 bins 是一个序列时，这个参数决定了第一个区间的左边界是否为闭合的
+
+   - include_lowest=False (默认): 
+
+     ​	第一个区间是 (a, b] (如果 right=True)。如果你的数据里有一个值正好等于第一个边界 a，它会被标记为缺失值 NaN，因为它不包含在任何区间内。
+
+   - include_lowest=True: 
+
+     ​	第一个区间会变成**全闭合**的 [a, b]。这确保了等于最低边界的值能被包含进去。
+
+| 特性           | pd.cut                                                       | pd.qcut                                                      |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **切割依据**   | **基于值**                                                   | **基于样本数量**                                             |
+| **核心思想**   | 创建**等宽**或**自定义宽度**的箱                             | 创建**样本数量大致相等**的箱                                 |
+| **箱的宽度**   | 固定或由你定义                                               | 动态变化，通常不相等                                         |
+| **箱内样本数** | 通常不相等，差异可能很大                                     | 大致相等                                                     |
+| **主要参数**   | bins 可以是整数或边界列表                                    | q 是一个整数，代表箱的数量                                   |
+| **适用场景**   | 有明确的业务逻辑或固定的区间标准时（如年龄段、价格范围、分数等级） | 想观察不同收入水平（如最低10%的人，次低10%的人...）或处理高度偏斜的数据时 |
+
+#### 数据合并 ---concat()
+
+concat()函数：
+
+**参数**
+
+```bash
+concatenate(...)
+    concatenate(
+        (a1, a2, ...),
+        axis=0,
+        out=None,
+        dtype=None,
+        casting="same_kind"
+    )
+```
+
+- a1, a2, ... : sequence of array_like
+
+  数组必须具有相同的形状，除了与 `axis` 对应的维度（默认为第一个）。
+
+- axis : int, optional
+  数组连接时所沿的轴。如果 axis 为 None，则**数组在使用前会被展平**。默认值为 0
+
+- out : ndarray, optional
+
+  如果提供，则为放置结果的目标。形状必须正确，与 concatenate 返回的结果（如果未指定）相匹配
+
+- dtype : str or dtype
+  如果提供，目标数组将具有此数据类型。不能与 `out` 同时提供。
+
+**返回值**
+
+res : ndarray 数组
+
+​	The concatenated array
+
+**示例**
+
+```python
+import numpy as np
+a = np.array([[1, 2], [3, 4]]) 
+b = np.array([[5, 6]])
+np.concatenate((a, b), axis=0) # 2*2 1*2 按行合并，那么 [5,6]位于[3,4]下面
+输出：
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+np.concatenate((a, b.T), axis=1)
+输出：
+array([[1, 2, 5],
+       [3, 4, 6]])
+p.concatenate((a, b), axis=None)
+输出：
+array([1, 2, 3, 4, 5, 6])
+```
+
+
 
 
 
@@ -704,6 +843,72 @@ axis=1 或 axis='columns'：**“沿着列向右”**。
   - +1: 完全正相关。
   - -1: 完全负相关。
   - 0: 没有线性关系。
+
+## 文本类型转换数值类型
+
+### pd.get_dumies() 函数
+
+在 pandas中， **One Hot Encoding**已经封装为一个函数：`.get_dumies()`
+
+#### 主要作用
+
+实现 one hot encoding，将文本类型转化为数值类型，并消除虚构的顺序关系，**使类别特征适合线性模型**
+
+#### 参数解释
+
+```python
+pandas.get_dummies(data, prefix=None, columns=None, drop_first=False, dummy_na=False, ...)
+```
+
+1. data
+
+   需要进行转换的数据，可以是一个 Series（单列）或一个 DataFrame（整个数据表）
+
+2. columns
+
+   一个列表，用来指定**想对哪些列**进行独热编码。
+
+   如果省略这个参数，get_dummies() 会自动尝试转换所有数据类型为 object 或 category 的列。
+
+   例如：columns=['sex', 'embarked']
+
+3. prefix
+
+   一个字符串或字典，用于为新生成的虚拟变量列添加**前缀**。这能让新列名更具可读性，并避免命名冲突。
+
+   例如：
+
+   ```python
+   prefix='sex'
+   ```
+
+    会生成 sex_male, sex_female 这样的列。
+
+   如果columns参数被使用，prefix可以是一个包含每个列对应前缀的列表或字典，如
+
+   ```python
+   prefix={'sex': 'Sex', 'embarked': 'Port'}
+   ```
+
+   即，可以对每一列生成的虚拟变量添加一个前缀
+
+4. **drop_first**
+
+   - 布尔值，默认为 False。如果设置为 True，则在为 K 个类别创建 K 个虚拟变量后，会**丢弃第一个**类别对应的列。
+
+   - **用法**：drop_first=True
+
+   - **目的**：
+
+     这是为了 **避免“虚拟变量陷阱”（多重共线性）**
+
+     对于线性模型来说，K-1个虚拟变量已经包含了所有信息，保留 K 个会导致列之间完全线性相关，可能会对模型造成问题。**在为线性模型准备数据时，强烈建议设置为 True**。
+
+5. dummy_na
+
+   1. 布尔值，默认为 False。如果设置为 True，并且数据中包含缺失值 (NaN)，它会为 NaN 也创建一个专门的虚拟变量列。
+   2. dummy_na=True
+   3. 有时候  “数据缺失”  本身就是一种信息（例如，用户拒绝回答某个问题）。通过为 NaN 创建一列，可以让模型学习到缺失值是否与预测目标有关。
 
 
 
