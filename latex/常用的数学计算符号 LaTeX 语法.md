@@ -172,3 +172,14 @@ $$
 | 下标的极限          | \lim_{x \to \infty}                    | $ \lim_{x \to \infty} $          | $...{\lim_{x \to \infty}}$          |
 | 下标的极限 (左极限) | \lim_{x \to a^-}                       | $ \lim_{x \to a^-} $             | $...{\lim_{x \to a^-}}$             |
 | 下标的极限 (右极限) | \lim_{x \to a^+}                       | $ \lim_{x \to a^+} $             | $...{\lim_{x \to a^+}}$             |
+
+### 10.字母扩展符号（如预测值）
+
+|      描述      |    Latex指令    |     效果示例      |
+| :------------: | :-------------: | :---------------: |
+|     波浪号     |    \tilde{y}    |    $\tilde{y}$    |
+| 估计值（帽子） |     \hat{y}     |     $\hat{y}$     |
+|      横线      |     \bar{y}     |     $\bar{y}$     |
+|       点       |     \dot{y}     |     $\dot{y}$     |
+|    宽波浪号    | \widetilde{abc} | $\widetilde{abc}$ |
+
