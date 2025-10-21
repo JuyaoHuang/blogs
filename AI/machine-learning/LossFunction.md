@@ -1,7 +1,7 @@
 ---
 title: 损失函数
 author: JuyaoHuang
-published: 2025-10-121
+published: 2025-10-21
 description: "对机器学习中常用的损失函数的详细介绍"
 first_level_category: "AI"
 second_level_category: "机器学习"
