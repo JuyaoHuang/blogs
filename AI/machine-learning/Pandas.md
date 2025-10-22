@@ -371,7 +371,10 @@ print(df_indexed)
 # 选择单行
 print(df_indexed.loc['Bob'])
 
-# 选择多行
+# 选择多行，这里是省略了列，
+# 因为第二个参数是列，第一个参数传入的是列表
+# 如果只选择列，行的表达式不能省略
+# df.loc[:,'col']
 print(df_indexed.loc[['Alice', 'David']])
 
 # 选择行和列
@@ -383,16 +386,31 @@ print(df_indexed.loc[['Alice', 'Bob'], ['age', 'city']])
 print(df.iloc[0])
 
 # 选择前两行
+# 注意：切片语法不能使用 [] 包住
 print(df.iloc[0:2]) # 注意：不包含位置2，和Python切片一样
 
 # 选择特定位置的元素（第2行，第1列）
+
 print(df.iloc[2, 1]) # 输出: 35
 
 # 选择特定的行和列
 print(df.iloc[[0, 3], [0, 2]]) # 选择第0,3行和第0,2列
   
 ```
-
+**注意**
+1. 在 Pandas 的 loc 和 iloc 中，冒号 ":" 是一个特殊的符号，它代表 **所有**
+   1. 当它用在行选择的位置时，代表“所有行”;当它用在列选择的位置时，代表“所有列”
+   2. loc 的写法
+   ```python
+   df.loc[:, 'Glucose']
+   ```
+   3. iloc 写法
+   ```python
+   df.iloc[:, 1]
+   # 或者使用切片
+   df.iloc[0:784,1]
+   ```
+   
 #### c. 布尔索引 (Boolean Indexing)
 
 根据条件进行数据筛选，这在数据分析中极其常用。
@@ -442,7 +460,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
    print(df_filled_mean)
    ```
 
-   > **提示**：在你实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。你可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
+   > **提示**：在实验一的皮马印第安人糖尿病数据集中，一些0值实际上是缺失值。可以先将这些0替换为np.nan，然后再使用.fillna()方法用该列的均值或中位数来填充。
 
 2. **dropna()**  主要作用是移除缺失值
 
@@ -450,7 +468,22 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
 
    最终，这个方法会返回一个新的 Series，这个新的 Series 只包含原始 Series 中所有非缺失的值。
 
-3. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是填充缺失值。
+3. **.replace(to_replace, value, inplace=False, limit=None, regex=False)**：用于替换值
+   - to_replace
+      **要查找的目标值**
+      它可以是单个值，也可以是一个列表，或者一个字典
+   - value
+      **用来替换的新值**
+      它可以是单个值，也可以是一个列表或字典，具体取决于 `to_replace` 的形式。
+
+   - inplace
+      一个布尔值，默认为 `False`
+      - False:   
+         该操作会**返回一个新的、修改后的 DataFrame**，原始的 DataFrame **不变**
+      - True: 
+         该操作会**直接在原始的 DataFrame 上进行修改**，不返回任何东西 (返回 `None`)
+   
+4. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是**填充缺失值**
 
    在Pandas中，缺失值通常用 NaN (Not a Number) 来表示。fillna() 方法会找到这些 NaN 值，并用指定的值或方法来替换它们。
 
@@ -478,7 +511,9 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
    df['age'] = df['age'].fillna(some_value)
    ```
 
-4. **数据填充的选择**
+5. **np.nan**： 
+      python中的缺失值 NaN
+6. **数据填充的选择**
 
    **选择的填充方法，必须最符合该特征的数据类型和其分布特点，以最大程度地减少对原始数据信息的扭曲**
 
@@ -616,7 +651,50 @@ print(df)
    Name: count, dtype: int64
    ```
 
-   
+
+#### 4. 数据排序：.sort_values()
+
+.sort_values()用于使 DF按照某一列/行的数值进行排序，参数介绍：
+
+```python
+def sort_values(
+    self,
+    by: IndexLabel,
+    *,
+    axis: Axis = 0,
+    ascending: bool | list[bool] | tuple[bool, ...] = True,
+    inplace: bool = False,
+    kind: SortKind = "quicksort",
+    na_position: str = "last",
+    ignore_index: bool = False,
+    key: ValueKeyFunc | None = None,
+) -> DataFrame | None:
+"""
+Sort by the values along either axis.
+by : str or list of str
+            Name or list of names to sort by.
+axis : "{0 or 'index', 1 or 'columns'}", default 0
+     Axis to be sorted.
+ascending : bool or list of bool, default True
+     Sort ascending vs. descending. Specify list for multiple sort
+     orders.  If this is a list of bools, must match the length of
+     the by.
+inplace : bool, default False
+     If True, perform operation in-place.
+     
+Returns
+-------
+DataFrame or None
+"""
+```
+
+- `by` 用于指定根据什么排序：列名或者几个列名
+- `ascending` 指定升降序
+- 示例：
+
+```python
+print(crucial_feature.sort_values(by='Coefficient', ascending=False))
+```
 
 ### 6. 分组与聚合
 
