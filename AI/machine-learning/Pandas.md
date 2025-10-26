@@ -988,6 +988,38 @@ pandas.get_dummies(data, prefix=None, columns=None, drop_first=False, dummy_na=F
    2. dummy_na=True
    3. 有时候  “数据缺失”  本身就是一种信息（例如，用户拒绝回答某个问题）。通过为 NaN 创建一列，可以让模型学习到缺失值是否与预测目标有关。
 
+## pandas数据结构转为np
+
+### `pd.to_numpy()`
+
+```python
+def to_numpy(self, dtype=None, copy=False, na_value='<no_default>'): # reliably restored by inspect
+    """
+    Convert to a NumPy ndarray. 转换为 NumPy ndarray
+
+    This is similar to :meth:`numpy.asarray`, but may provide additional control
+    over how the conversion is done.
+
+    Parameters
+    ----------
+    dtype : str or numpy.dtype, optional
+        The dtype to pass to :meth:`numpy.asarray`.
+        传递给 :meth:`numpy.asarray` 的数据类型
+    copy : bool, default False
+        Whether to ensure that the returned value is a not a view on
+        another array. Note that ``copy=False`` does not *ensure* that
+        ``to_numpy()`` is no-copy. Rather, ``copy=True`` ensure that
+        a copy is made, even if not strictly necessary.
+    na_value : Any, optional
+        The value to use for missing values. The default value depends
+        on `dtype` and the type of the array.
+
+    Returns
+    -------
+    numpy.ndarray
+    """
+```
+
 
 
 ## 总结
