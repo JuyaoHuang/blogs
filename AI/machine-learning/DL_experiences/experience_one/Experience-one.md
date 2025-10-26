@@ -470,7 +470,7 @@ plt.show()
 
 **结果**：
 
-![scatter](../imgs/pima.png)
+![scatter](./pima.png)
 
 **结果分析**：
 
@@ -613,7 +613,7 @@ crucial_feature = pd.DataFrame({'Feature': feature_names, 'Coefficient': coeffic
 
 #### 3. 对结果可视化
 
-![imgs](../imgs/feature_impact_Diabetes.png)
+![imgs](./feature_impact_Diabetes.png)
 
 *相对位置：Experience_one/imgs/feature_impact_Diabetes.png*
 
@@ -889,7 +889,7 @@ plt.xlabel('Glucose (scaler)', fontsize=12)
 plt.ylabel('BMI (scaler)', fontsize=12)
 plt.legend(title='is suffered', labels=['0: no', '1: yes'])
 plt.grid(True)
-# plt.savefig('./imgs/pima.png',dpi=300)
+# plt.savefig('./pima.png',dpi=300)
 plt.show()
 
 # =========== 绘制逻辑回归散点图结束 ===============
