@@ -18,7 +18,7 @@ draft: false
 1. **GPU 加速**：张量可以轻松地在 CPU 和 GPU 之间转移，从而利用 GPU 强大的并行计算能力来加速运算
 2. **自动求导**：张量能够自动追踪其计算历史，用于高效地计算梯度，这是深度学习模型训练的核心
 
-Tensor与Numpy的具体差别查看<a href="./tensor与numpy的区别" target="_blank" ref="noopener noreferrer">此篇文章</a>
+Tensor与Numpy的具体差别查看<a href="https://juayohuang.top/posts/ai/pytorch/tensor%E4%B8%8Enumpy%E7%9A%84%E5%8C%BA%E5%88%AB/" target="_blank" ref="noopener noreferrer">此篇文章</a>
 
 <a href="https://pytorch-cn.readthedocs.io/zh/latest/package_references/torch/" target="_blank" ref="noopener noreferrer">有关tensor的全部语法查看此篇文章</a>
 
