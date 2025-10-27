@@ -24,7 +24,7 @@ Autograd 的作用就是自动完成**反向传播**计算梯度的过程
 
 Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个核心方法展开：
 
-### 1. `requires_grad` 属性
+### 1. requires_grad 属性
 
 这是一个布尔类型的属性
 
@@ -71,7 +71,7 @@ Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个
 
 -   任何从带有 `requires_grad=True` 的张量计算得到的新张量，都会自动地 `requires_grad=True`，并且其 `grad_fn` 属性会指向创建它的函数（例如，加法是 `AddBackward0`）
 
-### 2. `backward()` 方法
+### 2. backward() 方法
 
 这是启动梯度计算的启动键
 
@@ -111,7 +111,7 @@ Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个
 
   在典型的神经网络训练中，损失函数总是一个标量，所以通常不需要传递 `gradient` 参数。
 
-### 3. `.grad` 属性
+### 3. .grad 属性
 
 在调用 `.backward()` 之后，梯度会累积到参与计算的、`requires_grad=True` 的**叶子节点**张量的 `.grad` 属性中
 
@@ -131,7 +131,7 @@ Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个
   *   只有叶子节点（用户创建的、`requires_grad=True`的张量，或者通过 `nn.Parameter` 定义的模型参数）才会填充 `.grad`。中间张量的梯度在计算后通常会被释放以节省内存
   *   **梯度是累积的：** 多次调用 `backward()` 会将新的梯度值加到已有的 `.grad` 上。因此，在每次优化迭代开始时，通常需要使用 `optimizer.zero_grad()` 或手动将梯度清零（例如 `x.grad.zero_()`）
 
-### 4. 停止梯度追踪 (`torch.no_grad()` 和 `.detach()`)
+### 4. 停止梯度追踪 (torch.no_grad() 和 .detach())
 
 有时我们不希望 PyTorch 追踪某些操作的梯度
 
@@ -149,7 +149,7 @@ Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个
 
   也可以用作装饰器 `@torch.no_grad`。
 
-- **`.detach()` 方法：**
+- **.detach() 方法：**
   创建一个与原张量共享数据但不参与梯度计算的新张量。它会从当前的计算图中分离出来。
 
   ```python
@@ -178,7 +178,7 @@ Autograd 的工作主要围绕 torch.Tensor 对象的三个核心属性和一个
   1.  当你想将一个张量的值用于某些不应影响梯度的计算时（例如，将其转换为 NumPy 数组，或作为某个固定值使用）。
   2.  在某些复杂的网络结构中，需要显式地切断梯度流。
 
-### 5. `grad_fn` 属性
+### 5. grad_fn 属性
 
 当一个张量是通过对设置了 `requires_grad=True` 的张量进行操作而创建出来时，它会自动获得一个 `.grad_fn` 属性
 
