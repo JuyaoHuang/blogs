@@ -79,7 +79,7 @@ draft: false
      \text{negative\_slope} * x, & \text{otherwise}
   \end{cases}
   $$
-   
+  
 
   <img src="./imgs/LeakyReLU.png" style="zoom:50%;" />
 
