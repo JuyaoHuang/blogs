@@ -1,3 +1,14 @@
+---
+title: 'MLP实践'
+author: Alen
+published: 2025-10-28
+description: "PyTorch"
+first_level_category: "AI"
+second_level_category: "PyTorc第一个实践：MLP的简单实验"
+tags: ['ML','DL']
+draft: false
+---
+
 # MLP 简单实践
 
 这是一个简单的MLP实践，或者说，一个完整的深度学习实例。

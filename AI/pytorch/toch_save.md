@@ -1,7 +1,7 @@
 ---
 title: 'torch.save模块'
 author: Alen
-published: 2025-10-27
+published: 2025-10-28
 description: "PyTorch模型持久化工具 torch.save的介绍"
 first_level_category: "AI"
 second_level_category: "PyTorch"
