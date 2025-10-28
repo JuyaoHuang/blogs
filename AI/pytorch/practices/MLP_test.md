@@ -2,9 +2,9 @@
 title: 'MLP实践'
 author: Alen
 published: 2025-10-28
-description: "PyTorch"
+description: "PyTorc第一个实践：MLP的简单实验"
 first_level_category: "AI"
-second_level_category: "PyTorc第一个实践：MLP的简单实验"
+second_level_category: "PyTorch"
 tags: ['ML','DL']
 draft: false
 ---
