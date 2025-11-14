@@ -213,37 +213,3 @@ fatal: refusing to merge unrelated histories
    git remote remove upstream_fork
    ```
 
-## C4--默认上游仓库设置
-
-### 好处
-
-​	未来在 master 分支上工作时，可以输入简化的命令，如 git pull 和 git push，而无需每次都指定 origin master。Git 会自动知道你想从 origin/master 拉取，或推送到 origin/master。
-
-------
-
-
-
-1. 切换到想要设置的本地分支上
-
-   ```bash
-   git checkout master
-   ```
-
-2. 执行设置上游的指令
-
-   ```bash
-   git branch --set-upstream-to=origin/master
-   ```
-
-   - git branch: 这是用于管理分支的命令。
-   - --set-upstream-to=origin/master: 这是核心参数，用于建立“跟踪”（tracking）关系。
-   - origin：本地给上游仓库名称的重命名
-   - master：上游仓库的某个分支名
-
-3. 使用
-
-   ```bash
-   git status
-   ```
-
-   验证
