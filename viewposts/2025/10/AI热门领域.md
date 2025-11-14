@@ -4,7 +4,7 @@ author: Alen
 published: 2025-10-21
 description: "AI常见术语解释和前言发展"
 first_level_category: "前沿快讯"
-second_level_category: "AI前沿"
+second_level_category: "2025"
 tags: ['AI']
 draft: false
 ---
