@@ -1,5 +1,5 @@
 ---
-title: 实验一
+title: 深度学习实验一
 author: Alen
 published: 2025-10-25
 description: "深度学习实验一:机器学习回归问题+pyTorch"
