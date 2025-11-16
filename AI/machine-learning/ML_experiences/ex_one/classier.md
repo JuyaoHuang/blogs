@@ -567,5 +567,263 @@ classifiers = [
    - **sigmoid**：得分 $0.983$，它表现优秀，在简单数据集上表现良好。
    - **linear**：得分 $0.992$，它表现优秀，本身就是生成一条直线来进行分类。
 
+## 源码
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.colors import ListedColormap
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+# 使用内置数据集
+from sklearn.datasets import make_moons, make_circles, make_classification
+# 导入算法
+from sklearn.svm import SVC
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.naive_bayes import GaussianNB
+
+samples = 300
+
+def random_status():
+    n = int((np.random.rand(1) * 100) % 100)
+    print(n)
+    return n
+
+# 1. 观察数据集
+# 1.1. make_moons
+X_moons, y_moons = make_moons(n_samples=samples, noise=0.2, random_state=42)
+
+# fig,ax = plt.subplots(2,2,figsize=(12,8))
+
+# ax[0,0].scatter(X_moons[:, 0], X_moons[:, 1], c=y_moons,edgecolors='b')
+# ax[0,0].set_title('Moons Dataset')
+
+# 1.2. make_circles
+X_circles, y_circles = make_circles(n_samples=samples, noise=0.2, factor=0.5, random_state=42)
+
+# ax[0,1].scatter(X_circles[:, 0], X_circles[:, 1], c=y_circles)
+# ax[0,1].set_title('Circles Dataset')
+
+# 1.3. make_classification
+X_cf,y_cf = make_classification(
+    n_samples=samples,
+    n_features=2,
+    n_informative=2,
+    n_redundant=0,
+    n_clusters_per_class=1,
+    random_state=random_status(),
+    )
+
+# rng = np.random.RandomState(2)
+# X_cf += 2 * rng.uniform(size=X_cf.shape)
+linears = (X_cf, y_cf)
+
+# ax[1,0].scatter(X_cf[:, 0], X_cf[:, 1], c=y_cf)
+# ax[1,0].set_title('Make Classification Dataset')
+#
+# plt.tight_layout()
+# plt.savefig('Input_dataset.png',dpi=300)
+# plt.show()
+
+# 2.实例化算法
+# 设置显示图效果的标题
+names=['SVC','Decision Tree','Gaussian Naive Bayes']
+# 实例化分类器
+classifiers = [
+    SVC(kernel='rbf', C=1.0, gamma='auto'),
+    # DecisionTreeClassifier(max_depth=10, random_state=42),
+    # GaussianNB()
+]
+
+# 3.准备数据集
+moons = (X_moons, y_moons)
+circles = (X_circles, y_circles)
+datasets = [moons, circles, linears]
+
+fig = plt.figure(figsize=(12,8))
+
+# 4.模型训练
+i = 1
+for ds_cnt,ds in enumerate(datasets):
+    # 处理数据集
+    X,y = ds
+    X = StandardScaler().fit_transform(X)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=42)
+    x_min,x_max = X[:,0].min(axis=0) - .5, X[:,0].max(axis=0) + .5
+    y_min, y_max = X[:,1].min(axis=0) - .5, X[:,1].max(axis=0) + .5
+    h = 0.02
+    xx,yy = np.meshgrid(np.arange(x_min,x_max,h),
+                            np.arange(y_min,y_max,h)
+                        )
+    # 先展示输入数据集
+    # cm = ListedColormap(['yellow','green']) # 设置分割面颜色
+    cm_bright = ListedColormap(['yellow','green']) # 散点颜色
+    ax=plt.subplot(len(datasets),len(classifiers)+1,i) # 划分子面
+    if ds_cnt == 0:
+        ax.set_title('Input Data')
+
+    # 训练集散点图
+    ax.scatter(X_train[:, 0], X_train[:, 1], c=y_train,cmap=cm_bright,edgecolors='k',label='train set',marker='o')
+    ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test, alpha=0.5,cmap=cm_bright, edgecolors='k', label='test set',marker='x')
+    ax.set_xlim(x_min,x_max)
+    ax.set_ylim(y_min,y_max)
+    ax.set_xticks(())
+    ax.set_yticks(())
+    i += 1
+
+    for name, clf in zip(names, classifiers):
+        ax = plt.subplot(len(datasets),len(classifiers)+1,i)
+
+        # 训练模型
+        clf.fit(X_train, y_train)
+        test_score = clf.score(X_test, y_test)
+
+        # 绘制决策边界
+        # hasattr检查分类器是否有decision_function方法
+        if(hasattr(clf,'decision_function')):
+            Z = clf.decision_function(np.c_[xx.ravel(),yy.ravel()])
+        else:
+            Z = clf.predict_proba(np.c_[xx.ravel(),yy.ravel()])[:,1]
+
+        # 将决策边界绘制成等高线图
+        # cm = plt.cm.Set1
+        cm = ListedColormap(['red', 'blue'])  # 设置分割面颜色
+        Z = Z.reshape(xx.shape)
+        ax.contourf(xx,yy,Z,alpha=0.4,cmap=cm)
+
+        # 绘制散点图
+        ax.scatter(X_train[:,0],X_train[:,1],c=y_train,cmap=cm_bright,edgecolors='k')
+        ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test, alpha=0.6,cmap=cm_bright, edgecolors='k',marker='x')
+
+        ax.set_xlim(xx.min(),xx.max())
+        ax.set_ylim(yy.min(),yy.max())
+        ax.set_xticks(())
+        ax.set_yticks(())
+
+        if(ds_cnt == 0):
+            ax.set_title(name)
+
+        # 在图的右下角绘制测试集准确率
+        ax.text(xx.max()- .2,yy.min() + .2,(f'{test_score:.3f}').lstrip('0'),
+                size=12,horizontalalignment='right')
+        i += 1
+plt.tight_layout()
+plt.savefig('SVC.png',dpi=300)
+plt.show()
+
+# Breast Cancer Wisconsin dataset 回归分类问题
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# from sklearn.model_selection import train_test_split
+# from sklearn.preprocessing import StandardScaler
+# # 加载数据集
+# from sklearn.datasets import load_breast_cancer
+# # 导入算法
+# from sklearn.svm import SVC
+# from sklearn.tree import DecisionTreeClassifier
+# from sklearn.naive_bayes import GaussianNB
+# # 导入评价指标
+# from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+#
+# # 加载数据集
+# cancer = load_breast_cancer()
+# X,y = cancer.data,cancer.target
+#
+# # print(f"samples:{X.shape[0]}")
+# # print(f"features:{X.shape[1]}")
+# # print(f"target name: {list(cancer.target_names)}")
+#
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,stratify=y,random_state=42)
+#
+# scaler = StandardScaler()
+# X_train = scaler.fit_transform(X_train)
+# X_test = scaler.transform(X_test)
+#
+# names=['SVC','Decision Tree','Gaussian Naive Bayes']
+# # 实例化分类器
+# classifiers = [
+#     SVC(kernel='rbf', C=1.0, probability=True, random_state=42),
+#     DecisionTreeClassifier(max_depth=5,random_state=42),
+#     GaussianNB()
+# ]
+#
+# res = {}
+# # fig,ax = plt.subplots(2, 2, figsize=(8, 6))
+# # i = 0
+# # j = 0
+# for name,clf in zip(names,classifiers):
+#
+#     clf.fit(X_train,y_train)
+#
+#     y_pred = clf.predict(X_test)
+#
+#     accuracy = accuracy_score(y_test,y_pred)
+#     res[name] = accuracy
+#
+#     print(f"{name}算法结果：")
+#     print(f'测试集准确率：{accuracy*100:.2f}%')
+#     print('分类报告：')
+#     print(classification_report(y_test,y_pred,target_names=cancer.target_names))
+#     print('混淆矩阵：')
+#     print(confusion_matrix(y_test,y_pred))
+#
+#     # 热力图绘制
+#     # cm = confusion_matrix(y_test, y_pred)
+#     # if j == 2:
+#     #     j = 0
+#     #     i += 1
+#     # sns.heatmap(cm, annot=True, cmap='Blues', fmt='d', ax=ax[i, j])
+#     # ax[i, j].set_xlabel('Predicted Label')
+#     # ax[i, j].set_ylabel('Actual Label')
+#     # ax[i, j].set_title(f'{name} - Confusion Matrix')
+#     # j += 1
+#
+#
+# for name,acc in res.items():
+#     print(f'{name}\'s accuracy: {acc*100:.2f}%')
+#
+# # plt.tight_layout()
+# # # plt.savefig('heatmap.png',dpi=300)
+# # plt.show()
+#
+# # PCA降维绘制决策边界
+# from sklearn.decomposition import PCA
+# from matplotlib.colors import ListedColormap
+# pca = PCA(n_components=2)
+# X_train_pca = pca.fit_transform(X_train)
+#
+# # 创建网格来绘制决策边界
+# x_min, x_max = X_train_pca[:,0].min() - 1, X_train_pca[:,0].max() + 1
+# y_min, y_max = X_train_pca[:, 1].min() - 1, X_train_pca[:, 1].max() + 1
+# xx, yy = np.meshgrid(np.arange(x_min,x_max,0.02),
+#                      np.arange(y_min,y_max,0.02))
+#
+# fig, axes = plt.subplots(2,2,figsize=(10,8))
+#
+# for ax,name,clf in zip(axes.flatten(),names,classifiers):
+#
+#     clf.fit(X_train_pca,y_train)
+#
+#     # 绘制决策边界
+#     Z = clf.predict(np.c_[xx.ravel(),yy.ravel()])
+#     Z = Z.reshape(xx.shape)
+#     ax.contourf(xx,yy,Z,alpha=0.4,cmap=plt.cm.RdBu)
+#
+#     # 绘制散点图
+#     scatter = ax.scatter(X_train_pca[:,0], X_train_pca[:, 1], c=y_train,
+#                          cmap=ListedColormap(['yellow','green']),edgecolor='k', s=40)
+#
+#     ax.set_title(f'{name}')
+#     ax.set_xlabel('Principal Component 1')
+#     ax.set_ylabel('Principal Component 2')
+#
+# # 删除多余的子图
+# axes.flatten()[-1].axis('off')
+# plt.suptitle('Classifiers Decision Boundaries', fontsize=16)
+# plt.tight_layout()
+# plt.savefig('Breast_Cancer.png',dpi=300)
+# plt.show()
+```
 
