@@ -802,7 +802,7 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_train_scaled_df = pd.DataFrame(X_train_scaled, columns=X_train.columns)
-# 在 X_test (DataFrame) 上只进行转换
+# 在 X_test (DataFrame) 上进行转换
 X_test_scaled = scaler.transform(X_test)
 X_test_scaled_df = pd.DataFrame(X_test_scaled, columns=X_test.columns)
 # ====== 数据标准化完毕 =======

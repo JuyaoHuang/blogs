@@ -524,12 +524,20 @@ sudo systemctl status cron
 
    ```json
    {
-    "registry-mirrors": [
-    	 "https://xuanyuan.run",//轩辕镜像
-       "https://docker.1panel.live",
-       "https://docker.m.daocloud.io",
-       "https://docker-0.unsee.tech"
-     ]
+     "registry-mirrors": [
+     "https://kbnxxtib546zgm.xuanyuan.run",
+     "https://kbnxxtib546zgm.xuanyuan.dev",
+     "https://docker.xuanyuan.me",
+     "https://docker.1panel.live",
+     "https://docker.m.daocloud.io",
+     "https://docker-0.unsee.tech"
+   ],
+     "insecure-registries": [
+     "https://kbnxxtib546zgm.xuanyuan.run",
+     "https://kbnxxtib546zgm.xuanyuan.dev",
+     "docker.xuanyuan.me"
+   ],
+     "dns": ["119.29.29.29", "114.114.114.114","8.8.8.8","223.223.223.223"]
    }
    ```
 
@@ -619,11 +627,19 @@ sudo systemctl status cron
     docker images 
     ```
 
-    清除指定镜像
+18. 清除指定镜像
 
     ```bash
     docker rm img_name 
     ```
+
+19. 检查状态
+
+    ```bash
+    sudo systemctl status docker
+    ```
+
+    
 
     ---
 
