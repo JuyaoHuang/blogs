@@ -523,24 +523,20 @@ sudo systemctl status cron
 2. 添加内容：镜像源
 
    ```json
-   {
-     "registry-mirrors": [
-     "https://kbnxxtib546zgm.xuanyuan.run",
-     "https://kbnxxtib546zgm.xuanyuan.dev",
-     "https://docker.xuanyuan.me",
-     "https://docker.1panel.live",
-     "https://docker.m.daocloud.io",
-     "https://docker-0.unsee.tech"
+      {
+   "registry-mirrors": [
+   "https://docker.xuanyuan.me",
+   "https://docker.1panel.live",
+   "https://docker.m.daocloud.io",
+   "https://docker-0.unsee.tech"
    ],
-     "insecure-registries": [
-     "https://kbnxxtib546zgm.xuanyuan.run",
-     "https://kbnxxtib546zgm.xuanyuan.dev",
-     "docker.xuanyuan.me"
+   "insecure-registries": [
+   "docker.xuanyuan.me"
    ],
-     "dns": ["119.29.29.29", "114.114.114.114","8.8.8.8","223.223.223.223"]
+   "dns": ["119.29.29.29", "114.114.114.114","8.8.8.8","223.223.223.223"]
    }
    ```
-
+   
 3. 安装`docker-compose`
 
    ```shell
