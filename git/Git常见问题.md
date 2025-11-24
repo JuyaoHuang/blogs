@@ -2,15 +2,15 @@
 title: "Git常见问题"
 published: 2025-10-03
 tags: ['git']
-first_level_category: "编程"
-second_level_category: "Git"
+first_level_category: "Web全栈开发"
+second_level_category: "Git与版本控制"
 author: "Alen"
 draft: false
 ---
 
 # Git常见问题
 
-## C1--分支无共同git历史
+## 1. 分支无共同git历史
 
 ### Q1: entirely different commit histories 
 
@@ -97,7 +97,7 @@ git push --force my_fork dev:other_dev
 
 这会在 **origin_fork** 仓库新建一个 other_dev分支，将你的代码推送到此处
 
-## C2--分支合并
+## 2. 分支合并
 
 ### Q1:常规合并
 
@@ -199,7 +199,7 @@ fatal: refusing to merge unrelated histories
 
 
 
-## C3--删除上游仓库
+## 3. 删除上游仓库
 
 1. 查看要删除的上游仓库的本地名
 
@@ -213,3 +213,6 @@ fatal: refusing to merge unrelated histories
    git remote remove upstream_fork
    ```
 
+
+
+## 

@@ -3,8 +3,8 @@ title: sklearn优化器
 author: JuyaoHuang
 published: 2025-10-21
 description: "Scikit-learn optimizer的介绍和使用"
-first_level_category: "AI"
-second_level_category: "机器学习"
+first_level_category: "人工智能"
+second_level_category: "机器学习理论"
 tags: ['机器学习','sklearn']
 draft: false
 ---
@@ -259,4 +259,3 @@ print(f"在测试集上的准确率: {accuracy:.4f}")
   使用基于树的构建算法（如贪婪分裂、集成等），不涉及梯度下降
 
   注意：梯度提升中的  “梯度”  指的是损失函数的梯度，但其优化过程是迭代地添加新树，而非调整一组固定参数
-

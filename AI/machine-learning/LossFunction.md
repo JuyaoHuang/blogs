@@ -3,8 +3,8 @@ title: 损失函数
 author: JuyaoHuang
 published: 2025-10-21
 description: "对机器学习中常用的损失函数的详细介绍"
-first_level_category: "AI"
-second_level_category: "机器学习"
+first_level_category: "人工智能"
+second_level_category: "机器学习理论"
 tags: ['机器学习']
 draft: false
 ---
@@ -433,4 +433,3 @@ PyTorch中，需要**显式地定义和使用**损失函数
 一个  “优秀”  的损失值，最终会体现在这些评估指标上
 
 例如，一个损失为0.1的模型，其准确率可能是95%；另一个损失为0.05的模型，准确率可能是97%
-

@@ -3,8 +3,8 @@ title: '机器学习实验一'
 author: Alen
 published: 2025-11-16
 description: "SVC、DTC、Gauss贝叶斯算法的分类问题应用"
-first_level_category: "AI"
-second_level_category: "机器学习"
+first_level_category: "人工智能"
+second_level_category: "机器学习理论"
 tags: ['ML','DL']
 draft: false
 ---
@@ -826,4 +826,3 @@ plt.show()
 # plt.savefig('Breast_Cancer.png',dpi=300)
 # plt.show()
 ```
-

@@ -3,7 +3,7 @@ title: "GPT-Sovits训练参数介绍"
 published: 2025-10-11
 tags: ['gpt-sovits']
 description: '介绍gpt-sovits模型训练和推理参数'
-first_level_category: "AI"
+first_level_category: "项目实践"
 second_level_category: "GPT-Sovits"
 author: "Alen"
 draft: false
@@ -389,4 +389,3 @@ scp 是最常用的命令行文件传输工具。
 
 2. **输入服务器密码**：
    命令执行后，会提示你输入服务器的 root 用户密码。输入密码并回车，文件就会开始下载。
-

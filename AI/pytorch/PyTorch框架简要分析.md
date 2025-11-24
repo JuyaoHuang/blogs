@@ -3,8 +3,8 @@ title: PyTorch框架简要分析
 author: Alen
 published: 2025-10-26
 description: "PyTorch基础模块及其核心目的"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['python']
 draft: false
 ---
@@ -476,4 +476,3 @@ $$
 
 - 将一个包含任意实数的 K 维向量，转换为一个 K 维的、所有元素之和为 1 的**概率分布**
 - 通过 $Softmax$函数就可以将多分类的输出值转换为范围在 $[0, 1]$和为1的概率分布
-
