@@ -3,8 +3,8 @@ title: slugMode配置问题
 published: 2025-10-01
 description: 关于 slugMode 配置对内容管理生命周期的影响分析报告
 tags: [架构]
-first_level_category: 'blog项目'
-second_level_category: '架构理解'
+first_level_category: "项目实践"
+second_level_category: "Blog开发实录"
 author: Alen
 ---
 # 关于 slugMode 配置对内容管理生命周期的影响分析报告
@@ -136,4 +136,3 @@ author: Alen
 **最终结论**: 
 
 ​	当前系统架构已具备支持两种模式无缝切换的能力。然而，从长期可维护性和工程效率的角度出发，**RAW 模式是更优越的技术选择**。所有内容管理策略和工具链应围绕 RAW 模式进行构建。
-

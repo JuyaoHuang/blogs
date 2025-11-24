@@ -3,8 +3,8 @@ title: cssStyleSummary
 published: 2025-09-26
 description: CSS常见样式
 tags: [CSS]
-first_level_category: 'blog项目'
-second_level_category: 'css'
+first_level_category: "项目实践"
+second_level_category: "Blog开发实录"
 author: Alen
 draft: false
 ---

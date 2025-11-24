@@ -3,8 +3,8 @@ title: Tensor与AutoGrad语法
 author: Alen
 published: 2025-10-10
 description: "Tensor与AutoGrad的语法和操作"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['python']
 draft: false
 ---
@@ -660,6 +660,5 @@ if torch.cuda.is_available():
 
 
 ------
-
 
 

@@ -4,8 +4,8 @@ published: 2025-10-09
 author: Alen
 description: 'vue框架基础知识和架构理解'
 draft: false
-first_level_category: '编程'
-second_level_category: 'vue'
+first_level_category: "Web全栈开发"
+second_level_category: "前端技术"
 tags: ['vue']
 ---
 # VUE基础知识
@@ -559,4 +559,3 @@ head-up-rate-detection-frontend/
          - 为 Chrome、Firefox、Edge 安装 **Vue Devtools** 扩展。
          - 安装后，在你的 Vue 应用页面打开开发者工具 (F12)，会看到一个新的 "Vue" 选项卡。
          - **功能:** 检查组件层级、查看和修改组件的 props 和 data (或 ref/reactive 状态)、追踪事件、检查路由信息、检查 Pinia 状态等。这是调试 Vue 应用的神器！
-

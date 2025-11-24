@@ -3,7 +3,7 @@ title: 数据类型
 author: Alen
 published: 2025-10-10
 description: "Python合集第一集：数据类型以及输入输出"
-first_level_category: "python"
+first_level_category: "Python"
 second_level_category: "基础语法"
 tags: ['python']
 draft: false
@@ -176,4 +176,3 @@ print("%3d"%(3)) output: [space][space]3 因为若位数 < m值，则输出会�
 可以在input()里面直接输出你在输入数据前，需要在控制台输出的内容
 例如： a = input("你好\n")
 ```
-

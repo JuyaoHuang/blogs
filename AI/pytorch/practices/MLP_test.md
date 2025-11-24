@@ -3,8 +3,8 @@ title: 'MLP实践'
 author: Alen
 published: 2025-10-28
 description: "PyTorc第一个实践：MLP的简单实验"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['ML','DL']
 draft: false
 ---
@@ -862,4 +862,3 @@ model = MLP()
 # 优化器会自动找到所有可学习参数
 op = torch.optim.SGD(model.parameters(), lr=lr)
 ```
-

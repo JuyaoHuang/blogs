@@ -3,8 +3,8 @@ title: '自动求导autograd'
 author: Alen
 published: 2025-10-26
 description: "Autograd 自动求导介绍和核心语法"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['python']
 draft: false
 ---
@@ -334,4 +334,3 @@ Autograd 的工作流程可以概括为：
 4. **反向传播**：在损失上调用 `.backward()`，PyTorch 会遍历计算图，自动计算梯度
 5. **读取梯度**：从参数的 .grad 属性中获取计算出的梯度
 6. **梯度清零**：在下一次迭代前，记得使用 `optimizer.zero_grad()`清除旧的梯度
-

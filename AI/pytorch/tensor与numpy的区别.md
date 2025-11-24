@@ -3,8 +3,8 @@ title: tensor与numpy的区别
 author: Alen
 published: 2025-10-26
 description: "Tensor与numpy的区别"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['python']
 draft: false
 ---

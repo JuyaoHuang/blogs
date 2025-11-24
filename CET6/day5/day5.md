@@ -3,7 +3,7 @@ title: day5 words
 author: Alen
 published: 2025-11-03
 description: "CET6 单词-Day5"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "CET6"
 tags: ['cet6']
 draft: false
