@@ -236,15 +236,15 @@ git push
 
 导入仓库后，由于仓库根目录不是一个 Astro项目，因此需要更改仓库根目录：
 
-<img src="./19.jpg" alt="19" style="zoom: 67%;" />
+![19](./19.jpg)
 
 选择 "Root Directory" 后，点击 `lingLong` 作为项目根路径：
 
-<img src="./20.jpg" alt="19" style="zoom: 67%;" />
+![20](./20.jpg)
 
 下拉 **"Build and Output Settings"**，查看指令是否为以下内容：
 
-<img src="./21.jpg" alt="19" style="zoom: 67%;" />
+![21](./21.jpg)
 
 如果正确，点击 **Deploy**。
 
@@ -256,11 +256,11 @@ git push
 
 进入 "Domains" 页面之后，点击 **"Add Domain"**，在搜索框输入你的注册域名，选择 "Connect to an environment"，"Production"，然后 "Save"。
 
-<img src="./23.jpg" alt="19" style="zoom: 50%;" />
+![23](./23.jpg)
 
 之后等待 SSL证书自动颁发完成。
 
-<img src="./22.jpg" alt="19"  />
+![22](./22.jpg)
 
 **如果出现 No Deployment**，说明你原始域名解析，例如阿里云或者 Cloudflare 没有配置好。注意检查 Cloudflare 里的代理状态（那朵云）是否已经**关闭（变成灰色）**。
 
