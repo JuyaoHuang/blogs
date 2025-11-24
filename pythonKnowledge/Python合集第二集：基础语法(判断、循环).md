@@ -3,7 +3,7 @@ title: 基础结构语句
 author: Alen
 published: 2025-10-10
 description: "Python合集第二集：基础语句(判断、循环)"
-first_level_category: "python"
+first_level_category: "Python"
 second_level_category: "基础语法"
 tags: ['python']
 draft: false
@@ -188,7 +188,6 @@ continue 用于结束当前这一轮的循环，但并未退出循环体； brea
 ### 或 or
 
 ### 非 not
-
 
 
 

@@ -2,8 +2,8 @@
 title: "Conda环境配置指南"
 published: 2025-10-01
 tags: ['conda']
-first_level_category: "python"
-second_level_category: "conda"
+first_level_category: "Web全栈开发"
+second_level_category: "运维与Linux"
 author: "Alen"
 draft: false
 ---
@@ -299,4 +299,3 @@ Conda 会询问你是否继续，输入 y 并回车确认。
 | `conda env remove -n <name>`          | 删除指定的虚拟环境                 | conda env remove -n myenv        |
 | `conda env export > environment.yml`  | 导出当前激活环境的配置到 YAML 文件 | conda env export > env.yml       |
 | `conda env create -f environment.yml` | 从 YAML 文件创建环境               | conda env create -f env.yml      |
-

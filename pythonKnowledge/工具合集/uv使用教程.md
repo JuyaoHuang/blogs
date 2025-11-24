@@ -3,8 +3,8 @@ title: uv
 author: Alen
 published: 2025-10-10
 description: "包环境下载和管理工具：UV的介绍"
-first_level_category: "python"
-second_level_category: "开发工具"
+first_level_category: "Python"
+second_level_category: "工程化与工具"
 tags: ['python']
 draft: false
 ---

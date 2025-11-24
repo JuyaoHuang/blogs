@@ -3,8 +3,8 @@ title: Tensor基础
 author: Alen
 published: 2025-10-26
 description: "Tensor的基础语法和数据操作"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['python']
 draft: false
 ---
@@ -563,4 +563,3 @@ print("修改NumPy后, Tensor b:", b)
    在深度学习中，我们经常试图解决优化问题： *最大化*分配给观测数据的概率; *最小化*预测和真实观测之间的距离。 用向量表示物品（如单词、产品或新闻文章），以便最小化相似项目之间的距离，最大化不同项目之间的距离。 
 
    目标，或许是深度学习算法最重要的组成部分（除了数据），通常被表达为范数。
-

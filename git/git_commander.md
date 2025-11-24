@@ -2,8 +2,8 @@
 title: "Git 指令"
 published: 2025-11-14
 tags: ['git']
-first_level_category: "编程"
-second_level_category: "Git"
+first_level_category: "Web全栈开发"
+second_level_category: "Git与版本控制"
 author: "Alen"
 draft: false
 ---
@@ -194,4 +194,48 @@ git branch --unset-upstream origin/main
 ```
 
 ---
+
+## 回退 commit
+
+### 1. 硬回退
+
+```bash
+git reset --hard HEAD^
+```
+
+该 commit 回退会撤销 commit 的同时，**将 commit 中对仓库的修改一并删除**。
+
+`HEAD^` 表示回退到上一个版本；`--hard` 表示连同文件内容一起恢复原状。
+
+例如：某一 commit 编号为 B，提交的内容有 3 个 files。执行该指令后这三个文件的修改的内容都会被删除。
+
+### 2.软回退
+
+顾名思义，就是撤销 "commit" 这个动作，但保留本地仓库对代码的更改。
+
+```bash
+git reset --soft HEAD^
+```
+
+### 示例
+
+```bash
+commit d95c91b977f7c2a7e151f8ed183fbd875c4107c4 (HEAD -> re_format, origin/main, origin/HEAD, main)
+Merge: 83d9834 d833c26
+Author: Alen Nelson
+Date:   Fri Nov 21 21:05:52 2025 +0800
+
+    Merge pull request #10 from JuyaoHuang/s3
+
+    doc:add session 3 of 信息论
+commit d833c268c386e8fa104ae71ebccb052c86ca88fa (origin/s3)
+Author: Juyao Huang 
+Date:   Fri Nov 21 21:03:42 2025 +0800
+
+    doc:add session 3 of 信息论
+```
+
+如果执行 `git reset --hard HEAD^`，那么 hash 为 `d95c91b977f7c2a7e151f8ed183fbd875c4107c4`的 commit 就会被撤回，并且**修改的内容会被删除**。如果两个 commit 之间没有执行过 `git pull`，那么执行 `git reset --hard HEAD^` 后仓库的内容会回退到 hash 为 `d833c268c386e8fa104ae71ebccb052c86ca88fa`的 commit 的状态。
+
+如果执行的是 `git reset --soft HEAD^`，那么 hash 为 `d95c91b977f7c2a7e151f8ed183fbd875c4107c4`的 commit 就会被撤回，但是修改的内容不会被删除。
 

@@ -3,7 +3,7 @@ title: day4 words
 author: Alen
 published: 2025-10-25
 description: "CET6 单词-Day4"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "CET6"
 tags: ['cet6']
 draft: false
@@ -106,4 +106,3 @@ draft: false
     
      v.耸肩(表示不知道或不在乎)
      n.耸肩
-

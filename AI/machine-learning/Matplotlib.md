@@ -3,8 +3,8 @@ title: Matplotlib
 author: Alen
 published: 2025-10-12
 description: "数据可视化工具：Matplotlib介绍"
-first_level_category: "AI"
-second_level_category: "机器学习"
+first_level_category: "人工智能"
+second_level_category: "数据分析工具"
 tags: ['机器学习','matplotlib']
 draft: false
 ---
@@ -439,4 +439,3 @@ Matplotlib 是一个极其强大的库，虽然初看起来有些复杂，但掌
   - **任务 (4)**：使用 ax.imshow() (或 seaborn.heatmap) 绘制混淆矩阵。
 
 从简单的图表开始，逐步添加定制元素，是学习 Matplotlib 的最佳路径。
-
