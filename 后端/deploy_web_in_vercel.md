@@ -280,7 +280,16 @@ git push
 **自动化方法**：
 
 1. 打开 Vercel 项目的 `Setting -> Git -> Deploy hooks`部分，在 `Name` 一栏随便输个名字，然后选择要 hook 的分支（默认 main），点击 `Create Hook`，得到一个 URL。例如：`https://api.vercel.com/`
+
 2. 在文章的远程仓库 [blogs](https://github.com/JuyaoHuang/blogs) 的 `Settings -> Webhooks -> Add Webhooks`，将上面获得的 URL 填入 `Payload URL`一栏， `Content type`一栏选择 `application/json`。等待添加的 hook 变为 `Last delivery was successful.`即可。
+
+3. 回到 `Vercel 项目 -> Settings -> General`，找到 `Build & Development Settings -> nstall Command` (安装命令)。开启 **Override** (覆盖)，输入以下代码：
+
+   ```bash
+   git submodule update --init --recursive --remote && pnpm install
+   ```
+
+   - --remote：命令 Git 直接去子模块的远程仓库拉取 main 分支的最新版
 
 <img src="./24.jpg" alt="19" style="zoom: 80%;" />
 
