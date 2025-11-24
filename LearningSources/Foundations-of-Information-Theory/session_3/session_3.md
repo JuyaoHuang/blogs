@@ -3,7 +3,7 @@ title: 离散信源
 author: 'Alen'
 published: 2025-11-21
 description: "信息量基础：离散信源"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "信息论"
 tags: ['信息论']
 draft: false
@@ -349,4 +349,3 @@ $$
 $$
 
 **方程一**即图中的第一个方程。
-

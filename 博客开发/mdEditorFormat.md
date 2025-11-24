@@ -3,8 +3,8 @@ title: MD编写示例文件
 published: 2025-01-20
 description: MD编写示例文件
 tags: [Markdown, example]
-first_level_category: 'blog项目'
-second_level_category: '文章编写格式' 
+first_level_category: "项目实践"
+second_level_category: "Blog开发实录"
 author: Alen
 # sourceLink: "https://github.com/emn178/markdown"
 draft: false
@@ -80,6 +80,5 @@ titie: name
 中间是有一个空格的，否则报错
 
 ---
-
 
 

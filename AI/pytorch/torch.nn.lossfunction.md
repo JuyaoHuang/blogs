@@ -3,8 +3,8 @@ title: 'nn.lossfunction模块'
 author: Alen
 published: 2025-10-27
 description: "PyTorch神经网络损失函数模块nn.Module.lossfunctions的介绍"
-first_level_category: "AI"
-second_level_category: "PyTorch"
+first_level_category: "人工智能"
+second_level_category: "深度学习框架"
 tags: ['ML','DL']
 draft: false
 ---
@@ -203,4 +203,3 @@ print(f"BCEWithLogits Loss: {bce_loss.item():.4f}")
 |      **nn.L1Loss**       |       回归        |       预测的连续值       |     真实的连续值，形状与预测相同      |
 | **nn.CrossEntropyLoss**  |      多分类       | **Logits** (未经Softmax) |     **整数类别索引** (LongTensor)     |
 | **nn.BCEWithLogitsLoss** | 二分类/多标签分类 | **Logits** (未经Sigmoid) | **浮点数** (0.0或1.0)，形状与预测相同 |
-

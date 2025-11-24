@@ -3,8 +3,8 @@ title: AI agent介绍
 author: JuyaoHuang
 published: 2025-10-21
 description: "AI agent介绍"
-first_level_category: "AI"
-second_level_category: "agent"
+first_level_category: "人工智能"
+second_level_category: "LLM与Agent"
 tags: ['机器学习']
 draft: false
 ---
@@ -142,4 +142,3 @@ AI assistants are often embedded in the product being used. A key characteristic
 | **用途** |                  自主、主动地执行任务                  |                       协助用户执行任务                       |           自动执行简单任务或对话           |
 | **功能** | 可以执行复杂的多步骤操作；学习和适应；可以独立做出决策 | 响应请求或提示；提供信息并完成简单任务；可以推荐操作，但决策由用户做出 | 遵循预定义的规则；有限的学习能力；基本互动 |
 | **交互** |                   主动；以目标为导向                   |                      被动；响应用户请求                      |           被动；响应触发器或命令           |
-

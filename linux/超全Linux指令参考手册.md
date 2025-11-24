@@ -3,12 +3,11 @@ title: Linux指令手册
 author: Alen
 published: 2025-10-10
 description: "linux指令速查手册"
-first_level_category: "编程"
-second_level_category: "linux"
+first_level_category: "Web全栈开发"
+second_level_category: "运维与Linux"
 tags: ['linux']
 draft: false
 ---
-
 
 # 超全Linux指令参考手册 
 
@@ -739,4 +738,3 @@ sudo systemctl status cron
 ```
 journalctl | grep CRON
 ```
-

@@ -3,7 +3,7 @@ title: 离散信息的度量
 author: 'Alen'
 published: 2025-11-18
 description: "信息量基础：离散信息的度量"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "信息论"
 tags: ['信息论']
 draft: false
@@ -400,4 +400,3 @@ $$
 *   **非一一对应（多对一）时**：给定 $Y$，对应的 $X$ 有多种可能，不确定性存在，所以 **$H(X|Y) > 0$**
     
     结论：**$H(Y) < H(X)$**（熵减小）
-

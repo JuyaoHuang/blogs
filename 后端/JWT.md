@@ -1,10 +1,10 @@
 ---
 title: JWT令牌
 published: 2025-09-28
-description: 探讨JWT令牌的定义与实现
+description: '探讨JWT令牌的定义与实现'
 tags: [JWT]
-first_level_category: '编程'
-second_level_category: '后端开发'
+first_level_category: "Web全栈开发"
+second_level_category: "后端技术"
 author: JuyaoHuang
 draft: false
 ---

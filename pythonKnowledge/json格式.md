@@ -3,7 +3,7 @@ title: json数据格式
 author: Alen
 published: 2025-10-10
 description: "json数据格式介绍"
-first_level_category: "python"
+first_level_category: "Python"
 second_level_category: "基础语法"
 tags: ['python']
 draft: false

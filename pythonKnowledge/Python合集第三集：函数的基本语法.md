@@ -3,7 +3,7 @@ title: 函数
 author: Alen
 published: 2025-10-10
 description: "Python合集第三集：函数的基本语法"
-first_level_category: "python"
+first_level_category: "Python"
 second_level_category: "基础语法"
 tags: ['python']
 draft: false
@@ -289,4 +289,3 @@ while op != 4:
     op = int(input("请输入您想要的操作:\n 1.查询余额\n 2.存款\n 3.取款\n 4.退出\n"))
 
 ```
-
