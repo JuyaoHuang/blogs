@@ -239,3 +239,51 @@ Date:   Fri Nov 21 21:03:42 2025 +0800
 
 如果执行的是 `git reset --soft HEAD^`，那么 hash 为 `d95c91b977f7c2a7e151f8ed183fbd875c4107c4`的 commit 就会被撤回，但是修改的内容不会被删除。
 
+## 编写长段 Commit
+
+如果有编写一个完整的、长段的 commit，使用 `git commit`指令（不带 `-m' 参数）。
+
+这会打开一个终端文本器：nano 或者 vim。
+
+nano较为常见，此处不多描述。
+
+执行
+
+```bash
+git commit
+```
+
+进入 vim 的编辑页面： 如果你看到一个光标，但输入字符没反应，那你很可能在 Vim 中。
+
+1. 按下 " i " 键进入插入模式（ insert ），然后开始编写 commit
+2. 写完后，按下 "ESC" 键退出插入模式，并输入 `:wq` 然后回车。（`w`: write, `q`: quit）
+
+**commit 规范**：
+
+一个规范的 Commit Message 分为三个部分：
+
+```bash
+<类型>(<范围>): <简短描述>   <- 主题行，不超过50个字符
+<空一行>                     <- 主题行和正文之间必须有一个空行
+<详细描述的正文>              <- 这是你的长段描述。详细解释为什么要做这个修改，
+解决了什么问题，带来了什么影响。为了可读性，建议每行不超过72个字符。
+<空一行>
+<页脚 (Footer)>              <- 可选。通常用于关联 Issue，例如：Fixes #123
+```
+
+例如：
+
+```bash
+feat(api): Add user authentication endpoint
+
+Implement JWT-based authentication for the /api/users/login route.
+This new endpoint accepts a username and password, validates them against
+the database, and returns a JSON Web Token if successful.
+
+- Uses passlib for password hashing and verification.
+- Token expires in 24 hours.
+- Adds new dependencies: python-jose and passlib.
+
+Resolves: #42
+```
+
