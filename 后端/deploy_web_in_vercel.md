@@ -291,15 +291,15 @@ git push
 
    - --remote：命令 Git 直接去子模块的远程仓库拉取 main 分支的最新版
 
-<img src="./24.jpg" alt="19" style="zoom: 80%;" />
+![24](./24.jpg)
 
-<img src="./25.jpg" alt="19" style="zoom: 80%;" />
+![25](./25.jpg)
 
 ## 5. 部署项目
 
 回到 Vercel 的项目面板，点击上边栏的 "Deployments"，点击最新一栏的三个点，进行 "Redeploy".
 
-<img src="./26.jpg" alt="19" style="zoom: 80%;" />
+![26](./26.jpg)
 
 等待部署完成后，查看域名、应用是否能够正常访问：
 
