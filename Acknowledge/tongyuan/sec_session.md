@@ -3,7 +3,7 @@ title: '第二章习题'
 author: Alen
 published: 2025-11-03
 description: "通信原理第二章习题"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "通信原理"
 tags: ['通信原理']
 draft: false

@@ -3,7 +3,7 @@ title: 计算机网络学习笔记
 author: Alen
 published: 2025-10-11
 description: "计算机网络:自顶向下方法-第七版学习笔记"
-first_level_category: "课程资料"
+first_level_category: "知识库"
 second_level_category: "计算机网络"
 tags: ['csnetwork']
 draft: false
