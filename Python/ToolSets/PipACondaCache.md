@@ -22,8 +22,6 @@ draft: false
 pip cache dir   
 ```
 
-
-
 **示例输出 (Windows):**
 
 ```
@@ -199,5 +197,4 @@ conda clean --all
 **总结：**
 
 定期清理 pip 和 conda 的缓存是一个好习惯，尤其是在磁盘空间紧张或者遇到奇怪的包安装问题时。使用 pip cache purge 和 conda clean --all 是快速释放空间和解决潜在缓存冲突的有效方法。如果有特定的需求，可以根据上述命令进行更细致的缓存管理。
-
 
