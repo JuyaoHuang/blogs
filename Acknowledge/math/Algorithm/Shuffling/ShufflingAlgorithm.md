@@ -5,7 +5,6 @@ description: Fisher-Yates 算法及其变种 Sattolo算法
 tags: [算法]
 first_level_category: "知识库"
 second_level_category: "数学理论"
-author: Alen
 cover: '/mdsImgs/Maths/Fisher-Yates/xiPai.webp'
 draft: false
 ---

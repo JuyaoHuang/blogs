@@ -6,6 +6,7 @@ description: "机器学习的架构流程描述"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
 tags: ['机器学习']
+cover: "/mdsImgs/AI/ML/MLFrameworkProcess.png"
 draft: false
 ---
 
@@ -114,7 +115,7 @@ $$
 
    **核心**：
 
-   ​	不能使用测试集的数据特征对模型进行训练，因此必须先划分数据集，再使用训练集的数据特征进行训练
+   不能使用测试集的数据特征对模型进行训练，因此必须先划分数据集，再使用训练集的数据特征进行训练
 
    1. 标准化/归一化
 
@@ -194,13 +195,14 @@ $$
 **操作**：
     使用从未参与过训练的测试集/验证集评估模型的性能，根据预先选定的评价指标和目测效果，评价模型的优劣，是否需要继续迭代。
     常见的指标：
+
     1. 准确率 Accuracy
-        2. 精确率 Precision
-        3. 召回率 Recall
-        4. 还有 TN、TP、FP、FN等
-        评价指标介绍[看此处](#评价指标)
-        如果模型效果不理想，那么需要回来调整第六步模型训练里的[超参数](#超参数)，例如梯度下降法的学习率、神经网络的隐藏层层数
-        如果仍旧不理想，就要考虑第三步、第四步（换模型）了。
+    2. 精确率 Precision
+    3. 召回率 Recall
+    4. 还有 TN、TP、FP、FN等
+  评价指标介绍[看此处](#评价指标)
+  如果模型效果不理想，那么需要回来调整第六步模型训练里的[超参数](#超参数)，例如梯度下降法的学习率、神经网络的隐藏层层数
+  如果仍旧不理想，就要考虑第三步、第四步（换模型）了。
 
 ### 8. 模型部署与监控
 
@@ -363,7 +365,7 @@ $$
 
 ### 评价指标
 
-详情<a href="https://juayohuang.top/posts/ai/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87" target = "_blank" rel="noopener noreferrer">请点击此处查看机器学习评价指标文档</a>，此处仅给出简要介绍
+详情<a href="https://www.juayohuang.top/posts/ai/machine-learning/mlevaluationmertrics" target = "_blank" rel="noopener noreferrer">请点击此处查看机器学习评价指标文档</a>，此处仅给出简要介绍
 
 #### 分类指标
 
@@ -511,7 +513,7 @@ r2 = r2_score(y_true, y_pred)
 2. 对每个 k 值，运行聚类算法（如K-Means）
 3. 计算一个内部评价指标（例如**轮廓系数**）
 4. 将 k 值与对应的指标分数画成折线图。
-5. **寻找 "拐点"**:
+5. **寻找拐点**:
    - 对于**轮廓系数**或**Calinski-Harabasz指数**，寻找**分数最高**的那个 k 值
    - 对于**Davies-Bouldin指数**，寻找**分数最低**的那个 k 值
 
@@ -541,7 +543,7 @@ db_score = davies_bouldin_score(X, labels_pred)
 ### 数据清洗
 
 主要为 缺失值、异常值、重复值的处理，查看
-<a href="https://juayohuang.top/posts/ai/machine-learning/pandas" target = "_blank" rel="noopener noreferrer">pandas用法</a>
+<a href="https://www.juayohuang.top/posts/ai/machine-learning/pandas" target = "_blank" rel="noopener noreferrer">pandas用法</a>
 
 ### SMOTE
 
@@ -676,7 +678,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 ### 算法详细介绍
 
-具体的推导和介绍<a href="机器学习算法" target = "_blank" rel="noopener noreferrer">请点击此处</a>
+具体的推导和介绍<a href="机器学习算法" target = "_blank" rel="noopener noreferrer">请点击此处</a>（未编写文章）
 
 #### 分类算法 
 
@@ -692,8 +694,8 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 |                   随机森林 (Random Forest)                   | **集成学习**的代表。通过构建**多棵决策树**，并让它们投票来决定最终的分类结果。 | **极大地减少了单棵决策树的过拟合风险**，性能强大且稳定，不易受到噪声影响。 |  模型的可解释性比单棵决策树差，训练和预测速度比单个模型慢。  |
 |              K-近邻 (K-Nearest Neighbors - KNN)              | “物以类聚”。一个新样本的类别由它在特征空间中最近的K个邻居的类别来决定。 |         **算法非常简单，无需训练**，对异常值不敏感。         | **预测速度慢**（需要计算与所有点的距离），对特征尺度敏感（需要标准化），需要手动选择K值。 |
 |                   朴素贝叶斯 (Naive Bayes)                   | 基于贝叶斯定理，并假设特征之间相互**独立**（这是“朴素”的来源），来计算样本属于某个类别的概率。 | **算法简单，计算速度快**，在**文本分类**（如垃圾邮件检测）等领域效果非常好。 | “特征独立”的假设在现实中往往不成立，因此在某些情况下性能可能不佳。 |
-| 梯度提升决策树 (Gradient Boosting Decision Trees - GBDT, XGBoost, LightGBM) | **集成学习**的另一种形式。它迭代地构建一系列弱的决策树，每一棵新树都试图纠正前面所有树的错误。 | **性能极其强大，是各种数据科学竞赛中的“大杀器”**，能够处理非常复杂的关系。 |   **训练过程是串行的，可能比较慢**，调参比随机森林更复杂。   |
-|          神经网络/多层感知机 (Neural Networks/MLP)           | 模拟人脑神经元结构，通过多个层和非线性激活函数来学习数据中极其复杂的模式。 | **能拟合任意复杂的非线性关系，在图像、语音、文本等非结构化数据上表现最佳**。 |   **需要大量数据，训练成本高，模型是“黑箱”，可解释性差**。   |
+| 梯度提升决策树 (Gradient Boosting Decision Trees - GBDT, XGBoost, LightGBM) | **集成学习**的另一种形式。它迭代地构建一系列弱的决策树，每一棵新树都试图纠正前面所有树的错误。 | **性能极其强大，是各种数据科学竞赛中的大杀器**，能够处理非常复杂的关系。 |   **训练过程是串行的，可能比较慢**，调参比随机森林更复杂。   |
+|          神经网络/多层感知机 (Neural Networks/MLP)           | 模拟人脑神经元结构，通过多个层和非线性激活函数来学习数据中极其复杂的模式。 | **能拟合任意复杂的非线性关系，在图像、语音、文本等非结构化数据上表现最佳**。 |    **需要大量数据，训练成本高，模型是黑箱，可解释性差**。    |
 
 ------
 
@@ -727,7 +729,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 ---
 
-#### 各算法的详细介绍和PyTorch使用方法
+#### 各算法的详细介绍和PyTorch使用方法（未编写文章）
 
 1. <a href="./回归算法" target = "_blank" rel="noopener noreferrer">回归算法</a>
 2. <a href="./分类算法" target = "_blank" rel="noopener noreferrer">分类算法</a>
@@ -741,74 +743,75 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 这里只简单介绍具体有什么损失函数、常用的损失函数、代码中使用
 
-若要查看相关介绍，<a href="https://juayohuang.top/posts/ai/machine-learning/lossfunction">请点击此处</a>
+若要查看相关介绍，<a href="https://www.juayohuang.top/posts/ai/machine-learning/lossfunction">请点击此处</a>
 
 #### 分类损失
 
 1. **二元分类问题下的损失函数**
 
-   1. 二元交叉熵损失
-       实现代码：
+   二元交叉熵损失
 
-       1. 在 Scikit-learn 中
-            在Scikit-learn中，通常**不会直接  “选择”  交叉熵损失函数**
+   实现代码：
 
-            对于像**逻辑回归 LogisticRegression** 这样的分类模型，交叉熵损失是其**内置的、默认的优化目标**
+   1. 在 Scikit-learn 中
 
-            调用 `.fit()` 方法训练一个逻辑回归模型时，它内部的  “求解器 (solver)”  就在努力地最小化交叉熵损失，只需创建和训练模型即可
+        在Scikit-learn中，通常**不会直接选择交叉熵损失函数**
 
-            ```python
-            from sklearn.linear_model import LogisticRegression
-            from sklearn.model_selection import train_test_split
-            from sklearn.datasets import make_classification
-            # 1. 准备数据
-            X, y = make_classification(n_samples=100, n_features=10, n_classes=2, random_state=42)
-            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-            # 2. 创建模型
-            # 交叉熵损失是这个模型内在的优化目标
-            model = LogisticRegression()
-            # 3. 训练模型
-            # .fit() 的过程就是在最小化交叉熵
-            model.fit(X_train, y_train)
-            # 你可以使用 log_loss 来“计算”损失值，但这只是评估，不是训练过程的一部分
-            from sklearn.metrics import log_loss
-            predictions_proba = model.predict_proba(X_test)
-            loss_value = log_loss(y_test, predictions_proba)
-            ```
+        对于像逻辑回归这样的分类模型，交叉熵损失是其内置的、默认的优化目标
 
-       2. 在 PyTorch 中
-            PyTorch中，需要**显式地定义和使用**损失函数
-            使用 `torch.nn.BCEWithLogitsLoss`
+        调用 `.fit()` 方法训练一个逻辑回归模型时，它内部的  “求解器 (solver)”  就在努力地最小化交叉熵损失，只需创建和训练模型即可
 
-            ```python
-            import torch
-            import torch.nn as nn
-            criterion = nn.BCEWithLogitsLoss()
-            model_output = torch.randn(10, 1) # 10个样本，模型的原始输出 (logits)
-            true_labels = torch.randint(0, 2, (10, 1)).float() # 10个真实标签 (0或1)
-            loss = criterion(model_output, true_labels)
-            ```
+        ```python
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.model_selection import train_test_split
+        from sklearn.datasets import make_classification
+        # 1. 准备数据
+        X, y = make_classification(n_samples=100, n_features=10, n_classes=2, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        # 2. 创建模型
+        # 交叉熵损失是这个模型内在的优化目标
+        model = LogisticRegression()
+        # 3. 训练模型
+        # .fit() 的过程就是在最小化交叉熵
+        model.fit(X_train, y_train)
+        # 你可以使用 log_loss 来“计算”损失值，但这只是评估，不是训练过程的一部分
+        from sklearn.metrics import log_loss
+        predictions_proba = model.predict_proba(X_test)
+        loss_value = log_loss(y_test, predictions_proba)
+        ```
 
-   2. Hinge Loss
+   2. 在 PyTorch 中
 
-2. 多类别分类
-   1. 分类交叉熵损失
-        使用 `torch.nn.CrossEntropyLoss`
-        这个函数**内部集成了 Softmax 和计算负对数损失**两个步骤，这意味着模型最后一层**绝对不能**有Softmax激活函数，直接输出原始得分（logits）即可
-        
+        PyTorch中，需要**显式地定义和使用**损失函数 `torch.nn.BCEWithLogitsLoss`
+
         ```python
         import torch
         import torch.nn as nn
-        criterion = nn.CrossEntropyLoss()
-        # 3个样本，模型对4个类别的原始输出 (logits)
-        model_output = torch.randn(3, 4) 
-        # 3个真实标签 (不是one-hot，直接是类别索引)
-        true_labels = torch.tensor([1, 0, 3]) 
+        criterion = nn.BCEWithLogitsLoss()
+        model_output = torch.randn(10, 1) # 10个样本，模型的原始输出 (logits)
+        true_labels = torch.randint(0, 2, (10, 1)).float() # 10个真实标签 (0或1)
         loss = criterion(model_output, true_labels)
         ```
 
+2. 多类别分类
+   
+   分类交叉熵损失使用 `torch.nn.CrossEntropyLoss`
+   这个函数**内部集成了 Softmax 和计算负对数损失**两个步骤，这意味着模型最后一层**绝对不能**有Softmax激活函数，直接输出原始得分（logits）即可
+   
+   ```python
+   import torch
+   import torch.nn as nn
+   criterion = nn.CrossEntropyLoss()
+   # 3个样本，模型对4个类别的原始输出 (logits)
+   model_output = torch.randn(3, 4) 
+   # 3个真实标签 (不是one-hot，直接是类别索引)
+   true_labels = torch.tensor([1, 0, 3]) 
+   loss = criterion(model_output, true_labels)
+   ```
+
 3. 多标签分类
-   1. 二元交叉熵损失：将  “N选K”  问题分解为 **N 个独立的二元分类问题**
+   
+   二元交叉熵损失：将  “N选K”  问题分解为 **N 个独立的二元分类问题**
 
 |    任务类型    |   类别关系    |   模型最后一层激活   |              **首选损失函数**              |
 | :------------: | :-----------: | :------------------: | :----------------------------------------: |
@@ -820,7 +823,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 #### 回归损失
 
-与分类损失函数衡量 “类别猜得对不对” 不同，回归损失函数的核心任务是  **衡量“预测值”与“真实值”之间的距离或误差有多大**
+与分类损失函数衡量类别猜得对不对不同，回归损失函数的核心任务是  **衡量预测值与真实值之间的距离或误差有多大**
 
 1. 均方误差 MSE / L2 损失
 2. 平均绝对误差 Mean Absolute Error - MAE / L1 损失
@@ -838,9 +841,12 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 **代码实现**
 
-1. **在 Scikit-learn 中**
-     与分类类似，损失函数通常是模型**内置**的。例如 LinearRegression 默认使用MSE
-     但你可以使用 metrics 模块来**评估**模型在不同损失函数下的表现，不是指定 $Loss\ Function$
+1. 在 Scikit-learn 中
+
+     与分类类似，损失函数通常是模型内置的。例如 LinearRegression 默认使用MSE
+
+     但你可以使用 metrics 模块来评估模型在不同损失函数下的表现，不是指定 $Loss\ Function$
+
      ```python
      from sklearn.metrics import mean_squared_error, mean_absolute_error
      # 假设 y_true 和 y_pred 是 NumPy 数组
@@ -853,8 +859,11 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
      # 计算 RMSE
      rmse = mean_squared_error(y_true, y_pred, squared=False) # 或者 np.sqrt(mse)
      ```
-2. **在 PyTorch 中**
-     PyTorch中需要**显式地定义**训练时使用的损失函数
+
+2. 在 PyTorch 中
+
+     PyTorch中需要显式地定义训练时使用的损失函数
+
      ```python
      import torch
      import torch.nn as nn
@@ -881,7 +890,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 - 常用的梯度下降法
 - 代码实现
 
-<a href = "https://juayohuang.top/posts/ai/machine-learning/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95" target="_blank" rel="noopener noreferrer">详细的算法介绍请点击此处</a>
+<a href = "https://www.juayohuang.top/posts/ai/machine-learning/gradientdescentmethod" target="_blank" rel="noopener noreferrer">详细的算法介绍请点击此处</a>
 
 1. **作用**
 
@@ -929,7 +938,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 4. **代码实现**
 
-   1. **sklearn**
+   1. sklearn
 
       在 Scikit-learn 中，梯度下降法通常是**隐藏在模型内部**的。Scikit-learn 高度封装，让你更专注于模型选择和超参数调整，而不是训练过程的细节
 
@@ -981,11 +990,11 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
       
       ---
       
-      > Scikit-learn中更多的优化器介绍<a href= "https://juayohuang.top/posts/ai/machine-learning/sklearn_optimizer" target="_blank" rel="noopener noreferrer">[请点击此处]</a>
+      > Scikit-learn中更多的优化器介绍<a href= "https://www.juayohuang.top/posts/ai/machine-learning/sklearn_optimizer" target="_blank" rel="noopener noreferrer">[请点击此处]</a>
       
-   2. **PyTorch**
+   2. PyTorch
    
-      PyTorch 已经将复杂的梯度计算和参数更新封装得极其简单，使用者只需要**配置**它，而不需要自己实现
+      PyTorch 已经将复杂的梯度计算和参数更新封装得极其简单，使用者只需要配置它，而不需要自己实现。
    
       以线性回归为例：$y = w * x + b$
    
@@ -997,7 +1006,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
       X = torch.tensor([[1.0], [2.0], [3.0], [4.0]], dtype=torch.float32)
       y = torch.tensor([[2.0], [4.0], [6.0], [8.0]], dtype=torch.float32) # y = 2 * X
       # 2. 定义模型
-      # 这是一个简单的线性模型 y = w * x + b
+      # 简单的线性模型 y = w * x + b
       model = nn.Linear(1, 1) 
       # 3. 定义损失函数和优化器
       # 超参数学习率
@@ -1005,7 +1014,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
       criterion = nn.MSELoss() # 损失函数：均方误差
       # 梯度下降法在此使用
       # 选择SGD 作为优化器
-      # 并告诉它要优化的参数是model.parameters()，以及学习率是多少
+      # 要优化的参数model.parameters(), 学习率
       optimizer = optim.SGD(model.parameters(), lr=learning_rate)
       # 4. 训练循环
       epochs = 20
@@ -1016,7 +1025,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
           loss = criterion(y_pred, y)
           # 计算梯度
           # 在PyTorch中，这两行代码会自动完成所有复杂的梯度计算
-          optimizer.zero_grad() # 清空上一轮的梯度，非常重要
+          optimizer.zero_grad() # 清空上一轮的梯度
           loss.backward()     # 反向传播，计算当前损失下所有参数的梯度
           # 更新参数
           # 优化器根据计算好的梯度，更新模型的所有参数
@@ -1035,10 +1044,9 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
    
         `optimizer.step()`会根据`loss.backward()`计算出的梯度，自动执行 $新参数 = 旧参数 - 学习率 * 梯度$ 这个操作。
    
-      - 开发者，核心工作就是**选择并配置优化器**
+      - 开发者，核心工作就是选择并配置优化器
    
-        除了SGD，还可以选择  `optim.Adam`、`optim.RMSprop`等更高级的梯度下降法变体，但它们的核心角色都是一样的：**读取梯度，更新参数**
-
+        除了SGD，还可以选择  `optim.Adam`、`optim.RMSprop`等更高级的梯度下降法变体，但它们的核心角色都是一样的：读取梯度，更新参数
 
 
 

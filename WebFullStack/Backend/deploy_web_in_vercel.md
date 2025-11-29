@@ -6,6 +6,7 @@ description: "Vercel部署个人网站教程"
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"
 tags: ['Vercel']
+cover: "/mdsImgs/WebFullStack/backend/deploy_web_in_vercel.png"
 draft: false
 ---
 
