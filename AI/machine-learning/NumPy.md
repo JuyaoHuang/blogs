@@ -5,7 +5,7 @@ description: "核心数据分析工具：NumPy介绍"
 first_level_category: "人工智能"
 second_level_category: "数据分析工具"
 tags: ['机器学习','numpy']
-cover: "/mdsImgs/python/Conda/Numpy.png"
+cover: "D/mdsImgs/AI/ML/Numpy.png"
 draft: false
 ---
 
