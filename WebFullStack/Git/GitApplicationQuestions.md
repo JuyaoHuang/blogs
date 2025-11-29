@@ -4,7 +4,7 @@ published: 2025-10-03
 tags: ['git']
 first_level_category: "Web全栈开发"
 second_level_category: "Git与版本控制"
-description: "Git 实际应用时遇到的问题"
+description: "项目开发时遇到的Git交互问题"
 draft: false
 ---
 
@@ -561,4 +561,83 @@ PR 已经合并到 main 分支，但发现有问题，需要撤销。
 **总结**
 
 如果是团队合作，使用 revert 即可，毕竟要照顾团队成员。如果是个人项目，**在确保你回退之前的 commit 的确没有新增的代码的前提下**，并且希望删除不必要的提交 commits，再执行`git reset --hard <commit_hash>`
+
+## 8. 需要上传大文件到 GitHub (GLFS)
+
+### 情景
+
+上传大文件到 GitHub 时，GitHub 拒绝你的访问。当使用 `git commit` 提交有关大型文件（大于100M）到 GitHub 上时，会被 GitHub 默认拒绝。需要使用 `Git-LFS` 工具创建指针，上传大文件。
+
+```bash
+remote: warning: File experience_two/codes/best_food_cnn.pth is 99.76 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: error: Trace: 9cf673a5c08a9ccb205aba61f85967171eba83989fd6227c8e502f2cc351b044
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File experience_two/codes/best_vgg16.pth is 512.35 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.  
+To https://github.com/JuyaoHuang/BUPTDeepLearning.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+```
+
+### 解决方法   Git-LFS
+
+1. **安装 Git LFS**
+
+   选择一条路径完成：
+
+   1. 前往[Git-LFS官网](https://git-lfs.com/)下载 LFS
+   2. 安装最新版本的 Git-for-Windows。
+
+   在仓库下执行：`git lfs install`
+
+   ```bash
+   (base) PS D:\Learing_Resourses> git lfs install
+   Updated Git hooks.
+   Git LFS initialized.
+   ```
+
+2. **处理已经提交的大文件**
+
+   即使现在配置了 Git LFS，因为**这个大文件已经存在于本地 commit 记录中了**，直接 push 依然会失败。你需要先清洗你的本地提交记录，把大文件转交给 LFS 管理。
+
+   因为已经对这些大文件进行了 git commit ，普通的 git lfs track 对**过去的**提交无效。需要使用 `migrate` 命令把历史记录里的 .pth 文件从普通 Git 对象转换成 LFS 对象。
+
+   ```bash
+   git lfs migrate import --include="*.pth" --everything
+   ```
+
+3. **继续推送**
+
+   ```bash
+   git status
+   git push origin main
+   ```
+
+**如果没有对大文件进行过提交**：
+
+1. 使用 `git lfs track ".lfs"` 指令提示 git 将 `.lfs` 文件使用 LFS管理
+
+   ```bash
+   git lfs track "*.pth"
+   ```
+
+2. 确保`.gitattributes` 被添加进暂存区
+
+   ```bash
+   git add .gitattributes
+   ```
+
+   > 需要先暂存 ` .gitattributes` 管理文件，再暂存大文件！
+
+3. 重新添加大文件
+
+   ```bash
+   git add .
+   ```
+
+4. 提交 commit 并进行推送
+
+   ```bash
+   git commit -m "your message."
+   git push 
+   ```
 
