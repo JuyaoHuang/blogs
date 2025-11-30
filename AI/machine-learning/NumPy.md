@@ -4,8 +4,8 @@ published: 2025-10-12
 description: "核心数据分析工具：NumPy介绍"
 first_level_category: "人工智能"
 second_level_category: "数据分析工具"
-tags: ['机器学习','numpy']
-cover: "D/mdsImgs/AI/ML/Numpy.png"
+tags: ['ML','numpy']
+cover: "/mdsImgs/AI/ML/Numpy.png"
 draft: false
 ---
 
