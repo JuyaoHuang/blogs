@@ -1,6 +1,5 @@
 ---
 title: 'torch.optim模块'
-author: Alen
 published: 2025-10-27
 description: "PyTorch优化器模块torch.optim的介绍"
 first_level_category: "人工智能"

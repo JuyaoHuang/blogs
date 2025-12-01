@@ -8,7 +8,7 @@ tags: ['DL']
 draft: false
 ---
 
-## 《神经网络与深度学习》课程实验作业（二）
+## 《神经网络与深度学习》课程实验作业
 
 **实验内容：计算机视觉基础**
 
@@ -62,75 +62,69 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 **任务 (1): 构造训练数据集 (3分)**
 
-*   **核心要求**：编写代码读取 `training` 和 `validation` 文件夹下的图片
-*   **关键动作**：
-    *   你需要自定义一个 Dataset 类（继承 `torch.utils.data.Dataset`）
-    *   **文件名解析**：这是难点。图片名格式为 `[类别]_[编号].jpg`（例如 `Bread_001.jpg`）。你需要写代码解析字符串，把 `Bread` 映射成数字标签（例如 `0`）
-    *   **注意**：要确保训练集和验证集的类别映射关系是一致的（比如 Bread 在训练集是 0，在验证集也必须是 0）
+*   核心要求：编写代码读取 `training` 和 `validation` 文件夹下的图片
+*   关键动作：
+    *   需要自定义一个 Dataset 类`FoodDataset`（继承 `torch.utils.data.Dataset`）
+    *   文件名解析：图片名格式为 `[类别]_[编号].jpg`（例如 `Bread_001.jpg`）。需要写代码解析字符串，把 `Bread` 映射成数字标签（例如 `0`）
+    *   注意：要确保训练集和验证集的类别映射关系是一致的（比如 Bread 在训练集是 0，在验证集也必须是 0）
 
 **任务 (2): 设计 Train Transform (3分)**
 
-*   **核心要求**：利用 `torchvision.transforms` 对图片进行预处理和增强
-*   **硬性指标**：
-    1.  **指定特征图大小**：必须包含 `Resize`（例如 `Resize((224, 224))`），因为题目提示“图片大小并不统一”
-    2.  **至少五种 Transform**：少于5种扣分
-*   **建议组合**：
+*   核心要求：利用 `torchvision.transforms` 对图片进行预处理和增强
+*   硬性指标：
+    1.  指定特征图大小：必须包含 `Resize`（例如 `Resize((224, 224))`），因为题目提示图片大小并不统一
+    2.  至少五种 Transform：少于5种扣分
+*   建议组合：
     1.  `Resize((224, 224))` (必选)
     2.  `RandomHorizontalFlip()` (水平翻转)
     3.  `RandomRotation()` (随机旋转)
     4.  `ColorJitter()` (颜色抖动)
-    5.  `ToTensor()` (转张量，必选)
-    6.  `Normalize()` (归一化，必选) -> 加上这个正好6种，稳过
+    5.  `RandomAffine()`: 随机仿射变换 (平移、缩放)
+    6.  `ToTensor()` (转张量，必选)
+    7.  `Normalize()` (归一化，必选)
 
 **任务 (3): Transform 可视化 (2分)**
 
-*   **核心要求**：展示图片在经过你设计的 Transform 处理后变成了什么样
-*   **操作**：取一张原始图片，应用你的 transform，然后用 `matplotlib.pyplot.imshow` 画出来
-*   **坑点**：如果 transform 里包含了 `Normalize`，图片颜色会变得很奇怪（因为数值被标准化了）。在可视化时，建议先展示不带 Normalize 的增强效果，或者编写一个“反归一化”函数再显示
+*   核心要求：展示图片在经过你设计的 Transform 处理后变成了什么样
+*   操作：取一张原始图片，应用你的 transform，然后用 `matplotlib.pyplot.imshow` 画出来
+*   坑点：如果 transform 里包含了 `Normalize`，图片颜色会变得很奇怪（因为数值被标准化了）。在可视化时，建议先展示不带 Normalize 的增强效果，或者编写一个反归一化函数再显示
 
 ### 第二阶段：自定义模型
 **任务 (4): 搭建个人模型 & TensorBoard 可视化 (2分)**
 
-*   **核心要求**：
-    1.  自己定义一个简单的 CNN 类（比如 3-4 层卷积层）
+*   核心要求：
+    1.  自定义一个简单的 CNN 类（比如 3-4 层卷积层）
     2.  使用 `SummaryWriter` 记录训练过程中的 Loss 和 Accuracy
-*   **交付物**：实验报告中必须要有 TensorBoard 的截图（Loss曲线下降，Accuracy曲线上升）
+*   交付物：报告中必须要有 TensorBoard 的截图（Loss曲线下降，Accuracy曲线上升）
 
 **任务 (5): 验证集评估 & 混淆矩阵 (2分)**
 
-*   **核心要求**：模型训练完后，在验证集（Validation Set）上跑一遍
-*   **交付物**：
-    1.  **准确率数值**：例如 "Validation Accuracy: 65.4%"
-    2.  **混淆矩阵图**：这是一个 11x11 的热力图。它可以告诉你模型是不是把“Bread（面包）”错误地分类成了“Dessert（甜点）”。你需要使用 `sklearn.metrics.confusion_matrix` 和 `seaborn.heatmap`
+*   核心要求：模型训练完后，在验证集（Validation Set）上跑一遍
+*   交付物：
+    1.  准确率数值：例如 "Validation Accuracy: 65.4%"
+    2.  混淆矩阵图：这是一个 11x11 的热力图。它可以告诉你模型是不是把“Bread（面包）”错误地分类成了“Dessert（甜点）”。需要使用 `sklearn.metrics.confusion_matrix` 和 `seaborn.heatmap`
 
 **任务 (6): 测试集预测输出 (3分)**
 
-*   **核心要求**：用训练好的模型对无标签的 `testing` 文件夹里的图片进行预测
-*   **交付物**：生成 `ans_ours.csv` 文件
-*   **格式注意**：通常 CSV 需要两列：`Id` (文件名) 和 `Category` (预测的类别数字)
+*   核心要求：用训练好的模型对无标签的 `testing` 文件夹里的图片进行预测
+*   交付物：生成 `ans_ours.csv` 文件
+*   格式：CSV 需要两列：`Id` (文件名) 和 `Category` (预测的类别数字)
 
-  **Todos**
-  [×] 任务1: 构造训练数据集 - 自定义Dataset类
-  [×] 任务2: 设计train_transform (至少5种变换)
-  [×] 任务3: Transform可视化展示
-  [×] 任务4: 搭建个人CNN模型 + TensorBoard可视化
-  [×] 任务5: 验证集评估 + 混淆矩阵
-  [ ] 任务6: 测试集预测输出到 ans_ours.csv
 
 ### 第三阶段：经典模型 (VGG)
 **任务 (7): 搭建 VGG 模型 & 打印参数 (2分)**
 
-*   **核心要求**：实现 VGG16 或 VGG19
-*   **选择策略**：
-    *   **硬核手写**：自己用 `nn.Conv2d` 一层层堆叠，完全复现 VGG 结构
-    *   **调库修改**（推荐）：使用 `torchvision.models.vgg16()`。**重要修改点**：VGG 原生模型是输出 1000 类（ImageNet），你需要把最后一层全连接层 (`classifier`) 修改为输出 **11 类**
-*   **交付物**：在代码中运行 `print(model)` 或使用 `torchsummary` 打印网络结构和参数量
+*   核心要求：实现 VGG16 或 VGG19
+*   选择策略：
+    
+    使用 `torchvision.models.vgg16()`。**重要修改点**：VGG 原生模型是输出 1000 类（ImageNet），需要把最后一层全连接层 (`classifier`) 修改为输出 **11 类**
+*   交付物：在代码中运行 `print(model)` 或使用 `torchsummary` 打印网络结构和参数量
 
 **任务 (8): VGG 预测输出 (3分)**
 
-*   **核心要求**：用训练好的 VGG 模型再次对测试集进行预测
-*   **交付物**：生成 `ans_vgg.csv` 文件
-*   **预期结果**：VGG 的效果理论上应该比你自己随便写的简单模型要好
+*   核心要求：用训练好的 VGG 模型再次对测试集进行预测
+*   交付物：生成 `ans_vgg.csv` 文件
+*   预期结果：VGG 的效果理论上应该比自己随便写的简单模型要好
 
 ---
 
@@ -138,11 +132,9 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 ### 1.1. 数据检查
 
-**观察数据集名字**，发现名字统一命名为 "数字_数字"。根据数据集介绍，前一个数字为类别编号，下划线后的数字为图片在类别里的编号。即 `[类别]_[编号]`。
+**观察数据集名字**，发现名字统一命名为 "数字_数字"。根据数据集介绍，前一个数字为类别编号，下划线后的数字为图片在类别里的编号。即 `[类别]_[编号]`
 
 ![a](./1.jpg)
-
-
 
 **上网查找类别编号对应的标签**，得到编号从0到10分别对应于：
 

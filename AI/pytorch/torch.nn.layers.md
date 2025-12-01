@@ -1,6 +1,5 @@
 ---
 title: 'nn.Layers模块'
-author: Alen
 published: 2025-10-27
 description: "PyTorch神经网络网络层构建工具箱nn.layer的介绍"
 first_level_category: "人工智能"
