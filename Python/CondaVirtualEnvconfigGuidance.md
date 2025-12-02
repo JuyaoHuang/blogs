@@ -4,7 +4,6 @@ published: 2025-10-01
 tags: ['conda']
 first_level_category: "Web全栈开发"
 second_level_category: "运维与Linux"
-cover: "/mdsImgs/python/Conda/CondaVirtualEnvconfigGuidance.png"
 draft: false
 ---
 

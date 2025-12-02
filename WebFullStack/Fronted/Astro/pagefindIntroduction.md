@@ -1,6 +1,5 @@
 ---
 author: Alen
-cover: ''
 description: pagefind工作模式介绍
 draft: false
 first_level_category: "Web全栈开发"
