@@ -2,10 +2,9 @@
 title: Front-end Improvement Plan
 published: 2025-10-01
 description: Layout adjustments for the blog's front-end pages
-tags: [Technical Improvement]
+tags: ['Blog开发实录']
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
-author: Alen
 ---
 <div align="right"> <a href="./frontedImproved"><strong>English</strong></a> | <a href="./前端改进方案">简体中文</a> </div>
 

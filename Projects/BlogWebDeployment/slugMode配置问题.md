@@ -2,10 +2,9 @@
 title: slugMode配置问题
 published: 2025-10-01
 description: 关于 slugMode 配置对内容管理生命周期的影响分析报告
-tags: [架构]
+tags: ['Blog开发实录']
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
-author: Alen
 ---
 # 关于 slugMode 配置对内容管理生命周期的影响分析报告
 

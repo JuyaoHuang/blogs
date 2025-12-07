@@ -2,11 +2,9 @@
 title: MD编写示例文件 
 published: 2025-01-20
 description: MD编写示例文件
-tags: [Markdown, example]
+tags: ['Blog开发实录']
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
-author: Alen
-# sourceLink: "https://github.com/emn178/markdown"
 draft: false
 ---
 # md 文档编写示例

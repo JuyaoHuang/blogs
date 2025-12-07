@@ -5,7 +5,7 @@ published: 2025-10-21
 description: "25年10~12月学习路线"
 first_level_category: "知识库"
 second_level_category: "学习路线"
-tags: ['机器学习']
+tags: ['AI agent']
 draft: false
 ---
 

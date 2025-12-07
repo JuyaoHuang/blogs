@@ -5,7 +5,7 @@ published: 2025-10-21
 description: "机器学习中的评价指标的介绍"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['机器学习']
+tags: ['ML']
 draft: false
 ---
 

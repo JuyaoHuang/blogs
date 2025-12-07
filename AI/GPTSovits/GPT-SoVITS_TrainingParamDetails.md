@@ -5,7 +5,6 @@ tags: ['gpt-sovits']
 description: '介绍gpt-sovits模型训练和推理参数'
 first_level_category: "项目实践"
 second_level_category: "GPT-Sovits"
-author: "Alen"
 draft: false
 ---
 

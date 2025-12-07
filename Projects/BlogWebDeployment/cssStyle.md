@@ -2,10 +2,9 @@
 title: cssStyleSummary
 published: 2025-09-26
 description: CSS常见样式
-tags: [CSS]
+tags: ['Blog开发实录']
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
-author: Alen
 draft: false
 ---
 # CSS 常见样式总结

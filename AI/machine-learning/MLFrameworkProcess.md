@@ -5,8 +5,7 @@ published: 2025-10-21
 description: "机器学习的架构流程描述"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['机器学习']
-cover: "/mdsImgs/AI/ML/MLFrameworkProcess.png"
+tags: ['ML']
 draft: false
 ---
 

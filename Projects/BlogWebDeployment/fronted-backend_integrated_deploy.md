@@ -1,10 +1,9 @@
 ---
 title: "fronted-backend integrated deployment"
 published: 2025-10-01
-tags: ['技术改进']
+tags: ['Blog开发实录']
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
-author: "Alen"
 draft: false
 ---
 <div align="right"> <a href="./fronted-backend_integrated_deploy"><strong>English</strong></a> | <a href="./前后端集成部署">简体中文</a> </div>
