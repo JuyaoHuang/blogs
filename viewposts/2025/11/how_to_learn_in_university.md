@@ -6,7 +6,7 @@ published: 2025-11-14
 description: "刘道玉：大学究竟应该怎么上?"
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-tags: ['大学']
+tags: ['news']
 cover: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg'
 draft: false
 ---

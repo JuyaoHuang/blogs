@@ -1,15 +1,11 @@
 ---
-author: Alen
 description: pagefind工作模式介绍
 draft: false
 first_level_category: "Web全栈开发"
-licenseName: ''
-licenseUrl: ''
 published: 2025-09-26
 second_level_category: "前端技术"
 slug: pagefind详解
-sourceLink: ''
-tags: ['Astro','pagefind']
+tags: ['Astro']
 title: pagefind详解
 ---
 

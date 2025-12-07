@@ -5,7 +5,7 @@ published: 2025-10-21
 description: "梯度下降法及其变种的介绍和推导"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['机器学习']
+tags: ['ML']
 draft: false
 ---
 

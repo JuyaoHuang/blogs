@@ -5,7 +5,7 @@ published: 2025-10-14
 description: "泰坦尼克号数据集实践-好的开始"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['机器学习']
+tags: ['ML']
 draft: false
 ---
 

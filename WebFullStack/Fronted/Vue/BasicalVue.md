@@ -1,7 +1,6 @@
 ---
 title: VUE框架
 published: 2025-10-09
-author: Alen
 description: 'vue框架基础知识和架构理解'
 draft: false
 first_level_category: "Web全栈开发"

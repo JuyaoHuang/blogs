@@ -5,7 +5,7 @@ published: 2025-10-21
 description: "Scikit-learn optimizer的介绍和使用"
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['机器学习','sklearn']
+tags: ['ML']
 draft: false
 ---
 

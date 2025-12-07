@@ -1,11 +1,10 @@
 ---
 title: AI agent介绍
-author: JuyaoHuang
 published: 2025-10-21
 description: "AI agent介绍"
 first_level_category: "人工智能"
 second_level_category: "LLM与Agent"
-tags: ['机器学习']
+tags: ['AI agent']
 draft: false
 ---
 
