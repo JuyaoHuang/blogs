@@ -423,7 +423,7 @@ st.session_state.messages.append({"role": "user", "content": user_input})
 
 ## 完整代码
 
-链接：https://github.com/JuyaoHuang/AI-agent/
+链接：https://github.com/JuyaoHuang/AI-agent/tree/main/llmcalling/project_one
 
 
 ## Streamlit 的语法
