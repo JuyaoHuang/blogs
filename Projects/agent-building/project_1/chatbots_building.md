@@ -22,7 +22,7 @@ draft: false
 
 本项目涉及到的 Streamlit 语法都会在后文讲述。当然代码实现过程也有相应的一些解释，方便理解
 
-![1](./project_1/1.jpg)
+![1](./1.jpg)
 
 ### 1. Prompt 设计
 
@@ -302,7 +302,7 @@ with st.sidebar:
 
 `st.selectbox` 会根据传入的列表内容生成一个下拉选择表单，渲染一个 `<select>` 标签。
 
-![2](./project_1/2.jpg)
+![2](./2.jpg)
 
 `st.session_state` 是状态管理变量，类似 VUE 的 pinia。用于存储希望持久化的内容，例如聊天消息 messages。
 
