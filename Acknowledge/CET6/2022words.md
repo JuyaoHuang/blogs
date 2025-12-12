@@ -81,6 +81,8 @@ draft: false
 71. drastic             a.激烈的，严厉的（措施）
 72. preserve            v.保护，保存
 73. alleviate           v.缓和，改善
+74. appropriate
+75. 
 
 
 
