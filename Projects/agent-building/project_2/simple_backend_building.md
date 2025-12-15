@@ -1,6 +1,6 @@
 ---
 title: "简单的后端构建"
-published: 2025-12-10
+published: 2025-12-12
 description: "使用 fastAPI 完成 llm 调用的简单后端实现"
 tags: ['AI agent']
 first_level_category: "项目实践"
