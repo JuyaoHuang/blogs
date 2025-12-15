@@ -1,6 +1,6 @@
 ---
 title: 配置anyrouter的网络环境
-published: 2025-11-24
+published: 2025-12-15
 description: "解决使用anyrouter的claude code报错 502等网络不稳定原因"
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"
