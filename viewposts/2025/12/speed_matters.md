@@ -7,7 +7,6 @@ description: "Speed matters: Why working quickly is more important than it seems
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
 tags: ['news']
-cover: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg'
 draft: false
 ---
 
