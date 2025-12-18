@@ -11,7 +11,7 @@ cover: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg'
 draft: false
 ---
 
-**快很重要：为什么干活快比看上去更重要**
+# 快很重要：为什么干活快比看上去更重要
 
 > 原文链接：https://jsomers.net/blog/speed-matters
 
