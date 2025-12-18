@@ -116,7 +116,7 @@ cloudflare-transpoint
 
 核心文件为 index.js，项目结构一定要和这个完全相同。
 
-```Javascript
+```javascript
 // 文件路径: api/index.js
 
 export const config = {
