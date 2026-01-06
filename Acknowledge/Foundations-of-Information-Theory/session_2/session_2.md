@@ -1,6 +1,5 @@
 ---
 title: 离散信息的度量
-author: 'Alen'
 published: 2025-11-18
 description: "信息量基础：离散信息的度量"
 first_level_category: "知识库"
