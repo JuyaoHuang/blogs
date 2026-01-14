@@ -1,11 +1,11 @@
 ---
 title: 深度学习实验一
-author: Alen
-published: 2025-10-25
+publishDate: 2025-10-25
 description: "深度学习实验一:皮马印第安人糖尿病数据集的回归预测问题"
+tags: ['ML']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "DeepLearning"
-tags: ['ML']
 draft: false
 ---
 

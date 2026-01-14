@@ -1,15 +1,13 @@
 ---
 title: tensor与numpy的区别
-author: Alen
-published: 2025-10-26
+publishDate: 2025-10-26
 description: "Tensor与numpy的区别"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['python']
 draft: false
 ---
-
-
 
 可以将 **PyTorch Tensor 看作是 NumPy ndarray 的一个  “超集”**，类似于 Javascript与 Typescript的关系，它为深度学习的需求进行了专门的优化和功能增强
 

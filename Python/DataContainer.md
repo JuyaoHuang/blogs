@@ -1,11 +1,11 @@
 ---
 title: 数据容器
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "python合集第五集：数据容器简要介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "基础语法"
-tags: ['python']
 draft: false
 ---
 

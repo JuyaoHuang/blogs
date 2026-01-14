@@ -1,11 +1,12 @@
 ---
 title: Fisher-Yates 算法
-published: 2025-09-26
+publishDate: 2025-09-26
 description: Fisher-Yates 算法及其变种 Sattolo算法
 tags: ['Algorithm']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "数学理论"
-cover: '/mdsImgs/Maths/Fisher-Yates/xiPai.webp'
+heroImage: { src: '/mdsImgs/Maths/Fisher-Yates/xiPai.webp', color: '#B8C5D6' }
 draft: false
 ---
 

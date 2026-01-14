@@ -1,10 +1,11 @@
 ---
 title: "Label Create"
-published: 2025-12-26
+publishDate: 2025-12-26
 description: "GitHub Labels 的创建格式和要求"
+tags: ['GitHub']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "GitHub"
-tags: ['GitHub']
 draft: false
 ---
 

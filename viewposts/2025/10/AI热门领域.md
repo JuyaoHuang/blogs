@@ -1,11 +1,11 @@
 ---
 title: AI热门领域
-author: Alen
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "AI常见术语解释和前言发展"
+tags: ['AI']
+language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-tags: ['AI']
 draft: false
 ---
 

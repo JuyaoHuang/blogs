@@ -1,10 +1,11 @@
 ---
 title: 离散信息的度量
-published: 2025-11-18
+publishDate: 2025-11-18
 description: "信息量基础：离散信息的度量"
+tags: ['信息论']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"
-tags: ['信息论']
 draft: false
 ---
 

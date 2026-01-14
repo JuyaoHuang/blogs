@@ -1,10 +1,11 @@
 ---
 title: 离散信道及其容量
-published: 2026-01-07
+publishDate: 2026-01-07
 description: "信息量基础：离散信道及其容量"
+tags: ['信息论']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"
-tags: ['信息论']
 draft: false
 ---
 

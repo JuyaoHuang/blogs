@@ -1,11 +1,11 @@
 ---
 title: 总线技术
-author: Alen
-published: 2025-10-11
+publishDate: 2025-10-11
 description: "微机原理第六章-总线技术"
+tags: ['微机原理']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "微机原理"
-tags: ['微机原理']
 draft: false
 ---
 

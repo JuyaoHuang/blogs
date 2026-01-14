@@ -1,12 +1,12 @@
 ---
 title: os库
-published: 2025-11-27
+publishDate: 2025-11-27
 description: "os库的介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"
-tags: ['python']
 draft: false
-
 ---
 
 ## 导入  os 库

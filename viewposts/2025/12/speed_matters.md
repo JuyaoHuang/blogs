@@ -1,12 +1,11 @@
 ---
 title: "Speed matters"
-author: "James Somers"
-sourceLink: 'https://jsomers.net/blog/speed-matters'
-published: 2025-12-18
+publishDate: 2025-12-18
 description: "Speed matters: Why working quickly is more important than it seems"
+tags: ['news']
+language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-tags: ['news']
 draft: false
 ---
 

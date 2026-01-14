@@ -1,8 +1,9 @@
 ---
 title: "优质Prompt构建"
-published: 2025-12-04
+publishDate: 2025-12-04
 description: "优质Prompt的搭建和示例"
 tags: ['AI agent']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "agent搭建"
 draft: false

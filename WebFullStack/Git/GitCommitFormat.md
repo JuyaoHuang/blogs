@@ -1,10 +1,11 @@
 ---
 title: "Git commit 编写格式"
-published: 2025-12-07
+publishDate: 2025-12-07
+description: "Git commit、PR 和 CR 编写格式要求和介绍"
 tags: ['git']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "Git与版本控制"
-description: "Git commit、PR 和 CR 编写格式要求和介绍"
 draft: false
 ---
 

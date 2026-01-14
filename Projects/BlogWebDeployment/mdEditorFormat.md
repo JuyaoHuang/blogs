@@ -1,12 +1,14 @@
 ---
-title: MD编写示例文件 
-published: 2025-01-20
+title: MD编写示例文件
+publishDate: 2025-01-20
 description: MD编写示例文件
 tags: ['Blog开发实录']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
 draft: false
 ---
+
 # md 文档编写示例
 ## 必填项
 示例中 `title` , `published` , `description` 字段根据文件: `yukina\src\content.config.ts` 规则必须填写，具体规则为:

@@ -1,12 +1,13 @@
 ---
-description: pagefind工作模式介绍
-draft: false
-first_level_category: "Web全栈开发"
-published: 2025-09-26
-second_level_category: "前端技术"
-slug: pagefind详解
-tags: ['Astro']
 title: pagefind详解
+publishDate: 2025-09-26
+description: pagefind工作模式介绍
+tags: ['Astro']
+language: 'Chinese'
+first_level_category: "Web全栈开发"
+second_level_category: "前端技术"
+draft: false
+slug: pagefind详解
 ---
 
 # Pagefind 

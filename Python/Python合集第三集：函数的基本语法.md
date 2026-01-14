@@ -1,11 +1,11 @@
 ---
 title: 函数
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "Python合集第三集：函数的基本语法"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "基础语法"
-tags: ['python']
 draft: false
 ---
 

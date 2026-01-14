@@ -1,10 +1,11 @@
 ---
 title: "蓝牙耳机无法连接 Windows"
-published: 2025-12-27
+publishDate: 2025-12-27
 description: "解决蓝牙无线耳机无法连接 Windows 的问题"
+tags: ['Windows', 'Bluetooth']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "装机知识"
-tags: ['Windows', 'Bluetooth']
 draft: false
 ---
 

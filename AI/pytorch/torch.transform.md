@@ -1,10 +1,11 @@
 ---
 title: 'torchvision.transforms模块'
-published: 2025-11-27
+publishDate: 2025-11-27
 description: "PyTorch计算机视觉图像预处理与增强工具箱transforms的介绍"
+tags: ['CV','Pytorch']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['CV','Pytorch']
 draft: false
 ---
 

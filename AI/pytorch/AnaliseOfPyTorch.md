@@ -1,11 +1,11 @@
 ---
 title: PyTorch框架简要分析
-author: Alen
-published: 2025-10-26
+publishDate: 2025-10-26
 description: "PyTorch基础模块及其核心目的"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['python']
 draft: false
 ---
 

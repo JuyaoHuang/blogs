@@ -1,11 +1,11 @@
 ---
 title: 损失函数
-author: JuyaoHuang
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "对机器学习中常用的损失函数的详细介绍"
+tags: ['ML']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['ML']
 draft: false
 ---
 

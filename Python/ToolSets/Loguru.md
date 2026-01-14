@@ -1,13 +1,14 @@
 ---
 title: Loguru
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "日志记录和分析工具：Loguru的介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"
-tags: ['python']
 draft: false
 ---
+
 # Loguru
 
 ​	Loguru 是 Python 中一个广受欢迎的第三方日志库，它旨在让日志记录变得简单、愉快且功能强大。相比 Python 内置的 logging 模块，Loguru 提供了更优雅、更现代的 API，并且开箱即用，无需繁琐的配置。

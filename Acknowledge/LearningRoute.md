@@ -1,11 +1,11 @@
 ---
 title: 10-12学习路线
-author: JuyaoHuang
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "25年10~12月学习路线"
+tags: ['AI agent']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "学习路线"
-tags: ['AI agent']
 draft: false
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: 深度学习实验二
-author: Alen
-published: 2025-11-17
+publishDate: 2025-11-17
 description: "深度学习实验二:CIFAR-10数据集的分类预测问题"
+tags: ['DL']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "DeepLearning"
-tags: ['DL']
 draft: false
 ---
 

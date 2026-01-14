@@ -1,10 +1,11 @@
 ---
 title: AI agent介绍
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "AI agent介绍"
+tags: ['AI agent']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "LLM与Agent"
-tags: ['AI agent']
 draft: false
 ---
 

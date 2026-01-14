@@ -1,11 +1,13 @@
 ---
 title: slugMode配置问题
-published: 2025-10-01
+publishDate: 2025-10-01
 description: 关于 slugMode 配置对内容管理生命周期的影响分析报告
 tags: ['Blog开发实录']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
 ---
+
 # 关于 slugMode 配置对内容管理生命周期的影响分析报告
 
 ## 核心议题：slugMode: "HASH" 的工程影响评估

@@ -1,10 +1,11 @@
 ---
 title: 深度学习实验三
-published: 2025-11-29
+publishDate: 2025-11-29
 description: "深度学习实验三:Food-11 图像分类预测问题"
+tags: ['DL']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "DeepLearning"
-tags: ['DL']
 draft: false
 ---
 

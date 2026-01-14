@@ -1,10 +1,11 @@
 ---
 title: "第四章习题与知识"
-published: 2025-12-23
+publishDate: 2025-12-23
 description: "第四章习题解析与知识点"
+tags: ['通信原理']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "通信原理"
-tags: ['通信原理']
 draft: false
 ---
 

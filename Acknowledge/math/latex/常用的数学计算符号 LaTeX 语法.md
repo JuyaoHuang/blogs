@@ -1,14 +1,13 @@
 ---
 title: Latex数学符号语法
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "常用的数学计算符号 LaTeX 语法"
+tags: ['latex']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "数学工具"
-tags: ['latex']
 draft: false
 ---
-
 
 ## 常用的数学计算符号 LaTeX 语法
 

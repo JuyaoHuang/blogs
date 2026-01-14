@@ -1,13 +1,12 @@
 ---
 title: 刘道玉：大学究竟应该怎么上?
-author: 刘道玉
-sourceLink: 'https://mp.weixin.qq.com/s/PxPDJ7o5cxZmmBPLaCwSWw'
-published: 2025-11-14
+publishDate: 2025-11-14
 description: "刘道玉：大学究竟应该怎么上?"
+tags: ['news']
+language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-tags: ['news']
-cover: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg'
+heroImage: { src: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg', color: '#B8C5D6' }
 draft: false
 ---
 
@@ -16,6 +15,8 @@ draft: false
 ⬆️刘道玉。
 
 # 逝者 | 刘道玉：大学究竟应该怎么上?
+
+*sourceLink: 'https://mp.weixin.qq.com/s/PxPDJ7o5cxZmmBPLaCwSWw'*
 
 > 2025年11月7日，武汉大学发布讣告，武汉大学原校长刘道玉同志，因病医治无效，于7日15时33分在武汉逝世，享年92岁。刘道玉被称为“武大蔡元培”。1980年代，在武大校长任上，他一方面营造了自由开放的校风；另一方面大刀阔斧改革高等教育，学分制、主辅修制、导师制等一系列现代高校的教育制度和管理模式，均始于他治下的武大。
 >

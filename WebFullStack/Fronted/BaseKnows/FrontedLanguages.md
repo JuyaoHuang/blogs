@@ -1,11 +1,11 @@
 ---
 title: 前端三件套知识
-author: Alen
-published: 2025-10-09
+publishDate: 2025-10-09
 description: "前端三件套基础知识"
+tags: ['HTML','CSS','Javascript']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"
-tags: ['HTML','CSS','Javascript']
 draft: false
 ---
 

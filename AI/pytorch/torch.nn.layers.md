@@ -1,13 +1,13 @@
 ---
 title: 'nn.Layers模块'
-published: 2025-10-27
+publishDate: 2025-10-27
 description: "PyTorch神经网络网络层构建工具箱nn.layer的介绍"
+tags: ['ML','DL']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['ML','DL']
 draft: false
 ---
-
 
 # torch.nn.Layers 概述
 

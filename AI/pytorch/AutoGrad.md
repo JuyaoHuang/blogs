@@ -1,14 +1,13 @@
 ---
 title: '自动求导autograd'
-author: Alen
-published: 2025-10-26
+publishDate: 2025-10-26
 description: "Autograd 自动求导介绍和核心语法"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['python']
 draft: false
 ---
-
 
 # Autograd 核心语法总结
 

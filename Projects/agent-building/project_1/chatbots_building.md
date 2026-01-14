@@ -1,8 +1,9 @@
 ---
 title: "构建多功能角色聊天机器人"
-published: 2025-12-09
+publishDate: 2025-12-09
 description: "使用 Streamlit 构建简单的前端页面以与聊天机器人对话"
 tags: ['AI agent']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "agent搭建"
 draft: false
