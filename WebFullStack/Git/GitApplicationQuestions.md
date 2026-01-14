@@ -641,7 +641,7 @@ To https://github.com/JuyaoHuang/BUPTDeepLearning.git
    git push 
    ```
 
-### 9. 克隆其他仓库后切换远程仓库
+## 9. 克隆其他仓库后切换远程仓库
 
 ### 背景
 
