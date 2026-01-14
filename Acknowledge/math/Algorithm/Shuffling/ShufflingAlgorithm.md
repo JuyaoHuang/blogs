@@ -6,7 +6,7 @@ tags: ['Algorithm']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "数学理论"
-heroImage: { src: '/mdsImgs/Maths/Fisher-Yates/xiPai.webp', color: '#B8C5D6' }
+heroImage: { src: './xiPai.webp', color: '#B8C5D6' }
 draft: false
 ---
 
