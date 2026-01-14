@@ -1,11 +1,11 @@
 ---
 title: Linux指令手册
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "linux指令速查手册"
+tags: ['linux']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "运维与Linux"
-tags: ['linux']
 draft: false
 ---
 

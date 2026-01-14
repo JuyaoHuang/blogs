@@ -1,11 +1,11 @@
 ---
 title: json数据格式
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "json数据格式介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "基础语法"
-tags: ['python']
 draft: false
 ---
 

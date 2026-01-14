@@ -1,10 +1,11 @@
 ---
 title: "Git实践"
-published: 2025-10-03
+publishDate: 2025-10-03
+description: "项目开发时遇到的Git交互问题"
 tags: ['git']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "Git与版本控制"
-description: "项目开发时遇到的Git交互问题"
 draft: false
 ---
 

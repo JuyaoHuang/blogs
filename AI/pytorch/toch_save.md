@@ -1,14 +1,13 @@
 ---
 title: 'torch.save模块'
-author: Alen
-published: 2025-10-28
+publishDate: 2025-10-28
 description: "PyTorch模型持久化工具 torch.save的介绍"
+tags: ['ML','DL']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['ML','DL']
 draft: false
 ---
-
 
 # torch.save持久化模型
 

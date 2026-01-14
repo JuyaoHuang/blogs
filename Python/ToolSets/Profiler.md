@@ -1,11 +1,11 @@
 ---
 title: Profiler
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "性能分析工具：Profiler的介绍和使用"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"
-tags: ['python']
 draft: false
 ---
 

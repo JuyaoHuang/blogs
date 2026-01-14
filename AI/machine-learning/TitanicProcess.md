@@ -1,11 +1,11 @@
 ---
 title: begin:泰坦尼克
-author: Alen
-published: 2025-10-14
+publishDate: 2025-10-14
 description: "泰坦尼克号数据集实践-好的开始"
+tags: ['ML']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['ML']
 draft: false
 ---
 

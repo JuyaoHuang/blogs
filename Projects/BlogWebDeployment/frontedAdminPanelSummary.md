@@ -1,11 +1,13 @@
 ---
 title: "Summary of front-end administrator panel development"
-published: 2025-10-01
+publishDate: 2025-10-01
 tags: ['Blog开发实录']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
 draft: false
 ---
+
 <div align="right"> <a href="./frontedAdminPanelSummary">English</a> | <a href="./管理员面板开发总结"><strong>简体中文</strong></a> </div>
 
 # Frontend Admin Panel Development Summary

@@ -1,11 +1,11 @@
 ---
 title: 异常处理
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "python合集第六集：异常处理"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "基础语法"
-tags: ['python']
 draft: false
 ---
 

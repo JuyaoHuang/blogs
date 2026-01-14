@@ -1,11 +1,11 @@
 ---
 title: '机器学习实验一'
-author: Alen
-published: 2025-11-16
+publishDate: 2025-11-16
 description: "SVC、DTC、Gauss贝叶斯算法的分类问题应用"
+tags: ['ML','DL']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['ML','DL']
 draft: false
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: "Conda环境配置指南"
-published: 2025-10-01
+publishDate: 2025-10-01
 tags: ['conda']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "运维与Linux"
 draft: false

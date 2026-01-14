@@ -1,11 +1,11 @@
 ---
 title: Matthew Prince访谈：互联网历史和按次付费爬取
-author: Alen
-published: 2025-10-12
+publishDate: 2025-10-12
 description: "Cloudflare创始人兼首席执行官 Matthew Prince 访谈：互联网历史和按次付费爬取"
+tags: ['cloudflare']
+language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-tags: ['cloudflare']
 draft: false
 ---
 

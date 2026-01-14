@@ -1,11 +1,11 @@
 ---
 title: requests库
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "网络请求工具：requests库的介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"
-tags: ['python']
 draft: false
 ---
 

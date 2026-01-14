@@ -1,11 +1,11 @@
 ---
 title: 机器学习框架流程
-author: JuyaoHuang
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "机器学习的架构流程描述"
+tags: ['ML']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['ML']
 draft: false
 ---
 

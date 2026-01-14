@@ -1,11 +1,11 @@
 ---
 title: sklearn优化器
-author: JuyaoHuang
-published: 2025-10-21
+publishDate: 2025-10-21
 description: "Scikit-learn optimizer的介绍和使用"
+tags: ['ML']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"
-tags: ['ML']
 draft: false
 ---
 

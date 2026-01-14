@@ -1,15 +1,13 @@
 ---
 title: 离散信源
-author: 'Alen'
-published: 2025-11-21
+publishDate: 2025-11-21
 description: "信息量基础：离散信源"
+tags: ['信息论']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"
-tags: ['信息论']
 draft: false
 ---
-
-
 
 ## 3.1. 离散信源的分类与数学模型
 

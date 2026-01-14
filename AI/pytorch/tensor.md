@@ -1,11 +1,11 @@
 ---
 title: Tensor介绍
-author: Alen
-published: 2025-10-10
+publishDate: 2025-10-10
 description: "Tensor语法详细介绍"
+tags: ['python']
+language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"
-tags: ['python']
 draft: false
 ---
 

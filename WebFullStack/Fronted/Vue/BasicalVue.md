@@ -1,12 +1,14 @@
 ---
 title: VUE框架
-published: 2025-10-09
+publishDate: 2025-10-09
 description: 'vue框架基础知识和架构理解'
-draft: false
+tags: ['vue']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"
-tags: ['vue']
+draft: false
 ---
+
 # VUE基础知识
 
 ## 基础架构

@@ -1,8 +1,9 @@
 ---
 title: "API Key环境配置"
-published: 2025-12-04
+publishDate: 2025-12-04
 description: "在生产环境中配置 API Key 并据此调用模型"
 tags: ['AI agent']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "agent搭建"
 draft: false

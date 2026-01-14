@@ -1,11 +1,11 @@
 ---
 title: 使用Vervel部署网站
-author: 'JuyaoHuang'
-published: 2025-11-24
+publishDate: 2025-11-24
 description: "Vercel部署个人网站教程"
+tags: ['Vercel']
+language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"
-tags: ['Vercel']
 draft: false
 ---
 

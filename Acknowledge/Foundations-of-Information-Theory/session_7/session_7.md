@@ -1,10 +1,11 @@
 ---
 title: 有噪信道编码
-published: 2026-01-08
+publishDate: 2026-01-08
 description: "信息量基础：有噪信道编码"
+tags: ['信息论']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"
-tags: ['信息论']
 draft: false
 ---
 

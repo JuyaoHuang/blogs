@@ -1,12 +1,14 @@
 ---
 title: cssStyleSummary
-published: 2025-09-26
+publishDate: 2025-09-26
 description: CSS常见样式
 tags: ['Blog开发实录']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
 draft: false
 ---
+
 # CSS 常见样式总结
 ## 将图片作背景
 

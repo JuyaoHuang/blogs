@@ -1,10 +1,11 @@
 ---
 title: '量子计算'
-published: 2025-12-18
+publishDate: 2025-12-18
 description: "量子计算的介绍"
+tags: ['量子计算']
+language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "量子计算"
-tags: ['量子计算']
 draft: false
 ---
 

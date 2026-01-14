@@ -1,11 +1,13 @@
 ---
 title: "fronted Admin-panel Development"
-published: 2025-10-01
+publishDate: 2025-10-01
 tags: ['Blog开发实录']
+language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
 draft: false
 ---
+
 <div align="right"> <a href="./frontedPanelDevelop"><strong>English</strong></a> | <a href="./前端管理员面板开发">简体中文</a> </div>
 
 # Frontend Admin Panel Development
