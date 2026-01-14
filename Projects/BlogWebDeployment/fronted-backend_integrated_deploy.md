@@ -2,6 +2,7 @@
 title: "fronted-backend integrated deployment"
 publishDate: 2025-10-01
 tags: ['Blog开发实录']
+description: ''
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"
