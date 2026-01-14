@@ -641,3 +641,68 @@ To https://github.com/JuyaoHuang/BUPTDeepLearning.git
    git push 
    ```
 
+### 9. 克隆其他仓库后切换远程仓库
+
+### 背景
+
+克隆其他远程仓库到本地，然后需要取消该仓库的跟踪，将其切换为其他仓库。
+
+### 不同情景
+
+**1. 如果希望保留这个项目的修改历史，或者后续还想拉取原主题的更新。**
+
+打开终端：
+1. 查看当前的远程仓库
+   ```bash
+   git remote -v
+   ```
+2. 删除原有的远程连接
+   ```bash
+   git remote remove origin
+   ```
+3. 添加新的仓库 A 作为远程仓库
+   将 `<仓库A的URL>` 替换为新的 GitHub 仓库地址（例如 `https://github.com/你的用户名/你的仓库名.git`）
+   ```bash
+   git remote add origin <仓库A的URL>
+   ```
+4. 确认修改成功
+   ```bash
+   git remote -v
+   ```
+5. 推送代码到新仓库
+   ```bash
+   git branch -M main
+   git push -u origin main
+   ```
+
+**2. 完全重新开始（不保留原仓库的所有历史记录）**
+
+如果不想保留原作者的几百次提交记录，想让这个仓库干干净净，从今天开始算作“第一次提交”。
+
+1. 删除 `.git` 目录
+   1. Windows
+      ```powershell
+      Remove-Item -Recurse -Force .git
+      ```
+   2. Linux/Mac
+      ```bash
+      rm -rf .git
+      ```
+2. 重新初始化 Git
+   ```bash
+   git init
+   ```
+3. 暂存所有文件并进行第一次提交
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   ```
+4. 关联仓库 A
+   ```bash
+   git branch -M main
+   git remote add origin <仓库A的URL>
+   ```
+5. 推送
+   ```bash
+   git push -u origin main
+   ```
