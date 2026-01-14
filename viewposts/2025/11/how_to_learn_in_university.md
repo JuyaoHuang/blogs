@@ -6,7 +6,7 @@ tags: ['news']
 language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-heroImage: { src: 'https://p1-mp.oeeee.com/202511/07/800x813_690df220e4e5f.jpg', color: '#B8C5D6' }
+heroImage: { src: 'liu.webp', color: '#B8C5D6' }
 draft: false
 ---
 
