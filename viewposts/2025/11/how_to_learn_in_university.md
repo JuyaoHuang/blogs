@@ -6,7 +6,7 @@ tags: ['news']
 language: 'Chinese'
 first_level_category: "资讯与生活"
 second_level_category: "前沿快讯"
-heroImage: { src: 'liu.webp', color: '#B8C5D6' }
+heroImage: { src: './liu.webp', color: '#B8C5D6' }
 draft: false
 ---
 
