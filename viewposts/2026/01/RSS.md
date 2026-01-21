@@ -1,6 +1,6 @@
 ---
 title: "RSS 订阅"
-publishDate: 2026-01- 19
+publishDate: 2026-01-19
 description: "RSS 订阅服务扫盲"
 tags: ['news']
 language: 'Chinese'
