@@ -243,6 +243,14 @@ uv run python -c "import requests; print(requests.__version__)"
 ```
 `uv` 会自动检测并在它管理的虚拟环境中运行该命令。
 
+注意：uv run 默认用 .venv，而你的虚拟环境是 wx-vtuber
+
+```bash
+wx-vtuber\Scripts\python.exe test_api.py
+# 或者
+uv run --active test_api.py
+```
+
 #### **同步环境**
 如果你下载了别人的代码（含有 `uv.lock`），只需运行：
 ```bash
