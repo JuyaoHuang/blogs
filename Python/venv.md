@@ -65,7 +65,7 @@ python3.10 -m venv .venv
 
 激活虚拟环境：
 
-#### **Windows（cmd）**
+#### Windows（cmd）
 
 ```bash
 # 如果你的虚拟环境目录是 .venv
@@ -76,10 +76,11 @@ python3.10 -m venv .venv
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
-
+> Windows 推荐使用指令：`venv\Scripts\activate`，这样不需要注意使用的是 cmd 还是 powershell。
+> 
 **注意**：如果 PowerShell 提示“禁止运行脚本”，你需要先执行一次 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser` 来允许脚本运行。
-#### **macOS 或 Linux**
 
+#### macOS 或 Linux
 ```bash
 # 如果你的虚拟环境目录是 .venv
 source .venv/bin/activate
