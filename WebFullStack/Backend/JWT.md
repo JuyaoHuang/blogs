@@ -2,7 +2,7 @@
 title: JWT令牌
 publishDate: 2025-09-28
 description: '探讨JWT令牌的定义与实现'
-tags: [JWT]
+tags: ['jwt', 'authentication']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "后端技术"

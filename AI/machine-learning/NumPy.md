@@ -2,7 +2,7 @@
 title: NumPy
 publishDate: 2025-10-12
 description: "核心数据分析工具：NumPy介绍"
-tags: ['ML']
+tags: ['data-analysis']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "数据分析工具"

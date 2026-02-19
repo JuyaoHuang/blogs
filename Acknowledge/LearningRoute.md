@@ -2,7 +2,7 @@
 title: 10-12学习路线
 publishDate: 2025-10-21
 description: "25年10~12月学习路线"
-tags: ['AI agent']
+tags: ['learning-route']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "学习路线"

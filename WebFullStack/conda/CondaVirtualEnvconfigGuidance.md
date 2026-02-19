@@ -5,7 +5,7 @@ description: ''
 tags: ['conda']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
-second_level_category: "运维与Linux"
+second_level_category: "环境与工具"
 draft: false
 ---
 

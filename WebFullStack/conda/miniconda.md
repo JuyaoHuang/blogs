@@ -4,8 +4,8 @@ publishDate: 2025-12-02
 description: "在云服务器上下载miniconda并配置镜像源"
 tags: ['conda']
 language: 'Chinese'
-first_level_category: "项目实践"
-second_level_category: "DeepLearning"
+first_level_category: "Web全栈开发"
+second_level_category: "环境与工具"
 draft: false
 ---
 

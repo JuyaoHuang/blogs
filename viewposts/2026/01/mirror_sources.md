@@ -2,10 +2,10 @@
 title: "常用镜像源"
 publishDate: 2026-01-21
 description: "常用镜像源服务介绍"
-tags: ['news']
+tags: ['mirror', 'tech-tips']
 language: 'Chinese'
 first_level_category: "资讯与生活"
-second_level_category: "前沿快讯"
+second_level_category: "技术资讯"
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: 无失真信源编码
 publishDate: 2026-01-06
 description: "信息量基础：无失真信源编码"
-tags: ['信息论']
+tags: ['information-theory']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"

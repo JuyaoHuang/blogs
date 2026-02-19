@@ -2,7 +2,7 @@
 title: '机器学习实验一'
 publishDate: 2025-11-16
 description: "SVC、DTC、Gauss贝叶斯算法的分类问题应用"
-tags: ['ML','DL']
+tags: ['machine-learning']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"

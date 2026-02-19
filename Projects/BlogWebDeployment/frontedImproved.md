@@ -2,7 +2,7 @@
 title: Front-end Improvement Plan
 publishDate: 2025-10-01
 description: Layout adjustments for the blog's front-end pages
-tags: ['Blog开发实录']
+tags: ['astro', 'frontend']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"

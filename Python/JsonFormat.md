@@ -2,10 +2,10 @@
 title: json数据格式
 publishDate: 2025-10-10
 description: "json数据格式介绍"
-tags: ['python']
+tags: ['python-basics']
 language: 'Chinese'
 first_level_category: "Python"
-second_level_category: "基础语法"
+second_level_category: "语言基础"
 draft: false
 ---
 

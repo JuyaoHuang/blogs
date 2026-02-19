@@ -2,7 +2,7 @@
 title: pagefind详解
 publishDate: 2025-09-26
 description: pagefind工作模式介绍
-tags: ['Astro']
+tags: ['astro', 'search']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"

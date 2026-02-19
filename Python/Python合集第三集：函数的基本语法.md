@@ -2,10 +2,10 @@
 title: 函数
 publishDate: 2025-10-10
 description: "Python合集第三集：函数的基本语法"
-tags: ['python']
+tags: ['python-basics']
 language: 'Chinese'
 first_level_category: "Python"
-second_level_category: "基础语法"
+second_level_category: "语言基础"
 draft: false
 ---
 

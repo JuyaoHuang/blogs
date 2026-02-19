@@ -2,7 +2,7 @@
 title: Tensor介绍
 publishDate: 2025-10-10
 description: "Tensor语法详细介绍"
-tags: ['python']
+tags: ['pytorch']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

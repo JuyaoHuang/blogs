@@ -2,7 +2,7 @@
 title: 前端三件套知识
 publishDate: 2025-10-09
 description: "前端三件套基础知识"
-tags: ['HTML','CSS','Javascript']
+tags: ['html', 'css', 'javascript']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "前端技术"

@@ -2,10 +2,10 @@
 title: "OpenAI API调用格式"
 publishDate: 2025-12-04
 description: "大模型开发时调用大模型的OpenAI格式介绍"
-tags: ['AI agent']
+tags: ['ai-agent', 'openai']
 language: 'Chinese'
 first_level_category: "项目实践"
-second_level_category: "agent搭建"
+second_level_category: "Agent 搭建"
 draft: false
 ---
 

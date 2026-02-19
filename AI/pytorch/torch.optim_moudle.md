@@ -2,7 +2,7 @@
 title: 'torch.optim模块'
 publishDate: 2025-10-27
 description: "PyTorch优化器模块torch.optim的介绍"
-tags: ['ML','DL']
+tags: ['pytorch', 'optimizer']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

@@ -2,10 +2,10 @@
 title: python 的三种虚拟环境
 publishDate: 2026-01-31
 description: "介绍 py 中的三种虚拟环境：conda、venv、uv 的创建方式"
-tags: ['python']
+tags: ['virtual-env']
 language: 'Chinese'
 first_level_category: "Python"
-second_level_category: "基础语法"
+second_level_category: "语言基础"
 draft: false
 ---
 

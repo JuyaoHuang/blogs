@@ -2,7 +2,7 @@
 title: tokei
 publishDate: 2025-10-10
 description: "代码统计工具：Tokei的介绍"
-tags: ['python']
+tags: ['dev-tools']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"

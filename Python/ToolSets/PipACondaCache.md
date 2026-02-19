@@ -2,7 +2,7 @@
 title: pip与conda包缓存介绍
 publishDate: 2025-10-10
 description: "pip与conda包缓存介绍"
-tags: ['python']
+tags: ['package-manager']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"

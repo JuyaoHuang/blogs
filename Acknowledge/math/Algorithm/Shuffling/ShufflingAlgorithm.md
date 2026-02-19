@@ -2,7 +2,7 @@
 title: Fisher-Yates 算法
 publishDate: 2025-09-26
 description: Fisher-Yates 算法及其变种 Sattolo算法
-tags: ['Algorithm']
+tags: ['algorithm', 'probability']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "数学理论"

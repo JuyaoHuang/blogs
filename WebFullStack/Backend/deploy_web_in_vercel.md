@@ -2,10 +2,10 @@
 title: 使用Vervel部署网站
 publishDate: 2025-11-24
 description: "Vercel部署个人网站教程"
-tags: ['Vercel']
+tags: ['vercel', 'deployment']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
-second_level_category: "前端技术"
+second_level_category: "后端技术"
 draft: false
 ---
 

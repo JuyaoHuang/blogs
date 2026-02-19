@@ -2,7 +2,7 @@
 title: '第二章习题'
 publishDate: 2025-11-03
 description: "通信原理第二章习题"
-tags: ['通信原理']
+tags: ['principle-communication']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "通信原理"
