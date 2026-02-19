@@ -2,7 +2,7 @@
 title: '自动求导autograd'
 publishDate: 2025-10-26
 description: "Autograd 自动求导介绍和核心语法"
-tags: ['python']
+tags: ['pytorch']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

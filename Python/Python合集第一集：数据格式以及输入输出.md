@@ -2,10 +2,10 @@
 title: 数据类型
 publishDate: 2025-10-10
 description: "Python合集第一集：数据类型以及输入输出"
-tags: ['python']
+tags: ['python-basics']
 language: 'Chinese'
 first_level_category: "Python"
-second_level_category: "基础语法"
+second_level_category: "语言基础"
 draft: false
 ---
 

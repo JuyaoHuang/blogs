@@ -2,7 +2,7 @@
 title: Profiler
 publishDate: 2025-10-10
 description: "性能分析工具：Profiler的介绍和使用"
-tags: ['python']
+tags: ['python-lib', 'performance']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"

@@ -2,7 +2,7 @@
 title: 波形信道
 publishDate: 2026-01-09
 description: "信息量基础：波形信道"
-tags: ['信息论']
+tags: ['information-theory']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"

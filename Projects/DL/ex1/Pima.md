@@ -2,10 +2,10 @@
 title: 深度学习实验一
 publishDate: 2025-10-25
 description: "深度学习实验一:皮马印第安人糖尿病数据集的回归预测问题"
-tags: ['ML']
+tags: ['machine-learning', 'sklearn']
 language: 'Chinese'
 first_level_category: "项目实践"
-second_level_category: "DeepLearning"
+second_level_category: "深度学习实验"
 draft: false
 ---
 

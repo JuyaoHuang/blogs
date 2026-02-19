@@ -2,7 +2,7 @@
 title: 'nn.activate_funcs模块'
 publishDate: 2025-10-27
 description: "PyTorch神经网络激活函数模块nn.Module.activate_funcs的介绍"
-tags: ['ML','DL']
+tags: ['pytorch', 'neural-network']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

@@ -2,7 +2,7 @@
 title: Rich库
 publishDate: 2025-10-10
 description: "命令行页面美化工具：Rich库的介绍"
-tags: ['python']
+tags: ['python-lib', 'cli']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"

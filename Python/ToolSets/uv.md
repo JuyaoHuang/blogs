@@ -2,7 +2,7 @@
 title: uv
 publishDate: 2025-10-10
 description: "包环境下载和管理工具：UV的介绍"
-tags: ['python']
+tags: ['package-manager']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"

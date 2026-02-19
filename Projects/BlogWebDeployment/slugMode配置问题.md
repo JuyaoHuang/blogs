@@ -2,7 +2,7 @@
 title: slugMode配置问题
 publishDate: 2025-10-01
 description: 关于 slugMode 配置对内容管理生命周期的影响分析报告
-tags: ['Blog开发实录']
+tags: ['astro', 'frontend']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"

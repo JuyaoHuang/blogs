@@ -2,7 +2,7 @@
 title: 'MLP实践'
 publishDate: 2025-10-28
 description: "PyTorc第一个实践：MLP的简单实验"
-tags: ['ML','DL']
+tags: ['deep-learning', 'neural-network']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

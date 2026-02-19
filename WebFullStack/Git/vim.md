@@ -2,10 +2,10 @@
 title: "vim"
 publishDate: 2025-12-07
 description: "编辑器 vim 的使用教程"
-tags: ['git']
+tags: ['vim', 'editor']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
-second_level_category: "运维与Linux"
+second_level_category: "环境与工具"
 draft: false
 ---
 

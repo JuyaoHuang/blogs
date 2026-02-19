@@ -2,7 +2,7 @@
 title: cssStyleSummary
 publishDate: 2025-09-26
 description: CSS常见样式
-tags: ['Blog开发实录']
+tags: ['astro', 'frontend']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"

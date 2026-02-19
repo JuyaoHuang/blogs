@@ -2,7 +2,7 @@
 title: 离散信源
 publishDate: 2025-11-21
 description: "信息量基础：离散信源"
-tags: ['信息论']
+tags: ['information-theory']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "信息论"

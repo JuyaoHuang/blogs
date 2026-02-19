@@ -2,7 +2,7 @@
 title: "Adam VS AdamW"
 publishDate: 2025-12-18
 description: "梯度优化算法 Adam 与 AdamW 的比较"
-tags: ['DL']
+tags: ['deep-learning', 'optimizer']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

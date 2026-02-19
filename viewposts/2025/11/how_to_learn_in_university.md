@@ -2,10 +2,10 @@
 title: 刘道玉：大学究竟应该怎么上?
 publishDate: 2025-11-14
 description: "刘道玉：大学究竟应该怎么上?"
-tags: ['news']
+tags: ['essay']
 language: 'Chinese'
 first_level_category: "资讯与生活"
-second_level_category: "前沿快讯"
+second_level_category: "技术资讯"
 heroImage: { src: './liu.webp', color: '#B8C5D6' }
 draft: false
 ---

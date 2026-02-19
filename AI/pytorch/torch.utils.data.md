@@ -2,7 +2,7 @@
 title: 'utils.data模块'
 publishDate: 2025-10-28
 description: "PyTorch数据加载模块torch.utils.data的介绍"
-tags: ['ML','DL']
+tags: ['pytorch']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

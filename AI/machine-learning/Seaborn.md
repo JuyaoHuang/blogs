@@ -2,7 +2,7 @@
 title: Seaborn
 publishDate: 2025-10-25
 description: "数据可视化工具：Seaborn介绍"
-tags: ['ML']
+tags: ['data-visualization']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "数据分析工具"

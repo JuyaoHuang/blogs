@@ -2,7 +2,7 @@
 title: sklearn优化器
 publishDate: 2025-10-21
 description: "Scikit-learn optimizer的介绍和使用"
-tags: ['ML']
+tags: ['machine-learning']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"

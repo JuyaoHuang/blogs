@@ -2,7 +2,7 @@
 title: Include Video in the Posts
 publishDate: 2022-08-01
 description: This post demonstrates how to include embedded video in a blog post.
-tags: [Example, Video]
+tags: ['demo']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Demo与示例"

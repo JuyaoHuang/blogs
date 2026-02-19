@@ -2,10 +2,10 @@
 title: "Speed matters"
 publishDate: 2025-12-18
 description: "Speed matters: Why working quickly is more important than it seems"
-tags: ['news']
+tags: ['essay']
 language: 'Chinese'
 first_level_category: "资讯与生活"
-second_level_category: "前沿快讯"
+second_level_category: "技术资讯"
 draft: false
 ---
 

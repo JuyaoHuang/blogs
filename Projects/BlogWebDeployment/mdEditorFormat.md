@@ -2,7 +2,7 @@
 title: MD编写示例文件
 publishDate: 2025-01-20
 description: MD编写示例文件
-tags: ['Blog开发实录']
+tags: ['astro', 'frontend']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Blog开发实录"

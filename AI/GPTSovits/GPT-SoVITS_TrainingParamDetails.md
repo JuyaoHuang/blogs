@@ -1,8 +1,8 @@
 ---
 title: "GPT-Sovits训练参数介绍"
 publishDate: 2025-10-11
-description: '介绍gpt-sovits模型训练和推理参数'
-tags: ['gpt-sovits']
+description: 'gpt-sovits模型训练和推理参数'
+tags: ['gpt-sovits', 'tts']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "GPT-Sovits"

@@ -2,10 +2,10 @@
 title: "RSS 订阅"
 publishDate: 2026-01-19
 description: "RSS 订阅服务扫盲"
-tags: ['news']
+tags: ['rss', 'tech-tips']
 language: 'Chinese'
 first_level_category: "资讯与生活"
-second_level_category: "前沿快讯"
+second_level_category: "技术资讯"
 draft: false
 ---
 

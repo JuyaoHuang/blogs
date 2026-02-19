@@ -2,7 +2,7 @@
 title: 'torch.optim.lr_scheduler模块'
 publishDate: 2025-12-01
 description: "PyTorch自适应学习率模块torch.optim.lr_scheduler的介绍"
-tags: ['ML','DL']
+tags: ['pytorch', 'optimizer']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

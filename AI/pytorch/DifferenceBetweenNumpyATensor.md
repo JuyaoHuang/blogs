@@ -2,7 +2,7 @@
 title: tensor与numpy的区别
 publishDate: 2025-10-26
 description: "Tensor与numpy的区别"
-tags: ['python']
+tags: ['pytorch']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "深度学习框架"

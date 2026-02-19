@@ -2,7 +2,7 @@
 title: 评价指标
 publishDate: 2025-10-21
 description: "机器学习中的评价指标的介绍"
-tags: ['ML']
+tags: ['machine-learning']
 language: 'Chinese'
 first_level_category: "人工智能"
 second_level_category: "机器学习理论"

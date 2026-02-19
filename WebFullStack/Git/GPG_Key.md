@@ -2,7 +2,7 @@
 title: "GPG 签名"
 publishDate: 2026-01-18
 description: "GPG Signature 的介绍"
-tags: ['git']
+tags: ['git', 'security']
 language: 'Chinese'
 first_level_category: "Web全栈开发"
 second_level_category: "Git与版本控制"

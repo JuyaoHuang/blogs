@@ -2,7 +2,7 @@
 title: Loguru
 publishDate: 2025-10-10
 description: "日志记录和分析工具：Loguru的介绍"
-tags: ['python']
+tags: ['python-lib', 'logging']
 language: 'Chinese'
 first_level_category: "Python"
 second_level_category: "工程化与工具"
