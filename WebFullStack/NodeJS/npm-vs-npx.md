@@ -1,6 +1,6 @@
 ---
 title: 'npm 与 npx：从一次报错说清楚两者的区别'
-published: 2026-03-04
+publishDate: 2026-03-04
 description: '从一次用 npx uninstall 卸载工具包的真实踩坑出发，深入讲解 npm 与 npx 的核心区别、工作原理与使用场景，以 vibe-kanban 为实例详解 npx 完整工作流，并附缓存清理方法。'
 tags: ['nodejs', 'npm', 'npx']
 language: 'Chinese'
