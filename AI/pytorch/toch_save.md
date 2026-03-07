@@ -9,7 +9,7 @@ second_level_category: "深度学习框架"
 draft: false
 ---
 
-# torch.save持久化模型
+# torch.save 持久化模型
 
 ## 引言：模型持久化的重要性
 
@@ -58,7 +58,7 @@ PyTorch 提供了两种核心的持久化方法，它们都使用 `torch.save()`
 
 假设我们已经有了 MLP 类的定义和训练好的模型 trained_model
 
-<a href="" target="_blank">MLP实例实践请点击此处</a>
+<a href="" target="_blank">MLP 实例实践请点击此处</a>
 
 **1. 保存模型参数**
 

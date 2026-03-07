@@ -9,22 +9,22 @@ second_level_category: "语言基础"
 draft: false
 ---
 
-# Python合集第二集：基础语句(判断、循环)
+# Python 合集第二集：基础语句(判断、循环)
 
 ## Bool 类型和比较运算符
 
-> Bool类型代表逻辑门
->  True为真，本质是 1； False为假，0；
->  **与C++不同的是，True 和 False 都是首字母大写， 对大小写敏感**
->  与bool量有关的运算符： == != >= <= > <
->  例如： 6 > 2 为 true， 5 == 2 为false
+> Bool 类型代表逻辑门
+>  True 为真，本质是 1； False 为假，0；
+>  **与 C++不同的是，True 和 False 都是首字母大写， 对大小写敏感**
+>  与 bool 量有关的运算符： == != >= <= > <
+>  例如： 6 > 2 为 true， 5 == 2 为 false
 
-## 判断结构----if-else语句
+## 判断结构----if-else 语句
 
-> **格式：与C++不同的是判断内容不需要括号，直接写。
->  而且执行体（执行内容）与其他代码段的分隔的格式是一个换行或者说，只有相连的、缩进统一的代码才会归入 if执行体 Python 是通过缩进来判断代码块的划分**
+> **格式：与 C++不同的是判断内容不需要括号，直接写。
+>  而且执行体（执行内容）与其他代码段的分隔的格式是一个换行或者说，只有相连的、缩进统一的代码才会归入 if 执行体 Python 是通过缩进来判断代码块的划分**
 
-注意： else的后面需要接一个冒号，即： else:
+注意： else 的后面需要接一个冒号，即： else:
 
 即： if 判断条件 ： 条件成立时，程序执行的内容    
 
@@ -43,7 +43,7 @@ else:
 print('World!')
 ```
 
-### if-elif-else 语句----elif用于实现多个判断条件 elif即 else if
+### if-elif-else 语句----elif 用于实现多个判断条件 elif 即 else if
 
 例如：
 
@@ -57,7 +57,7 @@ else:
     print("You are an elder")
 ```
 
-### if-else语句嵌套
+### if-else 语句嵌套
 
 利用 **缩进** 将内层 if 和外层 if 嵌套起来
 
@@ -77,7 +77,7 @@ else:
     print("You are an elder")
 ```
 
-## while循环体：
+## while 循环体：
 
 语法：
  while 判断条件 :
@@ -100,12 +100,12 @@ while val != num:
 print(counts)
 ```
 
-### while循环嵌套 ---- 和if-else 嵌套一样
+### while 循环嵌套 ---- 和 if-else 嵌套一样
 
 **补充**:
 
 1.  print() 取消自动换行的方法： print("内容", end = '')
-2. 转义符号 \t 可以使多行字符串自动对齐//左对齐 一个 \t 默认是一个tab的缩进内字符串对齐的功能才会生效，太长不行
+2. 转义符号 \t 可以使多行字符串自动对齐//左对齐 一个 \t 默认是一个 tab 的缩进内字符串对齐的功能才会生效，太长不行
     print("Heldwo \t\tworld")
     print("Ydawdaou \tqaadadwwdaare")
 
@@ -126,7 +126,7 @@ while i<=9:
 
 语法： for 临时变量 in 待处理数据集 :
       循环体
- for循环是每次从数据集中依次取一个值赋给临时变量，然后执行循环体 -----常用来遍历
+ for 循环是每次从数据集中依次取一个值赋给临时变量，然后执行循环体 -----常用来遍历
 
 例如：
 
@@ -137,7 +137,7 @@ for Name in name:
 output : a b c d e f g
 ```
 
-求name里面有多少个特定字母：
+求 name 里面有多少个特定字母：
 
 ```python
 name = "ahdiqwndpwahdalwdjawoidhaoiwd"
@@ -148,16 +148,16 @@ for x in name:
 print(ans)
 ```
 
-### for循环的range语句：
+### for 循环的 range 语句：
 
 待数据处理集严格来说是序列类型，即序列内容可以被依次取出值的变量类型，包括：字符串、List、tuple
-range顾名思义，就是限定一个范围，告诉for循环从哪开始到哪结束
+range 顾名思义，就是限定一个范围，告诉 for 循环从哪开始到哪结束
 定义：**def __new__(cls, __start: SupportsIndex, __stop: SupportsIndex, __step: SupportsIndex = ...) -> Self: ...**
 即存在三个参数：开头、结尾、步长 --- start 、 end、 step，
 注意：这个相当于数组，输出的最后一个是 arr[end -1]
-如果只写一个参数，默认为结尾（保证range区间有限）；开头默认为字符串首位或者0；步长默认为1，即逐个遍历
+如果只写一个参数，默认为结尾（保证 range 区间有限）；开头默认为字符串首位或者 0；步长默认为 1，即逐个遍历
 
-对于integer： range(2)表示从 0 开始到 1 结束,即C++中的for(int i = 0; i < 2; i++)， range(1,4,1)表示从1开始到3结束，步长为1
+对于 integer： range(2)表示从 0 开始到 1 结束,即 C++中的 for(int i = 0; i < 2; i++)， range(1,4,1)表示从 1 开始到 3 结束，步长为 1
 
 例子：打印九九乘法表
 
@@ -171,9 +171,9 @@ for i in range(1,10):# 即 range(1,9,1)
 
 ### continue and break
 
-continue 用于结束当前这一轮的循环，但并未退出循环体； break则是直接退出循环体
+continue 用于结束当前这一轮的循环，但并未退出循环体； break 则是直接退出循环体
 
-嵌套循环时，continue就是退出continue所在层的循环体，break 和continue一样
+嵌套循环时，continue 就是退出 continue 所在层的循环体，break 和 continue 一样
 
 ---
 ## For 和 while 的区别

@@ -42,7 +42,7 @@ draft: false
 | ------- | ----------------- | --------------- | ------------------ |
 | 分数    | \frac{分子}{分母} | $ \frac{a}{b} $ | $...{\frac{a}{b}}$ |
 | 根号    | \sqrt{...}        | $ \sqrt{x} $    | $...{\sqrt{x}}$    |
-| n次方根 | \sqrt[n]{...}     | $ \sqrt[3]{x} $ | $...{\sqrt[3]{x}}$ |
+| n 次方根 | \sqrt[n]{...}     | $ \sqrt[3]{x} $ | $...{\sqrt[3]{x}}$ |
 
 ### 4. 积分与无穷大
 
@@ -70,7 +70,7 @@ draft: false
 
 | 描述                   | LaTeX 命令                        | 效果                                  | 示例 Markdown                            |
 | ---------------------- | --------------------------------- | ------------------------------------- | ---------------------------------------- |
-| 普通导数 (y关于x)      | \frac{dy}{dx}                     | $ \frac{dy}{dx} $                     | $...{\frac{dy}{dx}}$                     |
+| 普通导数 (y 关于 x)      | \frac{dy}{dx}                     | $ \frac{dy}{dx} $                     | $...{\frac{dy}{dx}}$                     |
 | 高阶导数               | \frac{d^2y}{dx^2}                 | $ \frac{d^2y}{dx^2} $                 | $...{\frac{d^2y}{dx^2}}$                 |
 | 偏导数                 | \frac{\partial y}{\partial x}     | $ \frac{\partial y}{\partial x} $     | $...{\frac{\partial y}{\partial x}}$     |
 | 高阶偏导数             | \frac{\partial^2 y}{\partial x^2} | $ \frac{\partial^2 y}{\partial x^2} $ | $...{\frac{\partial^2 y}{\partial x^2}}$ |
@@ -156,7 +156,7 @@ $$
 | 无穷大符号          | \infty                                 | $ \infty $                       | $...{\infty}$                       |
 | 双重积分            | \iint                                  | $ \iint $                        | $...{\iint}$                        |
 | 三重积分            | \iiint                                 | $ \iiint $                       | $...{\iiint}$                       |
-| n重积分             | \idotsint (不常用，通常用 \int...\int) | $ \idotsint $                    | $...{\idotsint}$                    |
+| n 重积分             | \idotsint (不常用，通常用 \int...\int) | $ \idotsint $                    | $...{\idotsint}$                    |
 | 线积分 (标量场)     | \oint                                  | $ \oint $                        | $...{\oint}$                        |
 | 线积分 (向量场)     | \int \vec{F} \cdot d\vec{r}            | $ \int \vec{F} \cdot d\vec{r} $  | $...{\int \vec{F} \cdot d\vec{r}}$  |
 | 面积分 (标量场)     | \iint                                  | $ \iint $                        | $...{\iint}$                        |
@@ -174,7 +174,7 @@ $$
 
 ### 10.字母扩展符号（如预测值）
 
-|      描述      |    Latex指令    |     效果示例      |
+|      描述      |    Latex 指令    |     效果示例      |
 | :------------: | :-------------: | :---------------: |
 |     波浪号     |    \tilde{y}    |    $\tilde{y}$    |
 | 估计值（帽子） |     \hat{y}     |     $\hat{y}$     |
@@ -184,7 +184,7 @@ $$
 
 ### 11.线性代数
 
-|      描述      |    Latex指令    |     效果示例      |
+|      描述      |    Latex 指令    |     效果示例      |
 | :------------: | :-------------: | :---------------: |
 |     矩阵的按元素乘法     |    \odot{y}    | $\odot$ |
 |  |          |         |

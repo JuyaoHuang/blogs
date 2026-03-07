@@ -22,7 +22,7 @@ file_object = open(file, mode='r', encoding=None)
 - `file`: 必需参数，表示要打开的文件的路径（可以是相对路径或绝对路径）。
 - `mode:` 可选参数，表示文件的打开模式，默认为 'r'（只读文本）。
 - `encoding`: 可选参数，指定文件的编码格式，对于文本文件非常重要。在处理中文时，通常使用 'utf-8'。
-- `file_object`此时是open函数的文件**对象**，也就是C++中的类的实例化。
+- `file_object`此时是 open 函数的文件**对象**，也就是 C++中的类的实例化。
 
 ```py
 try:

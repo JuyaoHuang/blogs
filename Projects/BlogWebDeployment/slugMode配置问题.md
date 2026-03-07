@@ -47,9 +47,9 @@ second_level_category: "Blog开发实录"
 
 通过对 src/utils/hash.ts 的代码审查，IdToSlug 函数的行为在不同模式下存在本质差异：
 
-- 输入: post.id = "pagefind详解"
-- HASH 模式输出: "a1b2c3d4" (一个8位的确定性哈希摘要)
-- RAW 模式输出: "pagefind详解" (原始 ID 值，经过 URL-safe 编码)
+- 输入: post.id = "pagefind 详解"
+- HASH 模式输出: "a1b2c3d4" (一个 8 位的确定性哈希摘要)
+- RAW 模式输出: "pagefind 详解" (原始 ID 值，经过 URL-safe 编码)
 
 ### URL 构建流程的演进与问题定位
 
@@ -58,7 +58,7 @@ second_level_category: "Blog开发实录"
 在早期的 utils/content.ts 实现中，存在对 ID 的预处理逻辑：id: \/posts/${IdToSlug(post.id)}``。此实现导致了模式不兼容问题：
 
 - HASH 模式: 能够工作，因为哈希操作具有幂等性（对哈希值再次哈希的结果不同，但原始调用稳定）。然而，PostCard 组件中的重复调用 IdToSlug(props.id) 实际上执行了**双重哈希 (Double Hashing)**，这是一种潜在的逻辑缺陷。
-- RAW 模式: 出现故障。id 被预处理为 /posts/pagefind详解，当这个值传递给 PostCard 并再次调用 IdToSlug 时，会产生非预期的结果，破坏了 URL 结构。
+- RAW 模式: 出现故障。id 被预处理为 /posts/pagefind 详解，当这个值传递给 PostCard 并再次调用 IdToSlug 时，会产生非预期的结果，破坏了 URL 结构。
 
 ### 重构后的设计原则与实现
 
@@ -72,8 +72,8 @@ second_level_category: "Blog开发实录"
 
 | 模式     | 数据源 (post.id) | 传递至 PostCard | IdToSlug() 转换结果 | 最终构建 URL        |
 | -------- | ---------------- | --------------- | ------------------- | ------------------- |
-| **HASH** | "pagefind详解"   | "pagefind详解"  | "a1b2c3d4"          | /posts/a1b2c3d4     |
-| **RAW**  | "pagefind详解"   | "pagefind详解"  | "pagefind详解"      | /posts/pagefind详解 |
+| **HASH** | "pagefind 详解"   | "pagefind 详解"  | "a1b2c3d4"          | /posts/a1b2c3d4     |
+| **RAW**  | "pagefind 详解"   | "pagefind 详解"  | "pagefind 详解"      | /posts/pagefind 详解 |
 
 **结论**:
 
@@ -83,13 +83,13 @@ second_level_category: "Blog开发实录"
 
 ### 场景分析：批量修改分类名称
 
-**目标**: 将分类 "blog理解文档" 重命名为 "文档资料"。
+**目标**: 将分类 "blog 理解文档" 重命名为 "文档资料"。
 
 - RAW 模式下的优势:
   1. 操作: 在 src/contents/posts/ 目录下，执行全局搜索与替换。
   2. 构建: 运行 npm run build。
   3. 结果: 路由变更具有**可预测性**和**直观性**。
-     - 旧 URL: /categories/blog理解文档/
+     - 旧 URL: /categories/blog 理解文档/
      - 新 URL: /categories/文档资料/
        这使得重定向规则的配置和外部链接的更新变得简单。
 - HASH 模式下的挑战:

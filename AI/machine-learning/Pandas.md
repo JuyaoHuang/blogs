@@ -98,7 +98,7 @@ print(df)
   
 ```
 
-**Dataframe的属性**
+**Dataframe 的属性**
 
 ```python
 import pandas as pd
@@ -307,9 +307,9 @@ df.info()
 - mean: 平均值
 - std: 标准差
 - min: 最小值
-- 25%: 第1四分位数
-- 50%: 中位数（第2四分位数）
-- 75%: 第3四分位数
+- 25%: 第 1 四分位数
+- 50%: 中位数（第 2 四分位数）
+- 75%: 第 3 四分位数
 - max: 最大值
 
 ```python
@@ -324,7 +324,7 @@ print(df.describe())
 
 #### 2.7.len() 函数可直接获取行数
 
-python 的len() 函数可直接作用 DataFrame，返回行数
+python 的 len() 函数可直接作用 DataFrame，返回行数
 
 #### 总结
 
@@ -356,7 +356,7 @@ print(subset)
 最规范、最不会引起混淆的选择方式
 
 - **.loc**：   基于**标签**（行索引名、列名）进行选择
-- **.iloc**：    基于**整数位置**（从0开始）进行选择
+- **.iloc**：    基于**整数位置**（从 0 开始）进行选择
 
 ```Python
 # 设置 'name' 列为新的行索引，方便演示 .loc
@@ -461,7 +461,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
    print(df_filled_mean)
    ```
 
-   > **提示**：在实验中，一些0值实际上是缺失值。可以先将这些0替换为`np.nan`，再使用`.fillna()`方法用该列的均值或中位数来填充
+   > **提示**：在实验中，一些 0 值实际上是缺失值。可以先将这些 0 替换为`np.nan`，再使用`.fillna()`方法用该列的均值或中位数来填充
 
 2. **dropna()**： 主要作用是移除缺失值
 
@@ -488,7 +488,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
 
 4. **fillna()** 是 Pandas DataFrame 和 Series 对象的一个核心方法，作用是**填充缺失值**。
 
-   在Pandas中，缺失值通常用 NaN (Not a Number) 来表示。fillna() 方法会找到这些 NaN 值，并用指定的值或方法来替换它们。
+   在 Pandas 中，缺失值通常用 NaN (Not a Number) 来表示。fillna() 方法会找到这些 NaN 值，并用指定的值或方法来替换它们。
 
    ```python
    dataframe_or_series.fillna(value, inplace=False)
@@ -501,8 +501,8 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
      - 一个计算出来的结果，比如均值、中位数或者众数
    - inplace=False (默认)：
 
-     - `inplace=False` (默认值)：illna() 会创建一个新的、填充好值的DataFrame或Series并返回它，而原始的DataFrame保持不变
-     - `inplace=True`：fillna() 会直接修改原始的DataFrame，并且不返回任何东西 (返回 None)
+     - `inplace=False` (默认值)：illna() 会创建一个新的、填充好值的 DataFrame 或 Series 并返回它，而原始的 DataFrame 保持不变
+     - `inplace=True`：fillna() 会直接修改原始的 DataFrame，并且不返回任何东西 (返回 None)
 
 
    通常推荐使用 inplace=False 的方式，然后将结果重新赋值给原来的变量，这样做更安全：
@@ -511,7 +511,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
    df['age'] = df['age'].fillna(some_value)
    ```
 
-5. **np.nan**：python中的缺失值 NaN
+5. **np.nan**：python 中的缺失值 NaN
 
 6. **数据填充的选择**
 
@@ -542,7 +542,7 @@ print(df[(df['age'] < 30) & (df['city'] == 'New York')])
 
    3. **众数**
 
-      方法: (注意：.mode()返回一个Series，所以要取第一个元素 [0])
+      方法: (注意：.mode()返回一个 Series，所以要取第一个元素 [0])
 
       ```python
       df['embarked'] = fillna(df['embarked'].mode()[0]) 
@@ -576,7 +576,7 @@ print(df_no_dup)
 #### 4.3. 删除行 df.drop('deck', axis=1)
 
 - `deck`：要删除的列的名称
-- `axis=1`：axis 参数告诉 Pandas  要操作的是**列**。如果 axis=0 (默认值)，它会尝试删除名为 'deck' 的**行**，这通常会报错，因为行没有这样的标签
+- `axis=1`：axis 参数告诉 Pandas 要操作的是**列**。如果 axis=0 (默认值)，它会尝试删除名为 'deck' 的**行**，这通常会报错，因为行没有这样的标签
 
 ### 5. 数据操作与转换
 
@@ -653,7 +653,7 @@ print(df)
 
 #### 5.4. 数据排序：.sort_values()
 
-.sort_values()用于使 DF按照某一列/行的数值进行排序，参数介绍：
+.sort_values()用于使 DF 按照某一列/行的数值进行排序，参数介绍：
 
 ```python
 def sort_values(
@@ -740,7 +740,7 @@ print(multi_group)
 pandas.cut(x, bins, right=True, labels=None, include_lowest=False)
 ```
 
-1. x：要进行分箱操作的一维数组或Series
+1. x：要进行分箱操作的一维数组或 Series
 
 2. bins：核心参数，定义了如何进行切割。它有多种提供方式：
 
@@ -775,7 +775,7 @@ pandas.cut(x, bins, right=True, labels=None, include_lowest=False)
    为生成的新箱指定自定义的名称，让结果更具可读性。
 
    - `labels=False`：只返回代表每个箱的整数索引，而不是区间对象
-   - 提供一个列表：列表的长度必须**比箱的边界数量少1**（因为 N 个边界会产生 N-1 个箱）
+   - 提供一个列表：列表的长度必须**比箱的边界数量少 1**（因为 N 个边界会产生 N-1 个箱）
 
 5. include_lowest (布尔值, 默认为 False)
 
@@ -792,7 +792,7 @@ pandas.cut(x, bins, right=True, labels=None, include_lowest=False)
 | **箱的宽度**   |                        固定或由你定义                        |                     动态变化，通常不相等                     |
 | **箱内样本数** |                   通常不相等，差异可能很大                   |                           大致相等                           |
 | **主要参数**   |                  bins 可以是整数或边界列表                   |                  q 是一个整数，代表箱的数量                  |
-| **适用场景**   | 有明确的业务逻辑或固定的区间标准时（如年龄段、价格范围、分数等级） | 想观察不同收入水平（如最低10%的人，次低10%的人...）或处理高度偏斜的数据时 |
+| **适用场景**   | 有明确的业务逻辑或固定的区间标准时（如年龄段、价格范围、分数等级） | 想观察不同收入水平（如最低 10%的人，次低 10%的人...）或处理高度偏斜的数据时 |
 
 #### 6.2. 数据合并 ---concat()
 
@@ -888,7 +888,7 @@ array([1, 2, 3, 4, 5, 6])
 
 ### pd.get_dumies() 函数
 
-在 pandas中， **One Hot Encoding**已经封装为一个函数：`.get_dumies()`
+在 pandas 中， **One Hot Encoding**已经封装为一个函数：`.get_dumies()`
 
 #### 主要作用
 
@@ -918,7 +918,7 @@ prefix='sex'
    
     会生成 sex_male, sex_female 这样的列
 
-   如果columns参数被使用，prefix可以是一个包含每个列对应前缀的列表或字典，如
+   如果 columns 参数被使用，prefix 可以是一个包含每个列对应前缀的列表或字典，如
 
    ```python
 prefix={'sex': 'Sex', 'embarked': 'Port'}
@@ -932,7 +932,7 @@ prefix={'sex': 'Sex', 'embarked': 'Port'}
 
    - **用法**：drop_first=True
 
-   - **目的**：这是为了 **避免虚拟变量陷阱（多重共线性）**。对于线性模型来说，K-1个虚拟变量已经包含了所有信息，保留 K 个会导致列之间完全线性相关，可能会对模型造成问题。**在为线性模型准备数据时，强烈建议设置为 True**
+   - **目的**：这是为了 **避免虚拟变量陷阱（多重共线性）**。对于线性模型来说，K-1 个虚拟变量已经包含了所有信息，保留 K 个会导致列之间完全线性相关，可能会对模型造成问题。**在为线性模型准备数据时，强烈建议设置为 True**
 
 5. dummy_na
 
@@ -940,7 +940,7 @@ prefix={'sex': 'Sex', 'embarked': 'Port'}
    2. dummy_na=True
    3. 有时候数据缺失本身就是一种信息（例如，用户拒绝回答某个问题）。通过为 NaN 创建一列，可以让模型学习到缺失值是否与预测目标有关
 
-## pandas数据结构转为np
+## pandas 数据结构转为 np
 
 **`pd.to_numpy()`**
 

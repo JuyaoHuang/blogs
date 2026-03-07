@@ -25,7 +25,7 @@ draft: false
 4. 集合 set
 5. 字典 dict
 
-## 列表  List
+## 列表 List
 
 ### 基本语法
 
@@ -46,7 +46,7 @@ draft: false
 - 以  `[ ]` 作为标识
 - 列表中的每一个元素用逗号隔开
 
-2、类似于C/C++中的数组，**但是！列表允许在同一个list里面存储不同的数据类型的元素!**
+2、类似于 C/C++中的数组，**但是！列表允许在同一个 list 里面存储不同的数据类型的元素!**
 
 ```py
 name_list = ['hello',666,True]
@@ -72,11 +72,11 @@ print(type(name_list))
 
 ###  列表下标索引访问元素
 
-类似C++中的数组，能通过下标访问 list 中的元素
+类似 C++中的数组，能通过下标访问 list 中的元素
 
 特殊点：
 
-1. List不仅可以正向索引：从 0 到 n-1；也可以反向索引：从 -n 到 -1
+1. List 不仅可以正向索引：从 0 到 n-1；也可以反向索引：从 -n 到 -1
 
    ```py
    List_1 = [1,2,"hello","world"]
@@ -180,7 +180,7 @@ new_list = [expression for item in iterable]
 
 ### 列表的操作方法-增删查改
 
-#### 方法def-类class中的内置函数
+#### 方法 def-类 class 中的内置函数
 
 ![fangfa](./黑马/Pictures/dataStructure/fangfa.png)
 
@@ -245,7 +245,7 @@ output:
 list.insert(index,value)
 ```
 
-**不同于C++，若插入的索引值大于当前列表长度n时，他不会报错，只会在列表末尾插入该值，列表长度+1  ==> 容易内存泄漏**
+**不同于 C++，若插入的索引值大于当前列表长度 n 时，他不会报错，只会在列表末尾插入该值，列表长度+1  ==> 容易内存泄漏**
 
 ```python
 List_1 = [1,2,"hello","world"]
@@ -304,9 +304,9 @@ output:
 
 #### 删除元素
 
-##### del list[index] --调用delete函数
+##### del list[index] --调用 delete 函数
 
-##### list.pop(index)--使用list类内置方法
+##### list.pop(index)--使用 list 类内置方法
 
 ```py
 List_1 = [1,2,"hello","world"]
@@ -376,7 +376,7 @@ print(len(List_2)) # output: 8
 
 #### 列表的遍历操作-while | for
 
-##### 通过while循环操作
+##### 通过 while 循环操作
 
 ```py
 List_2 = [List_1,3,4,[7,8,9]]
@@ -402,7 +402,7 @@ for i in range(len(List_2)):
 
 ### 特点
 
-元组同列表 **list** 一样，可以封装多个、不同类型的元素，但有一个很大的不同点：**元组一旦定义完成，就不可以修改！！！**就像C++里定义了一个 **const Array**,是 **只读** 的
+元组同列表 **list** 一样，可以封装多个、不同类型的元素，但有一个很大的不同点：**元组一旦定义完成，就不可以修改！！！**就像 C++里定义了一个 **const Array**,是 **只读** 的
 
 ### def
 
@@ -502,7 +502,7 @@ Now hobby is ['music', 'codding']
 
 ## 字符串
 
-### Def - 存放字符char的容器-同C++
+### Def - 存放字符 char 的容器-同 C++
 
 ### 下标访问字符串内容
 
@@ -542,7 +542,7 @@ But string_4's val is Hi!today is a nice day!
 
 #### .split()方法
 
-![string分割](./黑马/Pictures/dataStructure/string分割.png)
+![string 分割](./黑马/Pictures/dataStructure/string分割.png)
 
 ```py
 str_1 = "hello, today is a nice day!"
@@ -558,7 +558,7 @@ String_1 val is hello, today is a nice day!
 
 #### .strip()规整操作
 
-![str规整操作](D:\Coding\Python\pythonKnowledge\黑马\Pictures\dataStructure\str规整操作.png)
+![str 规整操作](D:\Coding\Python\pythonKnowledge\黑马\Pictures\dataStructure\str规整操作.png)
 
 **但是，该语法只能去除首个匹配的字符！且相同字符只会去掉一个，要想全部去掉只能用 .replace(value)，而且碰到与字符不同时就会停下匹配**
 
@@ -579,7 +579,7 @@ Now string_1 val is hello, today is a nice day!
 """
 ```
 
-#### .count(value) 统计某字符char在str中的出现次数
+#### .count(value) 统计某字符 char 在 str 中的出现次数
 
 #### len(string) 计算长度
 
@@ -591,7 +591,7 @@ Now string_1 val is hello, today is a nice day!
 a.endswith('abcd')
 ```
 
-是否以abcd结尾，返回 True 或 False。
+是否以 abcd 结尾，返回 True 或 False。
 
 #### startswith(prefix)
 
@@ -626,7 +626,7 @@ print(csv_line)  # 输出: apple,banana,cherry
 
 #### 操作小结
 
-![string操作总结](./黑马/Pictures/dataStructure/string操作总结.png)
+![string 操作总结](./黑马/Pictures/dataStructure/string操作总结.png)
 
 ####  练习案例
 
@@ -691,7 +691,7 @@ ss = s[::-1]
 print(ss)
 i1 = ss.index("小")
 i2 = ss.index("士")
-# 通过索引获取元素后，再提取前5个字符
+# 通过索引获取元素后，再提取前 5 个字符
 res = ss[i1:i2 + 1:]
 print(res)
 
@@ -925,7 +925,7 @@ person = {
     "age" : 18,
     "city":"Beijing"
 }
-# 使用dict()和键值对的元组列表定义
+# 使用 dict()和键值对的元组列表定义
 dog = dict([('name','Bob'),("age",2)])
 cat = dict(name="CJ",age = 10)
 print(person)
@@ -956,7 +956,7 @@ dict() 是 Python 的一个内置构造函数，用于创建字典对象。
           "age" : 18,
           "city":"Beijing"
       }
-      # 使用dict()和键值对的元组列表定义
+      # 使用 dict()和键值对的元组列表定义
       dog = dict((('name','Bob'),("age",2)))
       cat = dict(name="CJ",age = 10)
       print(person['name'])

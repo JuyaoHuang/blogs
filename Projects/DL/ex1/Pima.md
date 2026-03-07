@@ -11,25 +11,25 @@ draft: false
 
 # 机器学习：回归问题
 
-皮马印第安人糖尿病数据集由年龄大于等于21岁的皮马印第安女性的已有诊断信息组成，包含若干医学预测变量和一个目标变量 Outcome，共九个字段。其中预测变量包括患者的怀孕次数、BMI、胰岛素水平、年龄等。
+皮马印第安人糖尿病数据集由年龄大于等于 21 岁的皮马印第安女性的已有诊断信息组成，包含若干医学预测变量和一个目标变量 Outcome，共九个字段。其中预测变量包括患者的怀孕次数、BMI、胰岛素水平、年龄等。
 
 请运用回归模型分析糖尿病数据集中自变量和因变量之间的关系，对某人是否患糖尿病进行预测。
 
-(1)   使用特征工程方法对数据集中的特征变量进行处理并在实验报告中作出说明；(2分)
+(1)   使用特征工程方法对数据集中的特征变量进行处理并在实验报告中作出说明；(2 分)
 
-(2)   使用逻辑回归模型完成实验并绘制逻辑回归散点图；(2分)
+(2)   使用逻辑回归模型完成实验并绘制逻辑回归散点图；(2 分)
 
-(3)   使用train_test_split函数对数据集进行拆分，并在拆分得到的测试集上测试模型准确率。学号为奇数的同学请设置train_size为0.7、0.75、0.8，学号为偶数的同学请设置train_size为0.75、0.8、0.85；(2分)
+(3)   使用 train_test_split 函数对数据集进行拆分，并在拆分得到的测试集上测试模型准确率。学号为奇数的同学请设置 train_size 为 0.7、0.75、0.8，学号为偶数的同学请设置 train_size 为 0.75、0.8、0.85；(2 分)
 
-(4)   试分析多个特征值（自变量）与病情（因变量）的关系(2分)，依据与病情的关联性对自变量进行排序并进行可视化展示(2分)。 (共计4分)
+(4)   试分析多个特征值（自变量）与病情（因变量）的关系(2 分)，依据与病情的关联性对自变量进行排序并进行可视化展示(2 分)。 (共计 4 分)
 
-皮马印第安人糖尿病数据集由年龄大于等于21岁的皮马印第安女性的已有诊断信息组成，包含若干医学预测变量和一个目标变量 Outcome，共九个字段。其中预测变量包括患者的怀孕次数、BMI、胰岛素水平、年龄等。
+皮马印第安人糖尿病数据集由年龄大于等于 21 岁的皮马印第安女性的已有诊断信息组成，包含若干医学预测变量和一个目标变量 Outcome，共九个字段。其中预测变量包括患者的怀孕次数、BMI、胰岛素水平、年龄等。
 
 请运用回归模型分析糖尿病数据集中自变量和因变量之间的关系，对某人是否患糖尿病进行预测。
 
 ## 第一问：使用特征工程方法对数据集中的特征变量进行处理
 
-### 使用Pandas进行数据加载与探索
+### 使用 Pandas 进行数据加载与探索
 
 #### 1. 使用 .info() 查看简要信息
 
@@ -56,21 +56,21 @@ Data columns (total 9 columns):
 
 **上网搜索该数据集每一列所代表的意思**：
 
-该数据集共有 **768** 条数据，包含 **9** 个字段，其中8个是特征，1个是目标变量 
+该数据集共有 **768** 条数据，包含 **9** 个字段，其中 8 个是特征，1 个是目标变量 
 
 |         字段名称         |      中文描述      | 数据类型 |                           详细说明                           |
 | :----------------------: | :----------------: | :------: | :----------------------------------------------------------: |
 |       Pregnancies        |      怀孕次数      |   数值   |                        曾经怀孕的次数                        |
-|         Glucose          |      血糖浓度      |   数值   |        口服葡萄糖耐量试验中，2小时后的血浆葡萄糖浓度         |
+|         Glucose          |      血糖浓度      |   数值   |        口服葡萄糖耐量试验中，2 小时后的血浆葡萄糖浓度         |
 |      BloodPressure       |        血压        |   数值   |                        舒张压 (mm Hg)                        |
 |      SkinThickness       |      皮褶厚度      |   数值   |              三头肌皮褶厚度 (mm)，用于估计体脂               |
-|         Insulin          |       胰岛素       |   数值   |                  2小时血清胰岛素 (mu U/ml)                   |
+|         Insulin          |       胰岛素       |   数值   |                  2 小时血清胰岛素 (mu U/ml)                   |
 |           BMI            |    身体质量指数    |   数值   |                    体重(kg) / (身高(m)²)                     |
 | DiabetesPedigreeFunction | 糖尿病家族遗传函数 |   数值   | 一个综合了糖尿病家族史和亲属关系的函数，值越大，遗传风险越高 |
 |           Age            |        年龄        |   数值   |                          年龄 (岁)                           |
 |    Outcome (目标变量)    |   是否患有糖尿病   |   类别   |            1 代表 患有糖尿病，0 代表 未患有糖尿病            |
 
-#### 2. 使用describe() 获取描述统计
+#### 2. 使用 describe() 获取描述统计
 
 ```bash
        Pregnancies     Glucose  BloodPressure  SkinThickness     Insulin 
@@ -98,12 +98,12 @@ max     67.100000                  2.420000   81.000000    1.000000
 
 **获得的信息**：
 
-1. 由 **最小值min** 一栏可以得到数据集是**有缺失值**的：
+1. 由 **最小值 min** 一栏可以得到数据集是**有缺失值**的：
 
-   1. Glucose               血糖浓度
-   2. BloodPressure     血压
-   3. SkinThickness     皮肤厚度
-   4. Insulin                  胰岛素
+   1. Glucose 血糖浓度
+   2. BloodPressure 血压
+   3. SkinThickness 皮肤厚度
+   4. Insulin 胰岛素
    5. BMI                     
 
    这五个指数不可能为零，那么就得出 **0** 实际上是缺失值。因此需要对这 5 列数据做特征工程
@@ -170,7 +170,7 @@ max     67.100000                  2.420000   81.000000    1.000000
 使用 $Z-score$ 标准化方法进行处理：
 
 ```python
-# 1.从DF中分离出特征矩阵 X和目标向量 y
+# 1.从 DF 中分离出特征矩阵 X 和目标向量 y
 X = df.drop('Outcome', axis=1)
 y = df['Outcome']
 # 2.传参切分训练集，测试集
@@ -333,18 +333,18 @@ plt.show()
 
      ```python
      import numpy as np
-     x_coords = np.array([0, 1, 2]) # 3个x坐标
-     y_coords = np.array([10, 11])   # 2个y坐标
+     x_coords = np.array([0, 1, 2]) # 3 个 x 坐标
+     y_coords = np.array([10, 11])   # 2 个 y 坐标
      # 想得到一个 3x2 的网格上的所有点:
      # (0,10), (1,10), (2,10)
      # (0,11), (1,11), (2,11)
      xx, yy = np.meshgrid(x_coords, y_coords)
-     print("xx (所有点的x坐标):")
+     print("xx (所有点的 x 坐标):")
      print(xx)
      # 输出:
      # [[0 1 2]
      #  [0 1 2]]
-     print("\nyy (所有点的y坐标):")
+     print("\nyy (所有点的 y 坐标):")
      print(yy)
      # 输出:
      # [[10 10 10]
@@ -401,12 +401,12 @@ plt.show()
         grid_points_for_predict = np.c_[xx.ravel(), yy.ravel()]
         print(grid_points_for_predict)
         # 输出:
-        # [[ 0 10]  <- 第1个点 (特征1=0, 特征2=10)
-        #  [ 1 10]  <- 第2个点
+        # [[ 0 10]  <- 第 1 个点 (特征 1=0, 特征 2=10)
+        #  [ 1 10]  <- 第 2 个点
         #  [ 2 10]
         #  [ 0 11]
         #  [ 1 11]
-        #  [ 2 11]] <- 第6个点
+        #  [ 2 11]] <- 第 6 个点
         ```
 
         现在它的形状是 (6, 2)，即6个样本，2个特征
@@ -515,13 +515,13 @@ for size in train_split_size:
 ```bash
 开始在不同的数据集拆分比例下评估模型
 当前训练集比例：0.75
-训练集样本数576，测试集样本数192
+训练集样本数 576，测试集样本数 192
 模型在测试集上的准确率：0.7396
 当前训练集比例：0.8
-训练集样本数614，测试集样本数154
+训练集样本数 614，测试集样本数 154
 模型在测试集上的准确率：0.7532
 当前训练集比例：0.85
-训练集样本数652，测试集样本数116
+训练集样本数 652，测试集样本数 116
 模型在测试集上的准确率：0.7414
 
 所有比例测试完成
@@ -662,7 +662,7 @@ crucial_feature = pd.DataFrame({'Feature': feature_names, 'Coefficient': coeffic
 
    ```python
    plt.figure(1, figsize=(18, 8))
-   # y轴是特征名称，x轴是其重要性（系数绝对值）
+   # y 轴是特征名称，x 轴是其重要性（系数绝对值）
    ax = sns.barplot(x='Abs Coefficient', y='Feature', data=crucial_feat, palette='viridis')
    ```
 
@@ -737,7 +737,7 @@ crucial_feature = pd.DataFrame({'Feature': feature_names, 'Coefficient': coeffic
    for p in ax.patches:
        # 获取条形的宽度，对于水平条形图，宽度就是其代表的数值
        width = p.get_width()
-       # 获取条形的y坐标和高度，用于确定文本的垂直位置
+       # 获取条形的 y 坐标和高度，用于确定文本的垂直位置
        y = p.get_y()
        height = p.get_height()
        # 在条形的末端右侧添加文本
@@ -768,7 +768,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-# 可从https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database/data下载
+# 可从 https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database/data 下载
 df = pd.read_csv('./dataset/pima/diabetes.csv')
 
 # pd.set_option('display.max_columns', None)
@@ -790,7 +790,7 @@ df.fillna(median_vals, inplace=True)
 # print(df[df_nan].describe())
 # ====== 填充完毕 ========
 # ====== 数据标准化 =======
-# 1.从DF中分离出特征矩阵 X和目标向量 y
+# 1.从 DF 中分离出特征矩阵 X 和目标向量 y
 X = df.drop('Outcome', axis=1)
 y = df['Outcome']
 # 2.传参切分训练集，测试集
@@ -824,7 +824,7 @@ train_accuracy = accuracy_score(y_train, y_train_pred)
 y_test_pred = model.predict(X_test_scaled_df)
 test_accuracy = accuracy_score(y_test, y_test_pred)
 
-print(f'训练集准确率：{train_accuracy:.4%}\n测试集准确率：{test_accuracy:.4%}')
+print(f'训练集准确率：{train_accuracy:.4%}\n 测试集准确率：{test_accuracy:.4%}')
 # =========== 逻辑回归训练结束 =================
 # =========== 绘制逻辑回归散点图 ===============
 # 为了可视化决策边界，只使用两个特征来训练一个新模型
@@ -881,7 +881,7 @@ y_split = df['Outcome']
 # 创建一个字典存储不同比例下的准确率
 res = {}
 train_split_size = [0.75,0.8,0.85]
-print("\n开始在不同的数据集拆分比例下评估模型")
+print("\n 开始在不同的数据集拆分比例下评估模型")
 
 for size in train_split_size:
     print(f'当前训练集比例：{size}')
@@ -902,7 +902,7 @@ for size in train_split_size:
     print(f'模型在测试集上的准确率：{accuracy:.4f}')
 
     res[size] = accuracy
-print(f'\n所有比例测试完成')
+print(f'\n 所有比例测试完成')
 
 res_df=pd.DataFrame(list(res.items()),columns=['Train Size','Test Accuracy'])
 print(res_df)
@@ -935,7 +935,7 @@ crucial_feat.sort_values('Abs Coefficient', ascending=False, inplace=True)
 print(crucial_feat)
 # 绘制条形图
 plt.figure(1, figsize=(18, 8))
-# y轴是特征名称，x轴是其重要性（系数绝对值）
+# y 轴是特征名称，x 轴是其重要性（系数绝对值）
 ax = sns.barplot(x='Abs Coefficient', y='Feature', data=crucial_feat, palette='viridis')
 # ax = crucial_feat.plot(kind='bar',rot=0)
 plt.title('The impact of different characteristics on diabetes',fontsize=16)
@@ -948,7 +948,7 @@ for p in ax.patches:
     # 获取条形的宽度，对于水平条形图，宽度就是其代表的数值
     width = p.get_width()
 
-    # 获取条形的y坐标和高度，用于确定文本的垂直位置
+    # 获取条形的 y 坐标和高度，用于确定文本的垂直位置
     y = p.get_y()
     height = p.get_height()
 

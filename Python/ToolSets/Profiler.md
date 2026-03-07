@@ -9,7 +9,7 @@ second_level_category: "工程化与工具"
 draft: false
 ---
 
-# Profiler性能分析工具
+# Profiler 性能分析工具
 
 
 
@@ -102,7 +102,7 @@ cProfile 是 Python 内置的、最常用的性能分析工具。
 - **percall (第二个)**: cumtime / ncalls，即每次调用的平均累计时间。
 - **filename:lineno(function)**: 函数所在的文件、行号和函数名。
 
-从上面的结果可以一目了然地看到，slow_function 的 tottime 占据了几乎全部时间 (0.251秒)，它就是性能瓶颈。
+从上面的结果可以一目了然地看到，slow_function 的 tottime 占据了几乎全部时间 (0.251 秒)，它就是性能瓶颈。
 
 **方式二：在代码中调用**
 

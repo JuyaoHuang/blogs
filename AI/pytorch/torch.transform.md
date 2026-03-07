@@ -123,7 +123,7 @@ draft: false
 
 -   作用：将图像转换为灰度图
 -   参数：
-    -   `num_output_channels` (int): 输出通道数（1或3）
+    -   `num_output_channels` (int): 输出通道数（1 或 3）
 
 ------
 

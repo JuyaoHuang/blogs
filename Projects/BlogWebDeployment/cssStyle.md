@@ -12,7 +12,7 @@ draft: false
 # CSS 常见样式总结
 ## 将图片作背景
 
-### 以Banner.astro为例
+### 以 Banner.astro 为例
 
 #### 前情提要
 
@@ -26,7 +26,7 @@ draft: false
 
 #### 操作步骤
 
-1. 查询 Banner 的CSS样式：
+1. 查询 Banner 的 CSS 样式：
 
    1. 打开 Banner.astro
 
@@ -61,7 +61,7 @@ draft: false
    3. `z-index` 控制元素的堆叠顺序。一个负值可以确保它被渲染在默认层级（z-index: 0）的所有内容的后面。
    4. 添加 `w-full`: 确保 Banner 始终是满宽的
 
-3. 对页面主容器 `main-container` 进行 CSS样式 修改
+3. 对页面主容器 `main-container` 进行 CSS 样式 修改
 
    1. 定位到 `MainLayout.astro` 文件，查看 html 部分
 
@@ -78,7 +78,7 @@ draft: false
       ```
 
       - `mt-[calc(var(--banner-height)\*3/4)]`: 给 <main> 标签添加了一个 margin-top。在移动端，这个边距的高度是 var(--banner-height) 的 3/4。
-      - `lg:mt-[var(--banner-height)]`: 在桌面端 (lg及以上)，这个边距的高度是完整的 var(--banner-height)。
+      - `lg:mt-[var(--banner-height)]`: 在桌面端 (lg 及以上)，这个边距的高度是完整的 var(--banner-height)。
 
 ​	这个 margin-top 的值**完全复制**了 Banner 组件里 height 的值。这样就完美地确保了文章内容 main 的顶部，正好衔接在作为背景的 Banner 的底部，无论在哪个屏幕尺寸下都能精确对齐。
 

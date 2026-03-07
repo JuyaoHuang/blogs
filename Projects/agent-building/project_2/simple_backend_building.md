@@ -11,10 +11,10 @@ draft: false
 
 ## 项目二简介
 
-**构建一个高级API封装器**：
+**构建一个高级 API 封装器**：
 
-使用FastAPI，创建一个简单的后端服务。它接收一个任务描述（比如“总结这段文字”或“把这段英文翻译成中文”），然后在内部构建一个高质量的 Prompt，调用 LLM API，最后将 LLM 返回的干净结果作为 API 的响应返回
-目的: 将 LLM的 强大能力，封装成可以轻松调用的、可靠的后端服务
+使用 FastAPI，创建一个简单的后端服务。它接收一个任务描述（比如“总结这段文字”或“把这段英文翻译成中文”），然后在内部构建一个高质量的 Prompt，调用 LLM API，最后将 LLM 返回的干净结果作为 API 的响应返回
+目的: 将 LLM 的 强大能力，封装成可以轻松调用的、可靠的后端服务
 
 ## 解决方案
 
@@ -51,7 +51,7 @@ load_dotenv()
 app = FastAPI(title="Atri Translator", docs_url=None, redoc_url=None)
 ```
 
-**2. 使用国内镜像CDN加速站加载 swagger ui**
+**2. 使用国内镜像 CDN 加速站加载 swagger ui**
 
 ```python
 # Add swagger-ui mirror
@@ -193,7 +193,7 @@ fastapi dev main.py --port 8000
 因此可以做出以下重构：
 1. 借用 MVC 设计思路，将逻辑划分为：服务层、配置层。
 2. 配置层：进行 fastapi 的配置，例如标题、描述、启动端口、启动入口等
-3. 服务层：业务处理、prompt工厂、Pydantic模型定义、llm 调用
+3. 服务层：业务处理、prompt 工厂、Pydantic 模型定义、llm 调用
 
 ```bash
 project_two
@@ -243,7 +243,7 @@ async def translate(request: TranslateRequest):
 ```
 只需构建好传入模型的 `message` 部分，再将结果返回即可。代码高度精简和可读。
 
-而需要构建新的（例如角色扮演等和 llm 互动）API 端点时，也是一样的处理逻辑，只需要在 prompt 工厂里新增系统 prompt即可。
+而需要构建新的（例如角色扮演等和 llm 互动）API 端点时，也是一样的处理逻辑，只需要在 prompt 工厂里新增系统 prompt 即可。
 
 **重构后的代码可在此 commit 查看**：https://github.com/JuyaoHuang/AI-agent/pull/9/commits/9544f2f8c77739cce1cef9a379c2463cc5b7555f
 
@@ -677,7 +677,7 @@ DeepSeek 的 APP 应用里使用的就是第三种，思考模式。
 
 ### 要求
 
-> 相关Issue：https://github.com/JuyaoHuang/AI-agent/issues/11
+> 相关 Issue：https://github.com/JuyaoHuang/AI-agent/issues/11
 
 为了提升用户体验，我们需要从当前的“等待完全生成后一次性返回”模式，升级为“流式输出”模式。特别针对支持深度思考的模型（如 `qwen3-vl-32b-thinking` / DeepSeek-R1），后端需要能够区分并实时返回 **思考过程** 和 **正式回复 **，以便前端能够将它们分开渲染（例如：思考过程显示在折叠面板中）
 
@@ -700,7 +700,7 @@ DeepSeek 的 APP 应用里使用的就是第三种，思考模式。
 
 ### 1. 单次请求完整的响应
 
-实现最简单的、最稳定的，在 API 请求里最常使用的方式：一次请求直接返回完整的文本回复（JSON格式返回）。
+实现最简单的、最稳定的，在 API 请求里最常使用的方式：一次请求直接返回完整的文本回复（JSON 格式返回）。
 
 #### **prompt 构建**
 
