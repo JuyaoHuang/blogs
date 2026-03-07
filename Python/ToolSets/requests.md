@@ -11,7 +11,7 @@ draft: false
 
 # requests
 
-requests 是 Python 中一个极其流行且功能强大的第三方库，它的口号是 **“HTTP for Humans”**（为人类设计的HTTP）。顾名思义，它旨在使发送 HTTP 请求变得极其简单和直观。
+requests 是 Python 中一个极其流行且功能强大的第三方库，它的口号是 **“HTTP for Humans”**（为人类设计的 HTTP）。顾名思义，它旨在使发送 HTTP 请求变得极其简单和直观。
 
 ---
 

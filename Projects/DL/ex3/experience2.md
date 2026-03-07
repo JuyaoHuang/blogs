@@ -15,39 +15,39 @@ draft: false
 
 注意事项：
 
-①  本次实验包含一道题，共计20分；
+①  本次实验包含一道题，共计 20 分；
 
-②  部分问题根据学号不同需进行不同的配置，若完成内容与实验要求不对应，则该项记为0分；
+②  部分问题根据学号不同需进行不同的配置，若完成内容与实验要求不对应，则该项记为 0 分；
 
 ③  所有实验结果需以实验报告的形式进行提交，文件命名格式：实验二_姓名_学号.pdf；
 
 ④  实验报告中可插入代码片段，完整代码无需放在实验报告中，以压缩包的形式添加即可，压缩包命名格式：实验二代码_姓名_学号.zip；
 
-⑤  作业提交截止时间：2025年12月31日24：00前。
+⑤  作业提交截止时间：2025 年 12 月 31 日 24：00 前。
 
- **卷积神经网络与经典卷积神经网络模型**(20分)
+ **卷积神经网络与经典卷积神经网络模型**(20 分)
 
-food-11数据集是深度学习中常用的一类数据集，其中包含11类食物的图片，分别是：Bread, Dairy product, Dessert, Egg, Fried food, Meat, Noodles/Pasta, Rice, Seafood, Soup, and Vegetable/Fruit. 数据集中包含9866张训练集，3430张验证集，3347张测试集。其中training和validation目录下的照片命名格式为“[类别]_[编号].jpg”
+food-11 数据集是深度学习中常用的一类数据集，其中包含 11 类食物的图片，分别是：Bread, Dairy product, Dessert, Egg, Fried food, Meat, Noodles/Pasta, Rice, Seafood, Soup, and Vegetable/Fruit. 数据集中包含 9866 张训练集，3430 张验证集，3347 张测试集。其中 training 和 validation 目录下的照片命名格式为“[类别]_[编号].jpg”
 
 请基于该数据集，完成以下实验内容：
 
-(1)   请根据已有数据集，对training和validation进行处理，构造训练数据集；(3分)
+(1)   请根据已有数据集，对 training 和 validation 进行处理，构造训练数据集；(3 分)
 
-(2)   为了保证数据的训练性能，请利用torchvision.transforms设计属于你的train_transform，train_transform模版已事先给出。你所设计的train_transform需要指定你所选择的特征图大小，并至少由五种transform组成；(3分)
+(2)   为了保证数据的训练性能，请利用 torchvision.transforms 设计属于你的 train_transform，train_transform 模版已事先给出。你所设计的 train_transform 需要指定你所选择的特征图大小，并至少由五种 transform 组成；(3 分)
 
-(3)   对你所设计的train_transform进行可视化，将变换后的结果进行可视化展示；(2分)
+(3)   对你所设计的 train_transform 进行可视化，将变换后的结果进行可视化展示；(2 分)
 
-(4)   搭建好个人设计的训练模型，并利用tensorboard对过程进行可视化展示；(2分)
+(4)   搭建好个人设计的训练模型，并利用 tensorboard 对过程进行可视化展示；(2 分)
 
-(5)   在验证集上显示你的准确性和混淆矩阵；(2分)
+(5)   在验证集上显示你的准确性和混淆矩阵；(2 分)
 
-(6)   将个人设计模型对测试集预测结果输出到ans_ours.csv中；(3分)
+(6)   将个人设计模型对测试集预测结果输出到 ans_ours.csv 中；(3 分)
 
-(7)   请自行查询资料，搭建VGG系列模型，并打印模型参数；(2分)
+(7)   请自行查询资料，搭建 VGG 系列模型，并打印模型参数；(2 分)
 
-(8)   使用VGG系列模型对测试集进行预测，并将结果输出到ans_vgg.csv中；(3分)
+(8)   使用 VGG 系列模型对测试集进行预测，并将结果输出到 ans_vgg.csv 中；(3 分)
 
-Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
+Food11 数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 提示：
 
@@ -55,13 +55,13 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 ②数据集中图片大小并不统一；
 
-③VGG系列模型主要包含VGG16和VGG19，你可以从中任选一个进行实现
+③VGG 系列模型主要包含 VGG16 和 VGG19，你可以从中任选一个进行实现
 
 ## 题目分析
 
 ### 第一阶段：数据工程
 
-**任务 (1): 构造训练数据集 (3分)**
+**任务 (1): 构造训练数据集 (3 分)**
 
 *   核心要求：编写代码读取 `training` 和 `validation` 文件夹下的图片
 *   关键动作：
@@ -69,12 +69,12 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
     *   文件名解析：图片名格式为 `[类别]_[编号].jpg`（例如 `Bread_001.jpg`）。需要写代码解析字符串，把 `Bread` 映射成数字标签（例如 `0`）
     *   注意：要确保训练集和验证集的类别映射关系是一致的（比如 Bread 在训练集是 0，在验证集也必须是 0）
 
-**任务 (2): 设计 Train Transform (3分)**
+**任务 (2): 设计 Train Transform (3 分)**
 
 *   核心要求：利用 `torchvision.transforms` 对图片进行预处理和增强
 *   硬性指标：
     1.  指定特征图大小：必须包含 `Resize`（例如 `Resize((224, 224))`），因为题目提示图片大小并不统一
-    2.  至少五种 Transform：少于5种扣分
+    2.  至少五种 Transform：少于 5 种扣分
 *   建议组合：
     1.  `Resize((224, 224))` (必选)
     2.  `RandomHorizontalFlip()` (水平翻转)
@@ -84,28 +84,28 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
     6.  `ToTensor()` (转张量，必选)
     7.  `Normalize()` (归一化，必选)
 
-**任务 (3): Transform 可视化 (2分)**
+**任务 (3): Transform 可视化 (2 分)**
 
 *   核心要求：展示图片在经过你设计的 Transform 处理后变成了什么样
 *   操作：取一张原始图片，应用你的 transform，然后用 `matplotlib.pyplot.imshow` 画出来
 *   坑点：如果 transform 里包含了 `Normalize`，图片颜色会变得很奇怪（因为数值被标准化了）。在可视化时，建议先展示不带 Normalize 的增强效果，或者编写一个反归一化函数再显示
 
 ### 第二阶段：自定义模型
-**任务 (4): 搭建个人模型 & TensorBoard 可视化 (2分)**
+**任务 (4): 搭建个人模型 & TensorBoard 可视化 (2 分)**
 
 *   核心要求：
     1.  自定义一个简单的 CNN 类（比如 3-4 层卷积层）
     2.  使用 `SummaryWriter` 记录训练过程中的 Loss 和 Accuracy
-*   交付物：报告中必须要有 TensorBoard 的截图（Loss曲线下降，Accuracy曲线上升）
+*   交付物：报告中必须要有 TensorBoard 的截图（Loss 曲线下降，Accuracy 曲线上升）
 
-**任务 (5): 验证集评估 & 混淆矩阵 (2分)**
+**任务 (5): 验证集评估 & 混淆矩阵 (2 分)**
 
 *   核心要求：模型训练完后，在验证集（Validation Set）上跑一遍
 *   交付物：
     1.  准确率数值：例如 "Validation Accuracy: 65.4%"
     2.  混淆矩阵图：这是一个 11x11 的热力图。它可以告诉你模型是不是把“Bread（面包）”错误地分类成了“Dessert（甜点）”。需要使用 `sklearn.metrics.confusion_matrix` 和 `seaborn.heatmap`
 
-**任务 (6): 测试集预测输出 (3分)**
+**任务 (6): 测试集预测输出 (3 分)**
 
 *   核心要求：用训练好的模型对无标签的 `testing` 文件夹里的图片进行预测
 *   交付物：生成 `ans_ours.csv` 文件
@@ -113,7 +113,7 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 
 ### 第三阶段：经典模型 (VGG)
-**任务 (7): 搭建 VGG 模型 & 打印参数 (2分)**
+**任务 (7): 搭建 VGG 模型 & 打印参数 (2 分)**
 
 *   核心要求：实现 VGG16 或 VGG19
 *   选择策略：
@@ -121,7 +121,7 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
     使用 `torchvision.models.vgg16()`。**重要修改点**：VGG 原生模型是输出 1000 类（ImageNet），需要把最后一层全连接层 (`classifier`) 修改为输出 **11 类**
 *   交付物：在代码中运行 `print(model)` 或使用 `torchsummary` 打印网络结构和参数量
 
-**任务 (8): VGG 预测输出 (3分)**
+**任务 (8): VGG 预测输出 (3 分)**
 
 *   核心要求：用训练好的 VGG 模型再次对测试集进行预测
 *   交付物：生成 `ans_vgg.csv` 文件
@@ -129,7 +129,7 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 ---
 
-## (1)   请根据已有数据集，对training和validation进行处理，构造训练数据集
+## (1)   请根据已有数据集，对 training 和 validation 进行处理，构造训练数据集
 
 ### 1.1. 数据检查
 
@@ -137,7 +137,7 @@ Food11数据集链接：https://www.kaggle.com/datasets/vermaavi/food11
 
 ![a](./1.jpg)
 
-**上网查找类别编号对应的标签**，得到编号从0到10分别对应于：
+**上网查找类别编号对应的标签**，得到编号从 0 到 10 分别对应于：
 
 ```python
 # 11个食物类别
@@ -181,7 +181,7 @@ class FoodDataset(Dataset):
 
 使用内置的`.__getitem__`方法，处理具体的每一张图片：
 
-1. 将图片转换为RGB数组
+1. 将图片转换为 RGB 数组
 2. 对图片应用`transform`变换
 3. 然后根据是否是测试集，返回图片的文件名或者图片的标签名
 
@@ -272,7 +272,7 @@ def get_dataloader(data_dir, batch_size=64, train_transform=None, test_transform
 
 ---
 
-## (2)   为了保证数据的训练性能，请利用torchvision.transforms设计属于你的train_transform，train_transform模版已事先给出。你所设计的train_transform需要指定你所选择的特征图大小，并至少由五种transform组成
+## (2)   为了保证数据的训练性能，请利用 torchvision.transforms 设计属于你的 train_transform，train_transform 模版已事先给出。你所设计的 train_transform 需要指定你所选择的特征图大小，并至少由五种 transform 组成
 
 > 该部分代码位于 `transforms.py` 中
 
@@ -283,7 +283,7 @@ def get_dataloader(data_dir, batch_size=64, train_transform=None, test_transform
 - `.Resize`：令所有图片尺寸统一为 VGG 模型需要的 `(224,224)`。
 - `.RandomHorizontalFlip`：以一个概率 $p$ 进行随机的水平翻转。
 - `.RandomRotation`：随机旋转一个特定的角度，此处选择`degree=15`
-- `.ColorJitter`：随机改变图像的亮度、对比度、饱和度和色调。此处依次选择0.2，0.2，0.2，0.1。
+- `.ColorJitter`：随机改变图像的亮度、对比度、饱和度和色调。此处依次选择 0.2，0.2，0.2，0.1。
 - `RandomAffine`：随机进行仿射变换
 
 > 注意：后续可视化展示时，如果 transform 里包含了 `Normalize`，图片颜色会变得很奇怪（因为数值被标准化）。在可视化时，可进行"是否选择`Normalize`"的对比。
@@ -326,7 +326,7 @@ Train Transform 包含以下变换:
 共 7 种变换
 ```
 
-## (3)   对你所设计的train_transform进行可视化，将变换后的结果进行可视化展示
+## (3)   对你所设计的 train_transform 进行可视化，将变换后的结果进行可视化展示
 
 ### 方法设计
 
@@ -405,9 +405,9 @@ Train Transform 包含以下变换:
         img_np = img_denorm.permute(1, 2, 0).numpy()
 ```
 
-## (4)   搭建好个人设计的训练模型，并利用tensorboard对过程进行可视化展示
+## (4)   搭建好个人设计的训练模型，并利用 tensorboard 对过程进行可视化展示
 
-### CNN网络结构
+### CNN 网络结构
 
 **模型展示**（位于`model.py`）：
 
@@ -539,7 +539,7 @@ FoodCNN(
 
 ![5](./5.jpg)
 
-> 由于本地4060显卡跑得太慢，故转移到华为云使用 T4 卡进行训练。
+> 由于本地 4060 显卡跑得太慢，故转移到华为云使用 T4 卡进行训练。
 >
 > 印象里就算使用 T4 也跑了 30 分钟以上，跑模型还是太烧钱了。
 >
@@ -583,9 +583,9 @@ Vegetable/Fruit       0.61      0.71      0.65       232
 
 
 
-**可以看到**，该自定义CNN模型表现出明显的偏科。它能准确识别汤(Soup)、肉(Meat)等特征鲜明的食物，但对奶制品(Dairy product)、鸡蛋(Egg)和米饭(Rice)等类别则出现严重混淆，特别是将大量奶制品误判为甜点。这表明该模型结构虽合理，但对于学习视觉上相似或概念重叠的细粒度特征能力不足。
+**可以看到**，该自定义 CNN 模型表现出明显的偏科。它能准确识别汤(Soup)、肉(Meat)等特征鲜明的食物，但对奶制品(Dairy product)、鸡蛋(Egg)和米饭(Rice)等类别则出现严重混淆，特别是将大量奶制品误判为甜点。这表明该模型结构虽合理，但对于学习视觉上相似或概念重叠的细粒度特征能力不足。
 
-## (6)   将个人设计模型对测试集预测结果输出到ans_ours.csv中
+## (6)   将个人设计模型对测试集预测结果输出到 ans_ours.csv 中
 
 ```python
 def main():
@@ -624,16 +624,16 @@ def main():
 
 **"ans_ours.csv"会放到附件中上传。**
 
-## (7)   请自行查询资料，搭建VGG系列模型，并打印模型参数
+## (7)   请自行查询资料，搭建 VGG 系列模型，并打印模型参数
 
 **查资料得**：
 
-VGG网络是计算机视觉领域的经典卷积神经网络架构。其核心特点是**结构规整**，全网统一使用 $3\times3$ 的小卷积核和 $2\times2$ 的最大池化层，通过重复堆叠卷积层块（Block）来增加网络深度，从而提取更高级的语义特征。
+VGG 网络是计算机视觉领域的经典卷积神经网络架构。其核心特点是**结构规整**，全网统一使用 $3\times3$ 的小卷积核和 $2\times2$ 的最大池化层，通过重复堆叠卷积层块（Block）来增加网络深度，从而提取更高级的语义特征。
 
-*   **VGG16**：由5个卷积块组成，包含 **13个卷积层** 和 **3个全连接层**（共16层权重层）。从日志可见，其总参数量约为 **1.34亿**
-*   **VGG19**：在VGG16的基础上增加了卷积深度，包含 **16个卷积层** 和 **3个全连接层**（共19层权重层），参数量增至约 **1.4亿**
+*   **VGG16**：由 5 个卷积块组成，包含 **13 个卷积层** 和 **3 个全连接层**（共 16 层权重层）。从日志可见，其总参数量约为 **1.34 亿**
+*   **VGG19**：在 VGG16 的基础上增加了卷积深度，包含 **16 个卷积层** 和 **3 个全连接层**（共 19 层权重层），参数量增至约 **1.4 亿**
 
-为适配 Food-11 数据集，将两个模型的最终全连接层均修改为 **11维输出**。由统计信息可知，VGG系列模型的参数主要集中在第一个全连接层（约1亿参数），导致模型体积较大（>500MB），对计算资源有较高要求。
+为适配 Food-11 数据集，将两个模型的最终全连接层均修改为 **11 维输出**。由统计信息可知，VGG 系列模型的参数主要集中在第一个全连接层（约 1 亿参数），导致模型体积较大（>500MB），对计算资源有较高要求。
 
 ```bash
 VGG16 模型结构
@@ -752,7 +752,7 @@ VGG19 参数统计
 参数大小: 532.59 MB
 ```
 
-## (8)   使用VGG系列模型对测试集进行预测，并将结果输出到ans_vgg.csv中
+## (8)   使用 VGG 系列模型对测试集进行预测，并将结果输出到 ans_vgg.csv 中
 
 ### 模型二次训练
 

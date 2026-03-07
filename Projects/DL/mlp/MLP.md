@@ -11,7 +11,7 @@ draft: false
 
 # MLP 简单实践
 
-这是一个简单的MLP实践，或者说，一个完整的深度学习实例。
+这是一个简单的 MLP 实践，或者说，一个完整的深度学习实例。
 
 ## 深度学习实践流程
 
@@ -21,24 +21,24 @@ draft: false
 
    1. **加载数据集**
    2. **切分数据集：训练集、验证集、测试集**
-   3. **创建 DataLoader准备给模型喂数据**
+   3. **创建 DataLoader 准备给模型喂数据**
    4. **必要时自定义 Dataset**
 
-2. **选择 GPU还是 CPU进行训练**
+2. **选择 GPU 还是 CPU 进行训练**
 
    ```python
    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
    ```
 
-   **如果选择 GPU训练，记得将以下内容迁移到 GPU上**：
+   **如果选择 GPU 训练，记得将以下内容迁移到 GPU 上**：
 
-   1. **模型训练前将实例化的模型转移到 gpu上**
-   2. **每一轮训练中，将训练的数据 X,y转移到 gpu上**
+   1. **模型训练前将实例化的模型转移到 gpu 上**
+   2. **每一轮训练中，将训练的数据 X,y 转移到 gpu 上**
 
    分别对应以下代码：
 
    1. ```python
-      model.to(device) # model为实例化模型：model = MLP()
+      model.to(device) # model 为实例化模型：model = MLP()
       ```
 
    2. ```python
@@ -49,7 +49,7 @@ draft: false
 3. **构建神经网络**
 
    1. **创建一模型子类，集成 nn.Module**
-   2. **在初始化函数`__init__()`中使用  nn.Sequential()构建网络框架，定义数据流(可选)**
+   2. **在初始化函数`__init__()`中使用 nn.Sequential()构建网络框架，定义数据流(可选)**
    3. **在 forward()中定义模型的数据流（和第二步的操作二选一），并返回模型的输出**
 
 4. **训练模型**
@@ -60,9 +60,9 @@ draft: false
 
    1. **模型训练环节**
       1. **将模型切换到训练模式**：`model.train()`
-      2. **将训练数据 X,y转移到正确的设备上**
+      2. **将训练数据 X,y 转移到正确的设备上**
       3. **前向传播**
-      4. **计算Loss**
+      4. **计算 Loss**
       5. **梯度清零并进行反向传播**
       6. **更新网络参数**
    2. **模型验证环节**
@@ -74,16 +74,16 @@ draft: false
 5. **测试模型性能**
 
    1. **将模型转为测试模式**
-   2. **计算Loss与 精确率等评价指标**
+   2. **计算 Loss 与 精确率等评价指标**
 
-6. **存储训练过程得到的loss和precision，便于可视化**
+6. **存储训练过程得到的 loss 和 precision，便于可视化**
 
    1. **使用一字典存储需要的数据**
-   2. **转为 json保存**
+   2. **转为 json 保存**
 
 7. **模型持久化**
 
-   1. **使用 torch.save存储状态字典**
+   1. **使用 torch.save 存储状态字典**
 
 ---
 
@@ -93,13 +93,13 @@ draft: false
 
 - **输入**：一张 28x28 像素的灰度图像
 - **处理**：通过 MLP 模型进行学习和转换
-- **输出**：从10个预设的类别（如 'T-shirt/top', 'Trouser', 'Pullover' 等）中预测出图像最属于哪一类
+- **输出**：从 10 个预设的类别（如 'T-shirt/top', 'Trouser', 'Pullover' 等）中预测出图像最属于哪一类
 
 ### 1. 获取数据集
 
 `torchvision`库里的数据集已自带`Fashion_MNIST`数据集，从此加载即可，此处重点应该是：
-1. 怎么从一个 Dataset获取数据
-2. **怎么使用 DataLoader加载训练模型需要的数据**
+1. 怎么从一个 Dataset 获取数据
+2. **怎么使用 DataLoader 加载训练模型需要的数据**
 
 ```python
 def get_dataloader_workers():
@@ -154,7 +154,7 @@ def load_fashion_mnist_datasets(resize=None):
 
 #### 2.2. 创建 DataLoader
 
-DataLoader相关的参数介绍<a href="https://juayohuang.top/posts/ai/pytorch/torchutilsdata" target="_blank" >请查看此处</a>
+DataLoader 相关的参数介绍<a href="https://juayohuang.top/posts/ai/pytorch/torchutilsdata" target="_blank" >请查看此处</a>
 ```python
     # 为切分后的数据集创建 DataLoader
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=get_dataloader_workers(),pin_memory=True)
@@ -164,7 +164,7 @@ DataLoader相关的参数介绍<a href="https://juayohuang.top/posts/ai/pytorch/
 
 ### 3. 选择设备进行训练
 
-**为加快训练，选择 GPU进行处理**
+**为加快训练，选择 GPU 进行处理**
 
 ```python
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -218,9 +218,9 @@ class MLP(nn.Module):
 #### 4.1. 网络结构设计
 
 网络结构包含：
-- 一个平坦层 Flatten：  用于将输入的28x28的图像展平为784维的向量
+- 一个平坦层 Flatten：  用于将输入的 28x28 的图像展平为 784 维的向量
 - 两个隐藏层 Linear + ReLU：  实现非线性激活
-- 一个输出层 Linear：  输出层有10个神经元，对应Fashion-MNIST的10个类别，CrossEntropyLoss()内部已有了 Softmax函数，因此在使用 CrossEntropyLoss计算 Loss时，不需要手动添加 Softmax()。
+- 一个输出层 Linear：  输出层有 10 个神经元，对应 Fashion-MNIST 的 10 个类别，CrossEntropyLoss()内部已有了 Softmax 函数，因此在使用 CrossEntropyLoss 计算 Loss 时，不需要手动添加 Softmax()。
 
 网络结构每一层的神经元依次为：
 $$
@@ -287,13 +287,13 @@ model = MLP()
 loss_function = nn.CrossEntropyLoss()
 ```
 
-将模型转移到 gpu上
+将模型转移到 gpu 上
 
 ```python
 model.to(device)
 ```
 
-#### 5.2 实例化优化器，以 Adam为例
+#### 5.2 实例化优化器，以 Adam 为例
 
 ```python
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
@@ -305,9 +305,9 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 1. 训练阶段：  训练模型
 
       1. 将模型切换到训练模式
-      2. 将训练数据 X,y转移到正确的设备上
+      2. 将训练数据 X,y 转移到正确的设备上
       3. 前向传播
-      4. 计算Loss
+      4. 计算 Loss
       5. 梯度清零并进行反向传播
       6. 更新网络参数
 2. 验证阶段
@@ -484,7 +484,7 @@ def evaluate_model(model, test_loader, device):
     return test_acc
 ```
 
-### 7. 存储训练过程得到的Loss
+### 7. 存储训练过程得到的 Loss
 
 ```python
     import json
@@ -754,11 +754,11 @@ if __name__ == '__main__':
 
 ---
 
-## 手动实现MLP
+## 手动实现 MLP
 
 若想深入底层实现，就要知道输入层、隐藏层、输出层、激活函数、损失函数怎么实现的。
 
-这些实际上就是 PyTorch 封装好的每一个组件，像本次实验用到的 Linear全连接层、Flatten平坦层、ReLU和交叉熵损失函数
+这些实际上就是 PyTorch 封装好的每一个组件，像本次实验用到的 Linear 全连接层、Flatten 平坦层、ReLU 和交叉熵损失函数
 
 而接下来分几个部分介绍每一层的实现
 
@@ -778,7 +778,7 @@ b2 = nn.Parameter(torch.zeros(num_outputs, requires_grad=True))
 代码没有使用 nn.Linear 层：该层会自动创建和管理权重 W 和偏置 b。相反，它手动创建了每一层所需的参数，并将它们封装在 nn.Parameter 中
 
 - **nn.Parameter 的作用**：
-   nn.Parameter 是 torch.Tensor 的一个特殊子类；当一个 Tensor被 nn.Parameter 包装后，它就**自动被注册为模型的可学习参数**
+   nn.Parameter 是 torch.Tensor 的一个特殊子类；当一个 Tensor 被 nn.Parameter 包装后，它就**自动被注册为模型的可学习参数**
    
    这意味着调用 loss.backward() 时，PyTorch 会自动计算这些参数的梯度，并且优化器 (torch.optim.SGD) 能够找到并更新它们
 
@@ -801,7 +801,7 @@ b2 = nn.Parameter(torch.zeros(num_outputs, requires_grad=True))
    X = X.reshape((-1, num_inputs))
    ```
 
-   - Fashion-MNIST 数据集中的每个样本 X 是一个 (batch_size, 1, 28, 28) 的4D张量
+   - Fashion-MNIST 数据集中的每个样本 X 是一个 (batch_size, 1, 28, 28) 的 4D 张量
 
    - MLP 处理的是向量数据，而不是具有空间结构的图像数据
 
@@ -841,9 +841,9 @@ b2 = nn.Parameter(torch.zeros(num_outputs, requires_grad=True))
 
 它通过将输入张量 x 与一个同形状的全零张量 a 进行逐元素比较，取其中的最大值，从而实现了 max(0, x) 的效果
 
-### 4. 与使用 PyTorch组件构建对比
+### 4. 与使用 PyTorch 组件构建对比
 
-使用 PyTorch构建上面这个 一个输入层、一个隐藏层、一个输出层的代码：
+使用 PyTorch 构建上面这个 一个输入层、一个隐藏层、一个输出层的代码：
 
 ```python
 class MLP(nn.Module):

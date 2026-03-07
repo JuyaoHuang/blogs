@@ -21,11 +21,11 @@ nn.Module 是 PyTorch 中所有神经网络模块的**基类**，可以把它想
 
   通过继承 nn.Module 并实现其方法（尤其是 forward 方法）来定义自己的网络架构
 
-**核心思想**：nn.Module 设计哲学是面向对象方法，将神经网络的通用的层封装好，后续只需要调用工具箱内部的API即可构建模型
+**核心思想**：nn.Module 设计哲学是面向对象方法，将神经网络的通用的层封装好，后续只需要调用工具箱内部的 API 即可构建模型
 
 ## nn.Module 的自动参数注册功能
 
-创建一个类并继承 nn.Module后，在 __init__ 方法中，将一个 nn.Module 的子类（如 nn.Linear）或一个 nn.Parameter 赋值给类的属性时，nn.Module 会**自动**将它们注册为模块的子模块或参数
+创建一个类并继承 nn.Module 后，在 __init__ 方法中，将一个 nn.Module 的子类（如 nn.Linear）或一个 nn.Parameter 赋值给类的属性时，nn.Module 会**自动**将它们注册为模块的子模块或参数
 
 ```python
 import torch.nn as nn

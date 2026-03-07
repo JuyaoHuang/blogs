@@ -9,7 +9,7 @@ second_level_category: "深度学习框架"
 draft: false
 ---
 
-可以将 **PyTorch Tensor 看作是 NumPy ndarray 的一个  “超集”**，类似于 Javascript与 Typescript的关系，它为深度学习的需求进行了专门的优化和功能增强
+可以将 **PyTorch Tensor 看作是 NumPy ndarray 的一个  “超集”**，类似于 Javascript 与 Typescript 的关系，它为深度学习的需求进行了专门的优化和功能增强
 
 ## 核心区别一览表
 
@@ -25,7 +25,7 @@ draft: false
 
 ## 三大关键区别详解
 
-### 1.  支持GPU硬件加速
+### 1.  支持 GPU 硬件加速
 
 两者最显著的区别
 
@@ -58,11 +58,11 @@ if torch.cuda.is_available():
 
 如果尝试用 NumPy 处理大型神经网络的训练，计算时间将会长得无法接受
 
-###  2. 自动求导  Autograd
+###  2. 自动求导 Autograd
 
 这是 Tensor 成为深度学习基石的核心原因
 
-神经网络的训练依赖于**反向传播  Backpropagation** 算法，该算法的本质就是计算损失函数对模型中每一个参数的**梯度 gradient**
+神经网络的训练依赖于**反向传播 Backpropagation** 算法，该算法的本质就是计算损失函数对模型中每一个参数的**梯度 gradient**
 
 #### PyTorch Tensor
 

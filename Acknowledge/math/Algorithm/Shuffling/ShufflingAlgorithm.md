@@ -16,7 +16,7 @@ draft: false
 
 ## Fisher-Yates 算法
 
-​	Fisher-Yates Shuffle算法（又被称为 Knuth Shuffle 算法），是一种用于随机打乱元素顺序的高效洗牌算法。其保证生成的随机排列是等概率的。而且该算法是一种原地算法，对于大数据集场景也十分有效。该算法最初由Ronald Fisher、Frank Yates于1938年提出
+​	Fisher-Yates Shuffle 算法（又被称为 Knuth Shuffle 算法），是一种用于随机打乱元素顺序的高效洗牌算法。其保证生成的随机排列是等概率的。而且该算法是一种原地算法，对于大数据集场景也十分有效。该算法最初由 Ronald Fisher、Frank Yates 于 1938 年提出
 
 ### 算法原理
 
@@ -42,7 +42,7 @@ draft: false
 
 #### 概率分布
 
-对于一个包含 n 个元素的数组，存在 n! (n的阶乘) 种不同的排列组合。
+对于一个包含 n 个元素的数组，存在 n! (n 的阶乘) 种不同的排列组合。
 
 Fisher-Yates 算法能保证**每一种**排列组合被生成的概率是完全相等的，即  $\frac{1}{n}$  
 
@@ -68,7 +68,7 @@ $$
 
 在每一步 i，都确保了当前位置 i 的元素，是从所有尚未处理的元素（0 到 i）中等概率随机挑选出来的，这保证了最终所有 $n!$ 种排列是等概率的
 
-JS实现：
+JS 实现：
 
 ```js
 function shuffArr(array:any[]){
