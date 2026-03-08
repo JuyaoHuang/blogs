@@ -6,7 +6,7 @@ tags: ['opencode', 'claude-code']
 language: 'Chinese'
 first_level_category: "项目实践"
 second_level_category: "Agent 搭建"
-heroImage: { src: './2.png', color: '#D58388' }
+heroImage: { src: './2.png'}
 draft: false
 ---
 
