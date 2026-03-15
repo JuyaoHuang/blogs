@@ -13,18 +13,29 @@ draft: false
 
 在 Markdown 中，当编辑器支持 LaTeX 渲染时（例如 Typora, Obsidian, VS Code + Markdown Preview Enhanced），可以直接使用 LaTeX 的数学模式来输入公式。
 
-### 1. 基本算术运算符
+### 1. 基本算术与关系运算符
 
-| 描述   | LaTeX 命令 | 效果              | 示例 Markdown         |
-| ------ | ---------- | ----------------- | --------------------- |
-| 加号   | +          | $ + $             | $...+$                |
-| 减号   | -          | $ - $             | $...-$                |
-| 乘号   | \times     | $ \times $        | $...{\times}$         |
-| 除号   | / 或 \div  | $ / $ 或 $ \div $ | $.../$ 或 $...{\div}$ |
-| 加减号 | \pm        | $ \pm $           | $...{\pm}$            |
-| 约等于 | \approx    | $ \approx $       | $...{\approx}$        |
-| 等于   | =          | $ = $             | $...=$                |
-| 不等于 | \neq       | $ \neq $          | $...{\neq}$           |
+| 描述     | LaTeX 命令 | 效果              | 示例 Markdown |
+| -------- | ---------- | ----------------- | --------------------- |
+| 加号     | +          | $ + $             | $...+$                |
+| 减号     | -          | $ - $             | $...-$                |
+| 乘号     | \times     | $ \times $        | $...{\times}$         |
+| 点乘     | \cdot      | $ \cdot $         | $...{\cdot}$          |
+| 除号     | / 或 \div  | $ / $ 或 $ \div $ | $.../$ 或 $...{\div}$ |
+| 加减号   | \pm        | $ \pm $           | $...{\pm}$            |
+| 减加号   | \mp        | $ \mp $           | $...{\mp}$            |
+| 约等于   | \approx    | $ \approx $       | $...{\approx}$        |
+| 等于     | =          | $ = $             | $...=$                |
+| 不等于   | \neq       | $ \neq $          | $...{\neq}$           |
+| 恒等于   | \equiv     | $ \equiv $        | $...{\equiv}$         |
+| 小于     | <          | $ < $             | $...<$                |
+| 大于     | >          | $ > $             | $...>$                |
+| 小于等于 | \leq 或 \le | $ \leq $          | $...{\leq}$           |
+| 大于等于 | \geq 或 \ge | $ \geq $          | $...{\geq}$           |
+| 远小于   | \ll        | $ \ll $           | $...{\ll}$            |
+| 远大于   | \gg        | $ \gg $           | $...{\gg}$            |
+| 相似/渐近| \sim       | $ \sim $          | $...{\sim}$           |
+| 正比于   | \propto    | $ \propto $       | $...{\propto}$        |
 
 ### 2. 乘方与下标
 
@@ -134,15 +145,22 @@ $$
 | 属于     | \in                      | $ \in $                          | $...{\in}$                             |
 | 不属于   | \notin                   | $ \notin $                       | $...{\notin}$                          |
 | 子集     | \subset 或 \subseteq     | $ \subset $ 或 $ \subseteq $     | $...{\subset}$ 或 $...{\subseteq}$     |
-| 真子集   | \subset                  | $ \subset $                      | $...{\subset}$                         |
+| 真子集   | \subsetneq               | $ \subsetneq $                   | $...{\subsetneq}$                      |
 | 超集     | \supset 或 \supseteq     | $ \supset $ 或 $ \supseteq $     | $...{\supset}$ 或 $...{\supseteq}$     |
 | 非空集合 | \emptyset 或 \varnothing | $ \emptyset $ 或 $ \varnothing $ | $...{\emptyset}$ 或 $...{\varnothing}$ |
 | 并集     | \cup                     | $ \cup $                         | $...{\cup}$                            |
 | 交集     | \cap                     | $ \cap $                         | $...{\cap}$                            |
-| 属于     | \forall                  | $ \forall $                      | $...{\forall}$                         |
+| 任意/所有| \forall                  | $ \forall $                      | $...{\forall}$                         |
 | 存在     | \exists                  | $ \exists $                      | $...{\exists}$                         |
-| 蕴含     | \implies 或 \Rightarrow  | $ \implies $ 或 $ \Rightarrow $  | $...{\implies}$ 或 $...{\Rightarrow}$  |
+| 不存在   | \nexists                 | $ \nexists $                     | $...{\nexists}$                        |
+| 蕴含(推导) | \implies 或 \Rightarrow  | $ \implies $ 或 $ \Rightarrow $  | $...{\implies}$ 或 $...{\Rightarrow}$  |
+| 推出(左) | \Leftarrow               | $ \Leftarrow $                   | $...{\Leftarrow}$                      |
 | 当且仅当 | \iff 或 \Leftrightarrow  | $ \iff $ 或 $ \Leftrightarrow $  | $...{\iff}$ 或 $...{\Leftrightarrow}$  |
+| 因为     | \because                 | $ \because $                     | $...{\because}$                        |
+| 所以     | \therefore               | $ \therefore $                   | $...{\therefore}$                      |
+| 逻辑与   | \land 或 \wedge          | $ \land $ 或 $ \wedge $          | $...{\land}$ 或 $...{\wedge}$          |
+| 逻辑或   | \lor 或 \vee             | $ \lor $ 或 $ \vee $             | $...{\lor}$ 或 $...{\vee}$             |
+| 逻辑非   | \lnot 或 \neg            | $ \lnot $ 或 $ \neg $            | $...{\lnot}$ 或 $...{\neg}$            |
 
 
 
@@ -182,12 +200,125 @@ $$
 |       点       |     \dot{y}     |     $\dot{y}$     |
 |    宽波浪号    | \widetilde{abc} | $\widetilde{abc}$ |
 
-### 11.线性代数
+### 11.线性代数与其他
 
-|      描述      |    Latex 指令    |     效果示例      |
-| :------------: | :-------------: | :---------------: |
-|     矩阵的按元素乘法     |    \odot{y}    | $\odot$ |
-|  |          |         |
-|            |          |       |
-|             |          |      |
-|        |  | |
+|      描述      |    Latex 指令    |     效果示例      | 示例 Markdown |
+| :------------: | :-------------: | :---------------: | :-------------: |
+| 矩阵按元素乘法 |    \odot        |     $\odot$       | $...{\odot}$    |
+| 张量积/克罗内克积 |   \otimes       |     $\otimes$     | $...{\otimes}$  |
+| 正交/垂直         |    \perp        |     $\perp$       | $...{\perp}$    |
+| 范数双竖线        |   \|x\|           |    $\|x\|$      | $...{\|x\|}$   |
+| 内积大括号        |  \langle x, y \rangle | $\langle x, y \rangle$ | $...{\langle x, y \rangle}$ |
+| 行列式            | \det(A)         |    $\det(A)$      | $...{\det(A)}$  |
+| 迹                | \text{Tr}(A)    |    $\text{Tr}(A)$ | $...{\text{Tr}(A)}$ |
+
+### 12. 概率论与数理统计
+
+| 描述               | LaTeX 命令                          | 效果                          | 示例 Markdown                     |
+| ------------------ | ----------------------------------- | ----------------------------- | --------------------------------- |
+| 事件概率           | P(A)                                | $ P(A) $                      | $...{P(A)}$                       |
+| 条件概率           | P(A\|B)                             | $ P(A\|B) $                   | $...{P(A\|B)}$                    |
+| 期望               | E(X) 或 \mathbb{E}(X)               | $ E(X) $ 或 $ \mathbb{E}(X) $ | $...{E(X)}$ 或 $...{\mathbb{E}(X)}$|
+| 方差               | D(X) 或 \mathrm{Var}(X)             | $ D(X) $ 或 $ \mathrm{Var}(X) $| $...{D(X)}$ 或 $...{\mathrm{Var}(X)}$ |
+| 协方差             | \mathrm{Cov}(X, Y)                  | $ \mathrm{Cov}(X, Y) $        | $...{\mathrm{Cov}(X, Y)}$         |
+| 分布：正态分布     | X \sim N(\mu, \sigma^2)             | $ X \sim N(\mu, \sigma^2) $   | $...{X \sim N(\mu, \sigma^2)}$    |
+| 分布：二项分布     | X \sim B(n, p)                      | $ X \sim B(n, p) $            | $...{X \sim B(n, p)}$             |
+| 分布：泊松分布     | X \sim P(\lambda)                   | $ X \sim P(\lambda) $         | $...{X \sim P(\lambda)}$          |
+| 分布：均匀分布     | X \sim U(a, b)                      | $ X \sim U(a, b) $            | $...{X \sim U(a, b)}$             |
+| 独立 (常用于事件)  | \perp\!\!\!\perp                    | $ \perp\!\!\!\perp $          | $...{\perp\!\!\!\perp}$           |
+| 排列               | A_n^k 或 P_n^k                      | $ A_n^k $                     | $...{A_n^k}$                      |
+| 组合               | C_n^k 或 \binom{n}{k}               | $ C_n^k $ 或 $ \binom{n}{k} $ | $...{C_n^k}$ 或 $...{\binom{n}{k}}$ |
+
+### 13. 高等数学补充符号集
+
+| 描述               | LaTeX 命令                          | 效果                              | 示例 Markdown                     |
+| ------------------ | ----------------------------------- | --------------------------------- | --------------------------------- |
+| 偏导数 (符号)      | \partial                            | $ \partial $                      | $...{\partial}$                   |
+| 二阶偏导数混合     | \frac{\partial^2 z}{\partial x \partial y} | $ \frac{\partial^2 z}{\partial x \partial y} $ | $...{\frac{\partial^2 z}{\partial x \partial y}}$ |
+| 全微分             | \mathrm{d} y = f'(x)\mathrm{d} x    | $ \mathrm{d} y = f'(x)\mathrm{d} x $| $...{\mathrm{d} z = ...}$         |
+| 多元函数极限       | \lim_{(x,y) \to (0,0)}              | $ \lim_{(x,y) \to (0,0)} $        | $...{\lim_{(x,y) \to (0,0)}}$     |
+| 等价无穷小         | \sim                                | $ \sin x \sim x $                 | $...{\sin x \sim x}$              |
+| 泰勒/麦克劳林展开  | \sum_{n=0}^{\infty} \frac{x^n}{n!}  | $ \sum_{n=0}^{\infty} \frac{x^n}{n!} $| $...{\sum_{n=0}^{\infty} ...}$    |
+| 自然对数底数 $e$   | \mathrm{e} 或 e                     | $ \mathrm{e}^x $                  | $...{\mathrm{e}^x}$               |
+| 复合函数求导法     | \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u} \cdot \frac{\mathrm{d} u}{\mathrm{d} x} | $ \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{\mathrm{d} y}{\mathrm{d} u} \frac{\mathrm{d} u}{\mathrm{d} x} $ | $...{\frac{\mathrm{d} y}{\mathrm{d} x}}$ |
+
+### 14. 常用大型结构（分段函数与矩阵）
+
+#### 分段函数 (cases 环境)
+
+使用 `\begin{cases}` 和 `\end{cases}`，用 `&` 分隔表达式和条件，`\\` 表示换行。
+示例代码：
+```latex
+f(x) =
+\begin{cases}
+1, & x > 0 \\
+0, & x = 0 \\
+-1, & x < 0
+\end{cases}
+```
+**效果：**
+$$
+f(x) =
+\begin{cases}
+1, & x > 0 \\
+0, & x = 0 \\
+-1, & x < 0
+\end{cases}
+$$
+
+#### 各种矩阵环境
+
+Markdown 常用的矩阵格式环境不需要 `\left[` 来包围，直接使用特定标签。如 `pmatrix` (圆括号)、`bmatrix` (方括号)、`vmatrix` (单竖线行列式)、`Vmatrix` (双竖线)。
+
+示例代码 (方括号矩阵 `bmatrix`)：
+```latex
+A = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+```
+**效果：**
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+$$
+
+示例代码 (行列式单竖线 `vmatrix`)：
+```latex
+|A| = \begin{vmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}
+```
+**效果：**
+$$
+|A| = \begin{vmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}
+$$
+
+#### 多行公式对齐 (aligned 环境)
+
+在推导过程（如计算不定积分或矩阵变换）中，使用 `aligned` 进行对齐，默认对齐符为 `&`：
+
+示例代码：
+```latex
+\begin{aligned}
+\int_0^1 x^2 \, dx &= \left[ \frac{1}{3} x^3 \right]_0^1 \\
+&= \frac{1}{3} - 0 \\
+&= \frac{1}{3}
+\end{aligned}
+```
+**效果：**
+$$
+\begin{aligned}
+\int_0^1 x^2 \, dx &= \left[ \frac{1}{3} x^3 \right]_0^1 \\
+&= \frac{1}{3} - 0 \\
+&= \frac{1}{3}
+\end{aligned}
+$$
