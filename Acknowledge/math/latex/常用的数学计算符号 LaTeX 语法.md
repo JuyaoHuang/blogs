@@ -161,6 +161,11 @@ $$
 | 逻辑与   | \land 或 \wedge          | $ \land $ 或 $ \wedge $          | $...{\land}$ 或 $...{\wedge}$          |
 | 逻辑或   | \lor 或 \vee             | $ \lor $ 或 $ \vee $             | $...{\lor}$ 或 $...{\vee}$             |
 | 逻辑非   | \lnot 或 \neg            | $ \lnot $ 或 $ \neg $            | $...{\lnot}$ 或 $...{\neg}$            |
+| 异或     | \oplus                   | $ \oplus $                       | $...{\oplus}$                          |
+| 同或     | \odot                    | $ \odot $                        | $...{\odot}$                           |
+| 逻辑非 (上横线) | \overline{A}      | $ \overline{A} $                 | $...{\overline{A}}$                    |
+| 逻辑与 (集合表示) | \cap            | $ \cap $                         | $...{\cap}$                            |
+| 逻辑或 (集合表示) | \cup            | $ \cup $                         | $...{\cup}$                            |
 
 
 
