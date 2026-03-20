@@ -278,7 +278,7 @@ def get_dataloader(data_dir, batch_size=64, train_transform=None, test_transform
 
 **由于每一张图片的大小并不统一，并且后续要使用 VGG16 模型进行训练**，因此使用`transforms.resize()`方法，将图片大小统一为`(224,224)`。
 
-[查看`transforms`库的 API 接口](https://www.juayohuang.top/posts/ai/pytorch/torchtransform)，可以使用以下的方法扩展数据集，提高模型的性能。
+[查看`transforms`库的 API 接口](https://www.juyaohuang.com/posts/ai/pytorch/torchtransform)，可以使用以下的方法扩展数据集，提高模型的性能。
 
 - `.Resize`：令所有图片尺寸统一为 VGG 模型需要的 `(224,224)`。
 - `.RandomHorizontalFlip`：以一个概率 $p$ 进行随机的水平翻转。

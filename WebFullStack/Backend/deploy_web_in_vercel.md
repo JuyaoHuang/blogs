@@ -90,7 +90,7 @@ draft: false
 
    国内使用大型公司的云平台的域名注册即可：阿里云、华为云、腾讯云等等。国外有 cloudflare、亚马逊云等。建议货比三家，自行购买。
 
-   接下来的步骤以笔者在阿里云注册的域名：juayohuang.top 进行介绍。
+   接下来的步骤以笔者在阿里云注册的域名：juyaohuang.com 进行介绍。
 
 2. 配置 DNS 域名解析
 
@@ -120,7 +120,7 @@ draft: false
 1. 使用代码与内容分离 "Headless CMS" 风格架构的仓库：
    1. lingLong 仓库存储 Astro 语言构建的博客项目
    2. blogs 仓库存储所有文章。文章存放处在 `lingLong/src/contents/posts` 目录下
-2. 阿里云注册的域名 `juayohuang.top`
+2. 阿里云注册的域名 `juyaohuang.com`
 3. Cloudflare 进行 DNS 解析
 
 ## 1. 域名注册

@@ -48,7 +48,7 @@ draft: false
 
 标签是为了快速筛选和分类。一个混乱的标签系统比没有标签更糟糕。
 
-> [Issue Label 的选择详情查看这篇文章](https://www.juayohuang.top/posts/webfullstack/github/label-create-priciple)
+> [Issue Label 的选择详情查看这篇文章](https://www.juyaohuang.com/posts/webfullstack/github/label-create-priciple)
 
 **核心分类原则**：
 

@@ -60,7 +60,7 @@ Android:
 
 首先访问你想要订阅的博客网站，查看作者是否提供了相关的 RSS 链接。
 
-例如本站的 RSS 订阅链接为：https://www.juayohuang.top/rss.xml
+例如本站的 RSS 订阅链接为：https://www.juyaohuang.com/rss.xml
 
 ![1](./1.jpg)
 
@@ -72,7 +72,7 @@ Android:
 
 以 fluent-reader 为例，点击“设置”即可看到添加订阅源的选项。然后在订阅源里输入订阅的 RSS 链接，点击确认即可。
 
-例如本站的 RSS 链接：https://www.juayohuang.top/rss.xml，之后即可看到最新的文章列表。
+例如本站的 RSS 链接：https://www.juyaohuang.com/rss.xml，之后即可看到最新的文章列表。
 
 ![3](./3.jpg)
 

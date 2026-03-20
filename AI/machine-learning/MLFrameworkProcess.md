@@ -364,7 +364,7 @@ $$
 
 ### 评价指标
 
-详情<a href="https://www.juayohuang.top/posts/ai/machine-learning/mlevaluationmertrics" target = "_blank" rel="noopener noreferrer">请点击此处查看机器学习评价指标文档</a>，此处仅给出简要介绍
+详情<a href="https://www.juyaohuang.com/posts/ai/machine-learning/mlevaluationmertrics" target = "_blank" rel="noopener noreferrer">请点击此处查看机器学习评价指标文档</a>，此处仅给出简要介绍
 
 #### 分类指标
 
@@ -542,7 +542,7 @@ db_score = davies_bouldin_score(X, labels_pred)
 ### 数据清洗
 
 主要为 缺失值、异常值、重复值的处理，查看
-<a href="https://www.juayohuang.top/posts/ai/machine-learning/pandas" target = "_blank" rel="noopener noreferrer">pandas 用法</a>
+<a href="https://www.juyaohuang.com/posts/ai/machine-learning/pandas" target = "_blank" rel="noopener noreferrer">pandas 用法</a>
 
 ### SMOTE
 
@@ -742,7 +742,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 
 这里只简单介绍具体有什么损失函数、常用的损失函数、代码中使用
 
-若要查看相关介绍，<a href="https://www.juayohuang.top/posts/ai/machine-learning/lossfunction">请点击此处</a>
+若要查看相关介绍，<a href="https://www.juyaohuang.com/posts/ai/machine-learning/lossfunction">请点击此处</a>
 
 #### 分类损失
 
@@ -889,7 +889,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
 - 常用的梯度下降法
 - 代码实现
 
-<a href = "https://www.juayohuang.top/posts/ai/machine-learning/gradientdescentmethod" target="_blank" rel="noopener noreferrer">详细的算法介绍请点击此处</a>
+<a href = "https://www.juyaohuang.com/posts/ai/machine-learning/gradientdescentmethod" target="_blank" rel="noopener noreferrer">详细的算法介绍请点击此处</a>
 
 1. **作用**
 
@@ -989,7 +989,7 @@ Synthetic Minority Oversampling Technique，合成少数类过采样技术
       
       ---
       
-      > Scikit-learn 中更多的优化器介绍<a href= "https://www.juayohuang.top/posts/ai/machine-learning/sklearn_optimizer" target="_blank" rel="noopener noreferrer">[请点击此处]</a>
+      > Scikit-learn 中更多的优化器介绍<a href= "https://www.juyaohuang.com/posts/ai/machine-learning/sklearn_optimizer" target="_blank" rel="noopener noreferrer">[请点击此处]</a>
       
    2. PyTorch
    

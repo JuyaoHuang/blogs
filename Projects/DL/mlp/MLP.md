@@ -154,7 +154,7 @@ def load_fashion_mnist_datasets(resize=None):
 
 #### 2.2. 创建 DataLoader
 
-DataLoader 相关的参数介绍<a href="https://juayohuang.top/posts/ai/pytorch/torchutilsdata" target="_blank" >请查看此处</a>
+DataLoader 相关的参数介绍<a href="https://juyaohuang.com/posts/ai/pytorch/torchutilsdata" target="_blank" >请查看此处</a>
 ```python
     # 为切分后的数据集创建 DataLoader
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=get_dataloader_workers(),pin_memory=True)

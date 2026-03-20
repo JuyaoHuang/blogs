@@ -13,7 +13,7 @@ draft: false
 
 ## 1. conda 虚拟环境
 
-conda 虚拟环境的介绍可查看[此篇文章](https://www.juayohuang.top/blog/webfullstack/conda/condavirtualenvconfigguidance)
+conda 虚拟环境的介绍可查看[此篇文章](https://www.juyaohuang.com/blog/webfullstack/conda/condavirtualenvconfigguidance)
 
 ## 2. venv 虚拟环境
 
@@ -120,7 +120,7 @@ rmdir /s /q .venv
 > ```
 ## 3. uv 虚拟环境
 
-uv 是一个轻量级的虚拟环境管理工具，适合快速创建和切换虚拟环境。可在此篇文章获得 uv 的详细介绍和使用方法：[uv 虚拟环境介绍](https://www.juayohuang.top/blog/python/toolsets/uv)
+uv 是一个轻量级的虚拟环境管理工具，适合快速创建和切换虚拟环境。可在此篇文章获得 uv 的详细介绍和使用方法：[uv 虚拟环境介绍](https://www.juyaohuang.com/blog/python/toolsets/uv)
 
 
 uv 是目前 Python 社区最炙手可热的工具，由 Rust 编写。它的核心特点只有一个字：快。

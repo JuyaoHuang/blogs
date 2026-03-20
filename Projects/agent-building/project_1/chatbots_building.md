@@ -29,7 +29,7 @@ draft: false
 
 现在要设计三个角色：CET6 考试专家、python 编程助手以及苏格拉底。
 
-按照[前文所学](https://www.juayohuang.top/posts/projects/agent-building/prompt_building)，可采用 RASCEF 框架编写 python 编程助手 prompt，使用 BPS-TAO 编写其余两个 prmopt。
+按照[前文所学](https://www.juyaohuang.com/posts/projects/agent-building/prompt_building)，可采用 RASCEF 框架编写 python 编程助手 prompt，使用 BPS-TAO 编写其余两个 prmopt。
 
 > **框架复习**：
 >

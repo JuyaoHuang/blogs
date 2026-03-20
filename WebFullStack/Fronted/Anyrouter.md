@@ -13,7 +13,7 @@ draft: false
 
 - `Unable to connect to API (ERR_SSL_SSLV3_ALERT_HANDSHAKE_FAILURE)`
 - `520 status code (no body)`
-- `juayohuang.top | 520: Web server is returning an unknown error`
+- `juyaohuang.com | 520: Web server is returning an unknown error`
 
 等问题。最后一条报错的原因后续会介绍。
 
@@ -189,9 +189,9 @@ vercel.json:
 
 #### **2. 添加二级域名**
 
-笔者域名使用 cloudflare 配置 DNS。一级域名用于个人博客：juayohuang.top，因此需要添加一个**二级域名**作为站点的域名。
+笔者域名使用 cloudflare 配置 DNS。一级域名用于个人博客：juyaohuang.com，因此需要添加一个**二级域名**作为站点的域名。
 
-> 如果不知道怎么用 cloudaflare 配置，参考这篇文章：https://www.juayohuang.top/posts/webfullstack/backend/deploy_web_in_vercel
+> 如果不知道怎么用 cloudaflare 配置，参考这篇文章：https://www.juyaohuang.com/posts/webfullstack/backend/deploy_web_in_vercel
 > 或者上网自助。
 
 在 cloudflare 的 DNS 记录里添加一条新纪录：
@@ -200,11 +200,11 @@ vercel.json:
 - 内容：cname.vercel-dns.com
 - 代理状态 (Proxy status)： 关闭 (变成灰色云朵，DNS Only)。
 
-然后在新部署好的 Vercel 项目里 cloudflare_transpoint => Settings => Domains 添加你新申请的二级域名：abcd.juayohuang.top。
+然后在新部署好的 Vercel 项目里 cloudflare_transpoint => Settings => Domains 添加你新申请的二级域名：abcd.juyaohuang.com。
 
 因为你在第一步已经设置了 CNAME 指向 Vercel 且关闭了 CF 代理（灰云），Vercel 应该能很快自动申请到 SSL 证书并显示两个绿色的勾。
 
-浏览器访问 https://abcd.juayohuang.top，应该看到 "AnyRouter Vercel Proxy is Active"。
+浏览器访问 https://abcd.juyaohuang.com，应该看到 "AnyRouter Vercel Proxy is Active"。
 
 这样站点就配置好了
 
