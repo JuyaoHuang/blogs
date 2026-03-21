@@ -9,7 +9,7 @@ second_level_category: "前端技术"
 draft: false
 ---
 
-# VUE基础知识
+# VUE 基础知识
 
 ## 基础架构
 
@@ -95,7 +95,7 @@ my-vue3-project/
 
    - **结构:** 
 
-     ​	是一个标准的单文件组件 (SFC)，包含 `<template>` (HTML结构)、`<script setup>` (组件逻辑，使用 Composition API) 和` <style scoped> `(组件样式)。
+     ​	是一个标准的单文件组件 (SFC)，包含 `<template>` (HTML 结构)、`<script setup>` (组件逻辑，使用 Composition API) 和` <style scoped> `(组件样式)。
 
    - **关联:** 
 
@@ -172,7 +172,7 @@ my-vue3-project/
 7. App.vue 组件及其子组件被渲染到页面上。
 
 
-### index.html和App.vue的联系
+### index.html 和 App.vue 的联系
 
 1. **index.html：舞台 / 容器 / 应用程序的“外壳”**
    - 浏览器 **直接加载** 的唯一 HTML 文件。当你访问你的 Vue 应用的 URL 时，服务器首先发送的就是这个 index.html。
@@ -202,9 +202,9 @@ my-vue3-project/
 
 所以，index.html 是外壳，App.vue 是内核（或者说是内核的起点），main.js 负责把内核装进外壳里。
 
-### Vue项目里各个文件的运行逻辑
+### Vue 项目里各个文件的运行逻辑
 
-1. index.html是网页主体，首先呈现在浏览器的就是index.html的内容，例如`<head></head>`里面的内容。然后到了 `<body>` 里面的内容。`<script>` 标签用来加载并执行 main.js。`<body>`中通常包含一个空的` <div> `元素，它有一个 id 属性，值为 app (即` <div id="app"></div>`)。这个 div 作为一个 **挂载点 (Mounting Point)** 或 **容器 (Container)**，等待 Vue 应用来填充内容。它本身在初始加载时是空的，所以用户一开始看不到由 Vue 渲染的任何东西。
+1. index.html 是网页主体，首先呈现在浏览器的就是 index.html 的内容，例如`<head></head>`里面的内容。然后到了 `<body>` 里面的内容。`<script>` 标签用来加载并执行 main.js。`<body>`中通常包含一个空的` <div> `元素，它有一个 id 属性，值为 app (即` <div id="app"></div>`)。这个 div 作为一个 **挂载点 (Mounting Point)** 或 **容器 (Container)**，等待 Vue 应用来填充内容。它本身在初始加载时是空的，所以用户一开始看不到由 Vue 渲染的任何东西。
 
 2. 然后 index.html 通过` <script>` 标签请求 main.js。浏览器发出这个请求时，Vite 开发服务器会拦截它，**实时编译** main.js 及其依赖（包括将 App.vue 编译成 JS 和 CSS），然后将编译后的代码返回给浏览器。浏览器执行 main.js 中的代码：import App from './App.vue' 导入了根组件，createApp(App) 使用这个根组件创建了一个 **Vue 应用实例**。
 
@@ -222,11 +222,11 @@ my-vue3-project/
 
    ​	App.vue (以及其他 .vue 文件) 是 Vue 的**单文件组件 (SFC)**。它不是一个标准的 HTML 文件，但它允许你在同一个文件中，使用专门的**块**来组织相关代码：`<template> `用于编写 HTML 结构的模板，`<script>` (或 `<script setup>`) 用于编写 JavaScript 逻辑，`<style>` 用于编写 CSS 样式。这种方式将组件的关注点（结构、逻辑、样式）分离在不同的块中，但又将它们**聚合**在同一个文件里，便于开发和维护。这个 .vue 文件**需要被构建工具（如 Vite）**编译成浏览器可以理解的 JavaScript 和 CSS。
 
-4. 且在.vue文件中，你可以像Js一样使用 import导入其他vue文件 
+4. 且在.vue 文件中，你可以像 Js 一样使用 import 导入其他 vue 文件 
 
    ------
 
-#### 当html中 id 为 app的 div元素未被使用：
+#### 当 html 中 id 为 app 的 div 元素未被使用：
 
 或者说，如果 main.js 中的 .mount('#app') 找不到 index.html 中 id 为 app 的元素，会发生以下情况：
 
@@ -248,9 +248,9 @@ my-vue3-project/
 
    ​	用户最终在浏览器中看到的将是 index.html 中 **除了** Vue 应用应该渲染的内容之外的所有静态内容。如果` <div id="app"></div>` 是` <body>` 中唯一的主要内容容器，那么用户很可能看到一个几乎空白的页面（可能只有 index.html 中` <head>` 定义的标题和一些静态资源）。
 
-**深究 index.html中 id 为 app 的div元素的实现本质**
+**深究 index.html 中 id 为 app 的 div 元素的实现本质**
 
-**Q：**是mian.js去找？意思是html那个是为app建了个占位元素，如果没有id 为app的挂载（假设此挂载要找的id是a）找这个空位，也只是该占位不呈现到网站上而已，并不影响body里其他的元素么？
+**Q：**是 mian.js 去找？意思是 html 那个是为 app 建了个占位元素，如果没有 id 为 app 的挂载（假设此挂载要找的 id 是 a）找这个空位，也只是该占位不呈现到网站上而已，并不影响 body 里其他的元素么？
 
 **A：**
 
@@ -326,7 +326,7 @@ head-up-rate-detection-frontend/
 └── README.md               # 项目说明
 ```
 
-​	Vue3项目的根目录主要用来放项目的**配置文件**（如 package.json, vite.config.ts, tsconfig.json, .gitignore 等）、说明文件 (README.md) 以及一些顶层目录（如 public, src, node_modules）。如果要编写代码，应该在**src**目录(**source/源代码**)下编写.vue文件
+​	Vue3 项目的根目录主要用来放项目的**配置文件**（如 package.json, vite.config.ts, tsconfig.json, .gitignore 等）、说明文件 (README.md) 以及一些顶层目录（如 public, src, node_modules）。如果要编写代码，应该在**src**目录(**source/源代码**)下编写.vue 文件
 
 ​	更具体地说，根据 .vue 文件的作用，你应该把它放在 src 目录下的不同子目录中：
 
@@ -363,7 +363,7 @@ head-up-rate-detection-frontend/
      - **路由出口:** `<RouterView />` 组件，它是一个占位符，用来显示当前路由匹配到的视图 (views) 组件。
      - **全局元素:** 可能有一些全局性的、不随路由变化的元素。
    - **何时修改:** 
-      通常会修改  App.vue 来调整整体布局，或者添加/移除全局  UI 元素。但具体页面的内容和可复用的功能块不应该直接写在这里，而应该写在 views 和 components 中。
+      通常会修改 App.vue 来调整整体布局，或者添加/移除全局 UI 元素。但具体页面的内容和可复用的功能块不应该直接写在这里，而应该写在 views 和 components 中。
 
 4. **路由配置 (Routing):**
 
@@ -399,15 +399,15 @@ head-up-rate-detection-frontend/
 - **src/stores/:** 管理全局状态 (如果需要)。
 - **src/App.vue:** 调整应用根布局和全局元素。
 
-​	当然，这只是通用架构，如果你有更多需求，自然可以自己拓展新的分层架构。例如API层处理（解码）后端的api请求，services层处理具体的业务请求，例如需要向后端用某种方法（get、post、put、delete）发送某一api请求，并得到响应的json数据。
+​	当然，这只是通用架构，如果你有更多需求，自然可以自己拓展新的分层架构。例如 API 层处理（解码）后端的 api 请求，services 层处理具体的业务请求，例如需要向后端用某种方法（get、post、put、delete）发送某一 api 请求，并得到响应的 json 数据。
 
-## 安装VUE框架
+## 安装 VUE 框架
 
 ###     配置环境：
 
-1. 在VScode中打开集成终端 Ctrl+`
+1. 在 VScode 中打开集成终端 Ctrl+`
 
-2. 用npm指令创建Vue3项目（Vite方式）：
+2. 用 npm 指令创建 Vue3 项目（Vite 方式）：
 
    ```cmd
    npm create vue@latest
@@ -420,7 +420,7 @@ head-up-rate-detection-frontend/
       - **核心作用**: 
             为代码提供**类型安全**。它要求在定义变量、函数参数和返回值时，明确指出它们应该是 string、number、boolean 还是其他更复杂的类型。
       - **什么时候应该选择它**：
-            如果不喜欢TS的类型检查，也可以不选。尤其当项目会变得复杂，或者需要长期维护时，TypeScript 能在早期就帮你避免掉无数潜在的类型相关的 Bug。
+            如果不喜欢 TS 的类型检查，也可以不选。尤其当项目会变得复杂，或者需要长期维护时，TypeScript 能在早期就帮你避免掉无数潜在的类型相关的 Bug。
 
    2.  **JSX 支持 (JSX Support)**
 
@@ -429,7 +429,7 @@ head-up-rate-detection-frontend/
             
         - **通俗比喻**: 
             
-            ​	Vue 默认的 `<template> `写法，就像是在**画板上（HTML区域）画画**，然后在旁边的调色盘（`<script>`区域）准备颜料。而 JSX 则是允许直接用**颜料（JavaScript）来画画**。
+            ​	Vue 默认的 `<template> `写法，就像是在**画板上（HTML 区域）画画**，然后在旁边的调色盘（`<script>`区域）准备颜料。而 JSX 则是允许直接用**颜料（JavaScript）来画画**。
             
         - **什么时候应该选择它**:
           
@@ -525,7 +525,7 @@ head-up-rate-detection-frontend/
 
    ### 运行项目
 
-   1. 运行Vue开发服务器命令(即运行Vue3项目)：
+   1. 运行 Vue 开发服务器命令(即运行 Vue3 项目)：
 
       ```bash
       npm run dev # 或者使用yarn命令：yarn dev
@@ -543,7 +543,7 @@ head-up-rate-detection-frontend/
 
    3. **查看运行的应用:** 你应该就能看到你的 Vue 应用在浏览器中运行起来了！并且当你修改代码并保存时，页面会自动更新（HMR - 热模块替换）。
 
-   4. 调试Vue应用：
+   4. 调试 Vue 应用：
 
       调试 Vue 应用通常在**浏览器**的开发者工具中进行，而不是直接在 VS Code 像调试 Node.js 或 C++ 那样（虽然有方法可以配置 VS Code 调试，但浏览器调试更常用直接）：
 

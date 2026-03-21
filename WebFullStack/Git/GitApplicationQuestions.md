@@ -9,11 +9,11 @@ second_level_category: "Git与版本控制"
 draft: false
 ---
 
-## 1. 分支无共同git历史
+## 1. 分支无共同 git 历史
 
 ### Q1:  分支提交历史不同
 
-​	原仓库没有dev分支，在原仓库创建Pull request只能提交B仓库的main分支，但是修改的代码都在B仓库的dev分支。将B仓库的dev分支pull request到原仓库的main分支会出现上面的错误
+​	原仓库没有 dev 分支，在原仓库创建 Pull request 只能提交 B 仓库的 main 分支，但是修改的代码都在 B 仓库的 dev 分支。将 B 仓库的 dev 分支 pull request 到原仓库的 main 分支会出现上面的错误
 
 核心问题： 正如 GitHub 错误信息所说，fork 的仓库 **origin_fork** 的 dev 分支，和原仓库 **origin** 的 main 分支，**没有任何共同的 Git 历史**
 
@@ -35,7 +35,7 @@ draft: false
 
 2. 克隆原仓库 origin ----- **新的本地仓库叫做 local_repo**
 
-3. **现在这个仓库有了一个正确的 git历史**
+3. **现在这个仓库有了一个正确的 git 历史**
 
 4. cd origin 后，创建一个新的分支 dev
 
@@ -45,7 +45,7 @@ draft: false
 
 5. 此时，dev 分支的代码和 **orgin** 仓库的 main 分支代码一样
 
-6. 接下来，从原先 fork的仓库 **origin_fork** 的 dev分支获取已经提交（原本就要提交给 **origin**仓库）的代码
+6. 接下来，从原先 fork 的仓库 **origin_fork** 的 dev 分支获取已经提交（原本就要提交给 **origin**仓库）的代码
 
 7. 先将 **orgin_fork**作为另一个上游仓库
 
@@ -59,7 +59,7 @@ draft: false
    git fetch my_fork
    ```
 
-9. 将当前文件夹里的所有文件，使用 my_fork 这个远程仓库的 dev分支里的文件覆盖
+9. 将当前文件夹里的所有文件，使用 my_fork 这个远程仓库的 dev 分支里的文件覆盖
 
    ```bash
    git checkout my_fork/dev -- .
@@ -67,7 +67,7 @@ draft: false
 
    " . "代表当前目录
 
-10. **现在新的本地仓库 local_repo有了完整的git历史和正确的代码**
+10. **现在新的本地仓库 local_repo 有了完整的 git 历史和正确的代码**
 
 11. 创建一个新的、干净的提交
 
@@ -76,7 +76,7 @@ draft: false
     git commit -m "your commmit"
     ```
 
-12. 推送到 fork的远程仓库**origin_fokr**
+12. 推送到 fork 的远程仓库**origin_fokr**
 
     ```bash
     git push --force my_fork dev
@@ -88,13 +88,13 @@ draft: false
 
 ------
 
-**如果不想覆盖掉原来的远程仓库 origi_fork的 dev分支（保留着你要 pull的代码）**，那么在**第 12.步**：
+**如果不想覆盖掉原来的远程仓库 origi_fork 的 dev 分支（保留着你要 pull 的代码）**，那么在**第 12.步**：
 
 ```bash
 git push --force my_fork dev:other_dev
 ```
 
-这会在 **origin_fork** 仓库新建一个 other_dev分支，将你的代码推送到此处
+这会在 **origin_fork** 仓库新建一个 other_dev 分支，将你的代码推送到此处
 
 ## 2. 分支合并
 
@@ -110,11 +110,11 @@ git push --force my_fork dev:other_dev
    git pull origin dev
    ```
 
-2. 检查 dev分支是否存在潜在冲突
+2. 检查 dev 分支是否存在潜在冲突
 
    - 为了确保最终合并到 main 分支时绝对不会有任何冲突，一个专业的做法是**先将 main 分支的最新更改合并到 dev 分支**。
 
-   - 在 dev分支上运行
+   - 在 dev 分支上运行
 
      ```bash
      git merge main
@@ -159,25 +159,25 @@ fatal: refusing to merge unrelated histories
 
 **解决方案：统一历史**
 
-如果 dev分支的开发已经完成而且稳定，那么强行让 **master** 分支放弃它自己的历史，完全变成和 **dev** 分支一模一样
+如果 dev 分支的开发已经完成而且稳定，那么强行让 **master** 分支放弃它自己的历史，完全变成和 **dev** 分支一模一样
 
-即用 dev分支直接覆盖 master分支
+即用 dev 分支直接覆盖 master 分支
 
-1. 切换到 dev分支
+1. 切换到 dev 分支
 
    ```
    git checkout dev
    ```
 
-2. 确保 dev与远程仓库同步
+2. 确保 dev 与远程仓库同步
 
    ```bash
    git push origin dev
    ```
 
-3. 切换到 master分支
+3. 切换到 master 分支
 
-4. 执行 reset指令
+4. 执行 reset 指令
 
    ```bash
    git reset --hard dev
@@ -194,7 +194,7 @@ fatal: refusing to merge unrelated histories
    git push origin master:master --force
    ```
 
-   强制推送本地 master分支覆盖远程仓库的 master分支
+   强制推送本地 master 分支覆盖远程仓库的 master 分支
 
 
 
@@ -222,7 +222,7 @@ fatal: refusing to merge unrelated histories
 
 ### 情景
 
-对于某个本地仓库，要将GitHub上某一仓库作为它的上游仓库并且跟踪它（此时本地仓库并没有远程仓库的任何信息）
+对于某个本地仓库，要将 GitHub 上某一仓库作为它的上游仓库并且跟踪它（此时本地仓库并没有远程仓库的任何信息）
 
 ### 解决方法
 
@@ -257,11 +257,11 @@ From https://github.com/JuyaoHuang/integrity
  * branch            HEAD       -> FETCH_HEAD
 ```
 
-当使用一个**完整的URL**来进行 fetch操作时，Git 会将远程的数据下载下来，但它只会把这些信息保存在一个临时的地方叫做 FETCH_HEAD，不会自动创建或更新一个叫做 origin/main 的本地跟踪分支。
+当使用一个**完整的 URL**来进行 fetch 操作时，Git 会将远程的数据下载下来，但它只会把这些信息保存在一个临时的地方叫做 FETCH_HEAD，不会自动创建或更新一个叫做 origin/main 的本地跟踪分支。
 
-如果 fetch 时使用的是仓库的名字，说明本地仓库里存有该仓库的 URL，即已跟踪的上游仓库的URL，假设该远程仓库名字为 origin，那么可直接跳过第2、3步
+如果 fetch 时使用的是仓库的名字，说明本地仓库里存有该仓库的 URL，即已跟踪的上游仓库的 URL，假设该远程仓库名字为 origin，那么可直接跳过第 2、3 步
 
-现在拿到远程仓库的分支和代码后，下一步就是要将它应用到当前分支，假设为 main中来。
+现在拿到远程仓库的分支和代码后，下一步就是要将它应用到当前分支，假设为 main 中来。
 
 
 #### 2. git remote 添加远程仓库别名
@@ -272,7 +272,7 @@ From https://github.com/JuyaoHuang/integrity
    git remote -v
    ```
 
-2. 为远程仓库的URL设置别名
+2. 为远程仓库的 URL 设置别名
 
    ```bash
    git remote add origin https://github.com/JuyaoHuang/integrity.git
@@ -303,7 +303,7 @@ From https://github.com/JuyaoHuang/integrity
    * [new branch]      sentinel-readme -> origin/sentinel-readme
    ```
 
-#### 3. git branch设置上游分支
+#### 3. git branch 设置上游分支
 
 1. 检查远程分支是否存在
 
@@ -323,7 +323,7 @@ From https://github.com/JuyaoHuang/integrity
 
 2. 设置上游分支
 
-   如果本地仓库当前命令行窗口没有位于 main分支，先执行 `git checkout main`切换到 main分支
+   如果本地仓库当前命令行窗口没有位于 main 分支，先执行 `git checkout main`切换到 main 分支
 
    ```bash
    git branch --set-upstream-to=origin/main main
@@ -333,12 +333,12 @@ From https://github.com/JuyaoHuang/integrity
 
    - --set-upstream-to=origin/master: 这是核心参数，用于建立“跟踪”（tracking）关系。
    - origin：本地给上游仓库名称的重命名
-   - origin/main的 main：上游仓库的某个分支名
+   - origin/main 的 main：上游仓库的某个分支名
    - main：本地仓库分支名
 
 接下来可以直接使用`git pull`拉取内容，或者使用`git merge`
 
-#### 4. git merge将远程仓库内容覆盖到当前分支
+#### 4. git merge 将远程仓库内容覆盖到当前分支
 
 使用
 
@@ -346,18 +346,18 @@ From https://github.com/JuyaoHuang/integrity
 git merge <branch_name>
 ```
 
-将远程仓库的分支 branch_name上的更改合并到当前分支 main上
+将远程仓库的分支 branch_name 上的更改合并到当前分支 main 上
 
 ```bash
 git checkout main
 git merge origin/main
 ```
 
-将远程仓库 origin的 main分支代码合并到 本地仓库的 main分支
+将远程仓库 origin 的 main 分支代码合并到 本地仓库的 main 分支
 
 ---
 
-`git pull` 指令实际上就是 `git fetch` 和 `git merge` 1、2这两步的便捷语法：
+`git pull` 指令实际上就是 `git fetch` 和 `git merge` 1、2 这两步的便捷语法：
 
 ```bash
 git pull origin main = git fetch origin + git merge origin/main
@@ -407,7 +407,7 @@ origin  https://github.com/JuyaoHuang/integrity.git (push)
    - `origin/main`：上游仓库的分支名
    - `main`：本地仓库分支
 
-#### 3. git branch --unset-upstream  取消跟踪上游仓库
+#### 3. git branch --unset-upstream 取消跟踪上游仓库
 
 ```bash
 git branch --unset-upstream <branch_name>
@@ -471,7 +471,7 @@ Date:   Fri Nov 21 21:03:42 2025 +0800
 
 这会打开一个终端文本器：nano 或者 vim
 
-nano较为常见，此处不多描述
+nano 较为常见，此处不多描述
 
 执行
 
@@ -567,7 +567,7 @@ PR 已经合并到 main 分支，但发现有问题，需要撤销。
 
 ### 情景
 
-上传大文件到 GitHub 时，GitHub 拒绝你的访问。当使用 `git commit` 提交有关大型文件（大于100M）到 GitHub 上时，会被 GitHub 默认拒绝。需要使用 `Git-LFS` 工具创建指针，上传大文件。
+上传大文件到 GitHub 时，GitHub 拒绝你的访问。当使用 `git commit` 提交有关大型文件（大于 100M）到 GitHub 上时，会被 GitHub 默认拒绝。需要使用 `Git-LFS` 工具创建指针，上传大文件。
 
 ```bash
 remote: warning: File experience_two/codes/best_food_cnn.pth is 99.76 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
@@ -579,13 +579,13 @@ To https://github.com/JuyaoHuang/BUPTDeepLearning.git
  ! [remote rejected] main -> main (pre-receive hook declined)
 ```
 
-### 解决方法   Git-LFS
+### 解决方法 Git-LFS
 
 1. **安装 Git LFS**
 
    选择一条路径完成：
 
-   1. 前往[Git-LFS官网](https://git-lfs.com/)下载 LFS
+   1. 前往[Git-LFS 官网](https://git-lfs.com/)下载 LFS
    2. 安装最新版本的 Git-for-Windows。
 
    在仓库下执行：`git lfs install`
@@ -615,7 +615,7 @@ To https://github.com/JuyaoHuang/BUPTDeepLearning.git
 
 **如果没有对大文件进行过提交**：
 
-1. 使用 `git lfs track ".lfs"` 指令提示 git 将 `.lfs` 文件使用 LFS管理
+1. 使用 `git lfs track ".lfs"` 指令提示 git 将 `.lfs` 文件使用 LFS 管理
 
    ```bash
    git lfs track "*.pth"

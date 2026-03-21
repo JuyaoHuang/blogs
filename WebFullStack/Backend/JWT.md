@@ -9,9 +9,9 @@ second_level_category: "后端技术"
 draft: false
 ---
 
-# JWT标准
+# JWT 标准
 
-## JWT介绍
+## JWT 介绍
 
 ### 形式化定义
 
@@ -182,7 +182,7 @@ draft: false
 
     ​	签名用的密钥（Secret）是整个安全体系的命脉，**必须妥善保管，绝不能泄露到客户端**。算法选择也很重要，绝不能使用 alg: "none"。
 
-## FastAPI实现方式
+## FastAPI 实现方式
 
 ### 1. 核心依赖库
 

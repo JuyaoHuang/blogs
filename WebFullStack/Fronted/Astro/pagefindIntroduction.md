@@ -35,15 +35,15 @@ pagefind 是一个 **“静态搜索索引生成器”**。
 **两步走战略**：
 
 1. 第一步：构建时的“索引器”  - 在服务器端运行
-   - 做什么： 当在终端运行 `npm run build` 或 `pnpm run build` 时，astro-pagefind 这个集成插件会被激活。它会像一个图书管理员一样，扫描网站构建后生成的所有静态HTML文件，提取其中的标题、正文等内容，并为它们创建一个高度优化的搜索索引（类似一本书的目录）。
+   - 做什么： 当在终端运行 `npm run build` 或 `pnpm run build` 时，astro-pagefind 这个集成插件会被激活。它会像一个图书管理员一样，扫描网站构建后生成的所有静态 HTML 文件，提取其中的标题、正文等内容，并为它们创建一个高度优化的搜索索引（类似一本书的目录）。
    - 触发者： `astro.config.mjs` 里的 pagefind() 配置。
    - 产物： 在最终的 dist 输出文件夹里，会生成一个 /pagefind 目录，里面存放着索引文件和前端搜索脚本。
    - 验证操作： 在 `astro.config.mjs` 和 `package.json` 中找到的配置，都是为了正确执行这一步。
-2. 第二步：运行时的“搜索UI” - 在用户的浏览器中运行
+2. 第二步：运行时的“搜索 UI” - 在用户的浏览器中运行
    - 做什么： 为了让用户能在页面上真正地进行搜索，astro-pagefind 插件会自动向您网站的每个页面的 HTML 中注入一个 <script> 标签。
    - 这个脚本（通常是 `/pagefind/pagefind-ui.js`）被浏览器加载后，会在 window 对象上创建一个名为 `pagefind` 的全局对象。
    - 触发者： 浏览器加载 HTML 页面。
-   - 产物： 浏览器拥有了 pagefind 这个JavaScript对象，`SearchBar.svelte` 组件中的代码 `await pagefind.search(keyword)` 才能找到它并成功调用。
+   - 产物： 浏览器拥有了 pagefind 这个 JavaScript 对象，`SearchBar.svelte` 组件中的代码 `await pagefind.search(keyword)` 才能找到它并成功调用。
 
 ## 启动方式
 

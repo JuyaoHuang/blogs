@@ -36,7 +36,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 ## 实践示例
 
 
-### 下载miniconda
+### 下载 miniconda
 
 使用华为镜像源下载 x86 版本
 
@@ -61,7 +61,7 @@ pip config set global.index-url https://mirrors.huaweicloud.com/repository/pypi/
 source ~/.bashrc
 ```
 
-### 创建conda环境
+### 创建 conda 环境
 
 ```bash
 conda create -n dl python=3.10 -y

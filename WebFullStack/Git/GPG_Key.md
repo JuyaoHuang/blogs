@@ -97,7 +97,7 @@ uid           [ultimate] your_host <your_mail@example.com>
 sub   rsa4096 2026-01-16 [E]
       E4CC56666DDDDD6DG62G191GF7706AEF4
 ```
-其中 `123456789ABCDEF0`（指纹的后16位或8位）即为 Key ID。
+其中 `123456789ABCDEF0`（指纹的后 16 位或 8 位）即为 Key ID。
 
 > 对一个密钥添加多个邮箱：
 >

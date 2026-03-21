@@ -9,7 +9,7 @@ second_level_category: "环境与工具"
 draft: false
 ---
 
-# 超全Linux指令参考手册 
+# 超全 Linux 指令参考手册 
 
 ## 1. 文件与目录管理 (核心操作)
 
@@ -82,7 +82,7 @@ draft: false
 ### `ln` (Link)
 
 创建链接文件。
-- **-s**: 创建一个软链接（符号链接，类似于Windows的快捷方式）。
+- **-s**: 创建一个软链接（符号链接，类似于 Windows 的快捷方式）。
 - **示例**: `ln -s /var/www/my_app/config.ini /etc/my_app_config.ini`
 
 ---
@@ -108,13 +108,13 @@ draft: false
 
 ### `head`
 
-显示文件的前几行（默认10行）。
+显示文件的前几行（默认 10 行）。
 - **-n <数字>**: 显示指定的行数。
 - **示例**: `head -n 50 main.c`
 
 ### `tail`
 
-显示文件的后几行（默认10行）。
+显示文件的后几行（默认 10 行）。
 - **-n <数字>**: 显示指定的行数。
 - **-f**: **(服务器必备)** 持续跟踪文件末尾新增的内容，常用于实时查看日志。按`Ctrl+C`停止。
 - **示例**: `tail -f /var/log/nginx/access.log`
@@ -135,7 +135,7 @@ draft: false
 - **-n**: 显示匹配行的行号。
 - **-v**: 显示不匹配的行。
 - **示例**: `grep -rin "error" /var/log/` (递归、忽略大小写、带行号地在日志目录中搜索"error")。
-- **与管道结合**: `ps aux | grep "nginx"` (查找nginx相关的进程)。
+- **与管道结合**: `ps aux | grep "nginx"` (查找 nginx 相关的进程)。
 
 ---
 
@@ -149,7 +149,7 @@ draft: false
 - **-type f**: 只查找文件。
 - **-type d**: 只查找目录。
 - **-size +<大小>`**: 查找大于指定大小的文件 (e.g., `+100M`)。
-- **示例**: `find /home/user -name "*.py" -type f` (在`/home/user`下查找所有.py文件)。
+- **示例**: `find /home/user -name "*.py" -type f` (在`/home/user`下查找所有.py 文件)。
 
 ### `which`
 
@@ -181,7 +181,7 @@ draft: false
 修改文件或目录的访问权限。
 - **模式**:
     - **符号模式**: `u` (user), `g` (group), `o` (other), `a` (all); `+` (添加), `-` (移除), `=` (设置); `r` (读), `w` (写), `x` (执行)。
-    - **数字模式**: `4` (读), `2` (写), `1` (执行)。三位数字分别代表u, g, o的权限总和。
+    - **数字模式**: `4` (读), `2` (写), `1` (执行)。三位数字分别代表 u, g, o 的权限总和。
 - **-R**: 递归修改。
 - **示例 (符号)**: `chmod +x my_script.sh` (为脚本添加可执行权限)。
 - **示例 (数字)**: `chmod 755 my_script.sh` (设置为 `rwxr-xr-x` 权限)。
@@ -226,7 +226,7 @@ NTP service: active
 RTC in local TZ: no
 ```
 
-- **Time zone**: 显示当前系统设置的时区。如果这里不是你在的时区，你的定时任务cron执行时间就会不符合你的预期！
+- **Time zone**: 显示当前系统设置的时区。如果这里不是你在的时区，你的定时任务 cron 执行时间就会不符合你的预期！
 - **System clock synchronized: yes**:  yes 表示树莓派已经成功通过网络时间协议（NTP）与世界标准时间服务器同步了，时间是绝对准确的。如果是 no，说明同步有问题。
 - **NTP service: active**: 确认时间同步服务正在运行。
 
@@ -242,7 +242,7 @@ timedatectl list-timezones | grep Asia/Shanghai
 
 #### `sudo timedatectl set-timezone Asia/Shanghai`
 
-设置时区为Asia/Shanghai
+设置时区为 Asia/Shanghai
 
 ### `uname -a`
 
@@ -282,13 +282,13 @@ timedatectl list-timezones | grep Asia/Shanghai
 
 ### `pgrep`
 
-根据名称或其他属性查找进程ID。
+根据名称或其他属性查找进程 ID。
 - **-f**: 匹配完整命令行参数。
 - **示例**: `pgrep -f webui.py`
 
 ### `nvidia-smi`
 
-**(GPU服务器必备)** 监控NVIDIA显卡状态。
+**(GPU 服务器必备)** 监控 NVIDIA 显卡状态。
 - **`watch -n 1 nvidia-smi`**: 每秒刷新一次，实现动态监控。
 
 ### `netstat `
@@ -332,7 +332,7 @@ sudo systemctl status cron
 ### `netstat`
 
 显示网络连接、路由表、接口统计等信息（旧版工具）。
-- **-tuln**: 查看TCP/UDP的监听端口。
+- **-tuln**: 查看 TCP/UDP 的监听端口。
 
 ### `ss`
 
@@ -342,13 +342,13 @@ sudo systemctl status cron
 
 ### `wget`
 
-从URL下载文件。
+从 URL 下载文件。
 - **-c**: 断点续传。
 - **-O <文件名>`**: 指定保存的文件名。
 
 ### `curl`
 
-功能强大的URL传输工具，可用于下载、API测试等。
+功能强大的 URL 传输工具，可用于下载、API 测试等。
 - **示例**: `curl -L https://example.com/file`
 
   `-I`   选项表示只获取网页的头信息，速度更快
@@ -363,8 +363,8 @@ sudo systemctl status cron
 通过 SSH (Secure Shell) 协议在不同计算机之间安全地复制文件或目录。
 
 - **-r**: 递归复制整个目录。
-- **-P** (大写): 指定远程主机的 SSH 端口号（如果不是默认的22）。
-- **-v**: 显示详细的连接和传输过程（Verbose模式），用于调试。
+- **-P** (大写): 指定远程主机的 SSH 端口号（如果不是默认的 22）。
+- **-v**: 显示详细的连接和传输过程（Verbose 模式），用于调试。
 - **-C**: 启用压缩，可以在慢速网络上加快传输速度。
 
 - **示例 (上传)**: `scp local_file.zip user@remote_ip:/remote/path/`
@@ -531,9 +531,9 @@ sudo systemctl status cron
    5. 取消开机自启: sudo systemctl disable clash
    6. 查看状态: sudo systemctl status clash
 
-## 13.登录docker
+## 13.登录 docker
 
-1. 配置docker主文件---**添加镜像源，不添加校园网别想上去了**
+1. 配置 docker 主文件---**添加镜像源，不添加校园网别想上去了**
 
    ```
    sudo nano /etc/docker/daemon.json
@@ -717,7 +717,7 @@ sudo systemctl status cron
      填入以下内容：
      
      ```yml
-     tunnel: 你的tunnel ID
+     tunnel: 你的 tunnel ID
      credentials-file: /home/alen/.cloudflared/dawdawddwa12312311.json
      
      ingress:

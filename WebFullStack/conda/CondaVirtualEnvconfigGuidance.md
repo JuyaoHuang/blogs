@@ -218,7 +218,7 @@ Conda 会询问你是否继续，输入 y 并回车确认。
 
 这会只保存使用 conda 指令 `conda install`下的包，并且不指定特定版本，适合环境迁移。
 
-> 如果本身conda 环境被污染了，例如本身创建的 conda 环境（设为 B ）使用的就是用原始环境 A 使用指令 `conda env export > environment.yml` 导出的包依赖，那么创建环境是会 **继承**此依赖关系。
+> 如果本身 conda 环境被污染了，例如本身创建的 conda 环境（设为 B ）使用的就是用原始环境 A 使用指令 `conda env export > environment.yml` 导出的包依赖，那么创建环境是会 **继承**此依赖关系。
 
 ### 7.2 从文件创建/导入环境
 
@@ -250,7 +250,7 @@ Conda 会询问你是否继续，输入 y 并回车确认。
    conda activate <environment_name_from_yml_or_-n>
    ```
 
-#### 7.2.2 环境已存在，使用 yaml文件更新环境配置
+#### 7.2.2 环境已存在，使用 yaml 文件更新环境配置
 
 ​	如果你已经有一个名为 llmvtuber 的环境，并且希望用 YAML 文件中的配置来更新它（可能会覆盖或添加包），请执行以下操作：
 
