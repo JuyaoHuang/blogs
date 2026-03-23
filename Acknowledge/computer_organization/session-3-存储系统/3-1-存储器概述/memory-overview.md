@@ -1,6 +1,6 @@
 ---
 title: '计算机组成原理：存储器概述'
-publishDate: 2026-03-18
+publishDate: 2026-03-23
 description: "计算机组成原理第三章 3.1节：存储器概述"
 tags: ['computer-organization']
 language: 'Chinese'
