@@ -2,12 +2,11 @@
 title: 'Superpowers 技能框架：各 Skills 作用与使用边界'
 publishDate: 2026-03-25
 description: "面向 Codex 的 Superpowers skills 速查，逐项说明每个 skill 的作用、触发时机与典型用途。"
-tags: ['computer-organization']
+tags: ['agent', 'superpowers','codex']
 language: 'Chinese'
-first_level_category: "知识库"
-second_level_category: "计算机组成原理"
+first_level_category: "AI"
+second_level_category: "agent"
 draft: false
-heroImage: { src: './bu.jpg'}
 ---
 
 ## 1. 使用前提
