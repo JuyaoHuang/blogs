@@ -213,9 +213,9 @@ print("文件已自动关闭。")
 
 ## 练习
 
-![2](./黑马/Pictures/dataStructure/2.png)
+![2](./黑马/Pictures/dataStructure/2.jpg)
 
-![1](./黑马/Pictures/dataStructure/1.png)
+![1](./黑马/Pictures/dataStructure/1.jpg)
 
 ```py
 try:

@@ -182,11 +182,11 @@ new_list = [expression for item in iterable]
 
 #### 方法 def-类 class 中的内置函数
 
-![fangfa](./黑马/Pictures/dataStructure/fangfa.png)
+![fangfa](./黑马/Pictures/dataStructure/fangfa.jpg)
 
 #### 列表的查询方法-.index(value)
 
- ![listCheck](./黑马/Pictures/dataStructure/listCheck.png)
+ ![listCheck](./黑马/Pictures/dataStructure/listCheck.jpg)
 
 ```py
 List_1 = [1,2,"hello","world"]
@@ -372,7 +372,7 @@ print(len(List_2)) # output: 8
 
 #### 方法总结
 
-![列表方法总结](./黑马/Pictures/dataStructure/列表方法总结.png)
+![列表方法总结](./黑马/Pictures/dataStructure/列表方法总结.jpg)
 
 #### 列表的遍历操作-while | for
 
@@ -470,7 +470,7 @@ the index of hello in tuple is:3
 
 ### 综合案例
 
-![元组小练习](./黑马/Pictures/dataStructure/元组小练习.png)
+![元组小练习](./黑马/Pictures/dataStructure/元组小练习.jpg)
 
 ```py
 Tp = ("周杰伦",11,['footbal','music'])
@@ -542,7 +542,7 @@ But string_4's val is Hi!today is a nice day!
 
 #### .split()方法
 
-![string 分割](./黑马/Pictures/dataStructure/string分割.png)
+![string 分割](./黑马/Pictures/dataStructure/string分割.jpg)
 
 ```py
 str_1 = "hello, today is a nice day!"
@@ -626,11 +626,11 @@ print(csv_line)  # 输出: apple,banana,cherry
 
 #### 操作小结
 
-![string 操作总结](./黑马/Pictures/dataStructure/string操作总结.png)
+![string 操作总结](./黑马/Pictures/dataStructure/string操作总结.jpg)
 
 ####  练习案例
 
-![字符串练习案例](./黑马/Pictures/dataStructure/字符串练习案例.png)
+![字符串练习案例](./黑马/Pictures/dataStructure/字符串练习案例.jpg)
 
 参考代码:
 
@@ -654,11 +654,11 @@ ithudahuw|ithudan|hwdabit
 
 ## 序列切片
 
-![序列](./黑马/Pictures/dataStructure/序列.png)
+![序列](./黑马/Pictures/dataStructure/序列.jpg)
 
 ### 切片操作
 
-![切片](./黑马/Pictures/dataStructure/切片.png)
+![切片](./黑马/Pictures/dataStructure/切片.jpg)
 
 例如
 
@@ -873,7 +873,7 @@ print(set0)
 
 ### 操作总结
 
-![set](./黑马/Pictures/dataStructure/set.png)
+![set](./黑马/Pictures/dataStructure/set.jpg)
 
 ------
 
@@ -911,7 +911,7 @@ print(a)
 
 例如：
 
-![image-20250813122813636](./黑马/Pictures/dataStructure/image-20250813122813636.png)
+![image-20250813122813636](./黑马/Pictures/dataStructure/image-20250813122813636.jpg)
 
 #### 语法
 
@@ -1256,11 +1256,11 @@ print("Alice" in person) # 输出: False (只检查键，不检查值)
 
 ### 字典特点
 
-![字典特点](./黑马/Pictures/dataStructure/字典特点.png)
+![字典特点](./黑马/Pictures/dataStructure/字典特点.jpg)
 
 ### 小练习
 
-![字典练习](./黑马/Pictures/dataStructure/字典练习.png)
+![字典练习](./黑马/Pictures/dataStructure/字典练习.jpg)
 
 ```py
 employee_salaries = {
@@ -1311,7 +1311,7 @@ print(f"结果:{employee_salaries}")
 | **语法 **       | [ ]             | ( )              | " " 或 ' '          | { } (非空) / set() (空) | {key: value}          |
 | **访问方式 **   | 通过索引 [i]    | 通过索引 [i]     | 通过索引 [i]        | 不支持索引              | 通过键 [key]          |
 
-![五种数据容器](./黑马/Pictures/dataStructure/五种数据容器.png)
+![五种数据容器](./黑马/Pictures/dataStructure/五种数据容器.jpg)
 
 ### 1. 列表 (List)
 

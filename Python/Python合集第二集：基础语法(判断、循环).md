@@ -178,7 +178,7 @@ continue 用于结束当前这一轮的循环，但并未退出循环体； brea
 ---
 ## For 和 while 的区别
 
-![image-20250703220744491](./黑马/Pictures/dataStructure/image-20250703220744491.png)
+![image-20250703220744491](./黑马/Pictures/dataStructure/image-20250703220744491.jpg)
 ---
 
 ## 逻辑运算符
