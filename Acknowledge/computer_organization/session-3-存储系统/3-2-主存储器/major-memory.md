@@ -1,6 +1,6 @@
 ---
 title: '计算机组成原理：主存储器的组成和基本操作'
-publishDate: 2026-03-23
+publishDate: 2026-03-27
 description: "计算机组成原理第三章 3.2节：主存储器的组成和基本操作"
 tags: ['computer-organization']
 language: 'Chinese'
