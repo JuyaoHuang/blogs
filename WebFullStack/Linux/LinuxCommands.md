@@ -754,3 +754,62 @@ sudo systemctl status cron
 ```
 journalctl | grep CRON
 ```
+
+## 16. pm2
+
+PM2 是 Process Manager 2 的缩写，是一个 Node.js 编写的进程管理器，用于管理应用程序的守护进程运行。虽然 PM2 最初为 Node.js 设计，但它可以管理任何语言编写的程序（Python、Bash、Ruby 等）。
+
+| 功能         | 说明                        |
+| :----------- | :-------------------------- |
+| 后台守护运行 | 关闭终端后程序继续运行      |
+| 自动重启     | 程序崩溃时自动重启          |
+| 负载均衡     | 支持多进程集群模式          |
+| 日志管理     | 自动记录 stdout/stderr 日志 |
+| 进程监控     | 查看 CPU、内存使用情况      |
+
+```bash
+pm2 --version          # 查看版本
+which pm2              # 查看安装路径
+
+# 如未安装
+npm install -g pm2     # 全局安装（需 Node.js）
+# 查看运行状态
+pm2 status			  # 查看状态
+pm2 list
+pm2 monit              # 实时监控面板
+pm2 env <session_id>   # 查看特定 id 的环境变量
+pm2 env 0 | grep -E "HTTP_PROXY|HTTPS_PROXY" # 使用 grep 查看特定 key 的环境变量
+
+# 管理进程
+pm2 start ecosystem.config.js  # 使用配置文件启动进程
+pm2 stop gemini-api    # 停止
+pm2 restart gemini-api # 重启
+pm2 delete gemini-api  # 删除
+pm2 reload gemini-api  # 平滑重启
+pm2 delete gemini-api  # 删除 gemini-api 进程
+pm2 kill               # 手动停止 PM2 服务
+pm2 resurrect          # 手动恢复，验证 save 文件有效
+
+# 日志管理
+pm2 logs gemini-api    # 查看实时日志
+pm2 logs gemini-api --lines 100
+pm2 flush              # 清空所有日志
+
+# 开机自启
+pm2 startup            # 生成开机启动脚本
+pm2 save               # 保存当前进程列表
+```
+
+
+
+````
+没做任何改动的情况下：
+```
+90 https://google.com
+HTTP/1.1 200 Connection established
+
+curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to google.com:443
+```
+改用 TLS1.2，禁止使用 TLS1.3
+````
+
