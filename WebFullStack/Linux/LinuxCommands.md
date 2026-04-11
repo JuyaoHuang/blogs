@@ -803,13 +803,9 @@ pm2 save               # 保存当前进程列表
 
 
 ````
-没做任何改动的情况下：
 ```
-90 https://google.com
-HTTP/1.1 200 Connection established
-
-curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to google.com:443
+ping: freevipa1.freecatnodles.com: Name or service not known
 ```
-改用 TLS1.2，禁止使用 TLS1.3
+本地电脑也找不到该主机。oh，我似乎找到了问题，官方提示：”本站不再支持订阅链接请查看教程下载安装自由猫客户端/“，难怪我今天PC使用clash verge导入订阅时全部都是 error
 ````
 
