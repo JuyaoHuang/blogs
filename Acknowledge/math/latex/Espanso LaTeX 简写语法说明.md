@@ -6,6 +6,7 @@ tags: ['latex', 'espanso', 'typora']
 language: 'Chinese'
 first_level_category: "知识库"
 second_level_category: "数学工具"
+heroImage: { src: './1.jpg', color: '#b5c7de' }
 draft: false
 ---
 
@@ -15,7 +16,7 @@ draft: false
 
 [Espanso](https://espanso.org/) 是一个开源、跨平台的**系统级文本展开器**。它可以在任何应用程序中（包括 Typora）监听你输入的缩写，并自动替换为完整的文本。
 
-利用 Espanso，我们可以用极短的缩写快速输入 LaTeX 数学公式，避免手打 `\frac{}{}`、`\sum_{i=1}^{n}` 等冗长命令。
+利用 Espanso，可以用极短的缩写快速输入 LaTeX 数学公式，避免手打 `\frac{}{}`、`\sum_{i=1}^{n}` 等冗长命令。
 
 ### 安装与配置
 
@@ -26,7 +27,7 @@ draft: false
 
 ### 使用规则
 
-- 所有触发词以 **分号 `;`** 开头，避免与正常输入冲突
+- 所有触发词以分号 `;` 开头，避免与正常输入冲突
 - 输入触发词后，Espanso 会自动将其替换为对应的 LaTeX 命令
 - 在 Typora 的 `$...$` 或 `$$...$$` 数学环境内使用
 
@@ -286,3 +287,672 @@ draft: false
 ```
 
 修改后执行 `espanso restart` 生效。
+
+## 配置参考
+
+```yaml
+# LaTeX 数学公式快速输入 - Espanso 配置
+# 触发规则：分号(;) + 缩写，自动展开为 LaTeX 代码
+# 配套文档：D:\Coding\Wrote_Codes\blogs\Acknowledge\math\latex\Espanso LaTeX 简写语法说明.md
+
+matches:
+
+  # ============================================================
+  #  1. 基本算术与关系运算符
+  # ============================================================
+
+  - trigger: ";ti"
+    replace: "\\times"
+    word: true
+
+  - trigger: ";cd"
+    replace: "\\cdot"
+    word: true
+
+  - trigger: ";div"
+    replace: "\\div"
+    word: true
+
+  - trigger: ";pm"
+    replace: "\\pm"
+    word: true
+
+  - trigger: ";mp"
+    replace: "\\mp"
+    word: true
+
+  - trigger: ";ap"
+    replace: "\\approx"
+    word: true
+
+  - trigger: ";ne"
+    replace: "\\neq"
+    word: true
+
+  - trigger: ";eq"
+    replace: "\\equiv"
+    word: true
+
+  - trigger: ";le"
+    replace: "\\leq"
+    word: true
+
+  - trigger: ";ge"
+    replace: "\\geq"
+    word: true
+
+  - trigger: ";ll"
+    replace: "\\ll"
+    word: true
+
+  - trigger: ";gg"
+    replace: "\\gg"
+    word: true
+
+  - trigger: ";sim"
+    replace: "\\sim"
+    word: true
+
+  - trigger: ";prop"
+    replace: "\\propto"
+    word: true
+
+  # ============================================================
+  #  2. 分数、根号与上下标
+  # ============================================================
+
+  - trigger: ";ff"
+    replace: "\\frac{}{}"
+    word: true
+
+  - trigger: ";sq"
+    replace: "\\sqrt{}"
+    word: true
+
+  - trigger: ";nsq"
+    replace: "\\sqrt[]{}"
+    word: true
+
+  # ============================================================
+  #  3. 积分、求和、极限、连乘
+  # ============================================================
+
+  - trigger: ";int"
+    replace: "\\int_{}^{}"
+    word: true
+
+  - trigger: ";iint"
+    replace: "\\iint"
+    word: true
+
+  - trigger: ";iiint"
+    replace: "\\iiint"
+    word: true
+
+  - trigger: ";oint"
+    replace: "\\oint"
+    word: true
+
+  - trigger: ";inf"
+    replace: "\\infty"
+    word: true
+
+  - trigger: ";sum"
+    replace: "\\sum_{i=1}^{n}"
+    word: true
+
+  - trigger: ";prod"
+    replace: "\\prod_{i=1}^{n}"
+    word: true
+
+  - trigger: ";lim"
+    replace: "\\lim_{x \\to }"
+    word: true
+
+  - trigger: ";liminf"
+    replace: "\\lim_{x \\to \\infty}"
+    word: true
+
+  # ============================================================
+  #  4. 括号（自适应大小）
+  # ============================================================
+
+  - trigger: ";lr("
+    replace: "\\left( \\right)"
+    word: true
+
+  - trigger: ";lr["
+    replace: "\\left[ \\right]"
+    word: true
+
+  - trigger: ";lr{"
+    replace: "\\left\\{ \\right\\}"
+    word: true
+
+  - trigger: ";lr|"
+    replace: "\\left| \\right|"
+    word: true
+
+  # ============================================================
+  #  5. 微分与导数
+  # ============================================================
+
+  - trigger: ";dydx"
+    replace: "\\frac{dy}{dx}"
+    word: true
+
+  - trigger: ";ddx"
+    replace: "\\frac{d}{dx}"
+    word: true
+
+  - trigger: ";par"
+    replace: "\\partial"
+    word: true
+
+  - trigger: ";pyx"
+    replace: "\\frac{\\partial y}{\\partial x}"
+    word: true
+
+  - trigger: ";nab"
+    replace: "\\nabla"
+    word: true
+
+  - trigger: ";dd"
+    replace: "\\mathrm{d}"
+    word: true
+
+  # ============================================================
+  #  6. 希腊字母（小写）
+  # ============================================================
+
+  - trigger: ";al"
+    replace: "\\alpha"
+    word: true
+
+  - trigger: ";be"
+    replace: "\\beta"
+    word: true
+
+  - trigger: ";ga"
+    replace: "\\gamma"
+    word: true
+
+  - trigger: ";de"
+    replace: "\\delta"
+    word: true
+
+  - trigger: ";ep"
+    replace: "\\epsilon"
+    word: true
+
+  - trigger: ";ze"
+    replace: "\\zeta"
+    word: true
+
+  - trigger: ";et"
+    replace: "\\eta"
+    word: true
+
+  - trigger: ";th"
+    replace: "\\theta"
+    word: true
+
+  - trigger: ";io"
+    replace: "\\iota"
+    word: true
+
+  - trigger: ";ka"
+    replace: "\\kappa"
+    word: true
+
+  - trigger: ";la"
+    replace: "\\lambda"
+    word: true
+
+  - trigger: ";mu"
+    replace: "\\mu"
+    word: true
+
+  - trigger: ";nu"
+    replace: "\\nu"
+    word: true
+
+  - trigger: ";xi"
+    replace: "\\xi"
+    word: true
+
+  - trigger: ";pi"
+    replace: "\\pi"
+    word: true
+
+  - trigger: ";rh"
+    replace: "\\rho"
+    word: true
+
+  - trigger: ";si"
+    replace: "\\sigma"
+    word: true
+
+  - trigger: ";ta"
+    replace: "\\tau"
+    word: true
+
+  - trigger: ";up"
+    replace: "\\upsilon"
+    word: true
+
+  - trigger: ";ph"
+    replace: "\\phi"
+    word: true
+
+  - trigger: ";vp"
+    replace: "\\varphi"
+    word: true
+
+  - trigger: ";ch"
+    replace: "\\chi"
+    word: true
+
+  - trigger: ";ps"
+    replace: "\\psi"
+    word: true
+
+  - trigger: ";om"
+    replace: "\\omega"
+    word: true
+
+  # ============================================================
+  #  7. 希腊字母（大写）
+  # ============================================================
+
+  - trigger: ";Ga"
+    replace: "\\Gamma"
+    word: true
+
+  - trigger: ";De"
+    replace: "\\Delta"
+    word: true
+
+  - trigger: ";Th"
+    replace: "\\Theta"
+    word: true
+
+  - trigger: ";La"
+    replace: "\\Lambda"
+    word: true
+
+  - trigger: ";Xi"
+    replace: "\\Xi"
+    word: true
+
+  - trigger: ";Pi"
+    replace: "\\Pi"
+    word: true
+
+  - trigger: ";Si"
+    replace: "\\Sigma"
+    word: true
+
+  - trigger: ";Ph"
+    replace: "\\Phi"
+    word: true
+
+  - trigger: ";Ps"
+    replace: "\\Psi"
+    word: true
+
+  - trigger: ";Om"
+    replace: "\\Omega"
+    word: true
+
+  # ============================================================
+  #  8. 集合与逻辑符号
+  # ============================================================
+
+  - trigger: ";in"
+    replace: "\\in"
+    word: true
+
+  - trigger: ";ni"
+    replace: "\\notin"
+    word: true
+
+  - trigger: ";sub"
+    replace: "\\subset"
+    word: true
+
+  - trigger: ";sube"
+    replace: "\\subseteq"
+    word: true
+
+  - trigger: ";sup"
+    replace: "\\supset"
+    word: true
+
+  - trigger: ";supe"
+    replace: "\\supseteq"
+    word: true
+
+  - trigger: ";empty"
+    replace: "\\varnothing"
+    word: true
+
+  - trigger: ";cup"
+    replace: "\\cup"
+    word: true
+
+  - trigger: ";cap"
+    replace: "\\cap"
+    word: true
+
+  - trigger: ";fa"
+    replace: "\\forall"
+    word: true
+
+  - trigger: ";ex"
+    replace: "\\exists"
+    word: true
+
+  - trigger: ";nex"
+    replace: "\\nexists"
+    word: true
+
+  - trigger: ";imp"
+    replace: "\\implies"
+    word: true
+
+  - trigger: ";Ra"
+    replace: "\\Rightarrow"
+    word: true
+
+  - trigger: ";La"
+    replace: "\\Leftarrow"
+    word: true
+
+  - trigger: ";iff"
+    replace: "\\iff"
+    word: true
+
+  - trigger: ";Lra"
+    replace: "\\Leftrightarrow"
+    word: true
+
+  - trigger: ";bc"
+    replace: "\\because"
+    word: true
+
+  - trigger: ";tf"
+    replace: "\\therefore"
+    word: true
+
+  - trigger: ";land"
+    replace: "\\land"
+    word: true
+
+  - trigger: ";lor"
+    replace: "\\lor"
+    word: true
+
+  - trigger: ";neg"
+    replace: "\\neg"
+    word: true
+
+  - trigger: ";oplus"
+    replace: "\\oplus"
+    word: true
+
+  - trigger: ";odot"
+    replace: "\\odot"
+    word: true
+
+  # ============================================================
+  #  9. 箭头
+  # ============================================================
+
+  - trigger: ";to"
+    replace: "\\to"
+    word: true
+
+  - trigger: ";ra"
+    replace: "\\rightarrow"
+    word: true
+
+  - trigger: ";lar"
+    replace: "\\leftarrow"
+    word: true
+
+  - trigger: ";lra"
+    replace: "\\leftrightarrow"
+    word: true
+
+  - trigger: ";map"
+    replace: "\\mapsto"
+    word: true
+
+  # ============================================================
+  #  10. 字母修饰符号（帽子、横线、波浪等）
+  # ============================================================
+
+  - trigger: ";hat"
+    replace: "\\hat{}"
+    word: true
+
+  - trigger: ";bar"
+    replace: "\\bar{}"
+    word: true
+
+  - trigger: ";tilde"
+    replace: "\\tilde{}"
+    word: true
+
+  - trigger: ";wtilde"
+    replace: "\\widetilde{}"
+    word: true
+
+  - trigger: ";dot"
+    replace: "\\dot{}"
+    word: true
+
+  - trigger: ";ddot"
+    replace: "\\ddot{}"
+    word: true
+
+  - trigger: ";vec"
+    replace: "\\vec{}"
+    word: true
+
+  - trigger: ";ol"
+    replace: "\\overline{}"
+    word: true
+
+  - trigger: ";ul"
+    replace: "\\underline{}"
+    word: true
+
+  # ============================================================
+  #  11. 字体样式
+  # ============================================================
+
+  - trigger: ";bb"
+    replace: "\\mathbb{}"
+    word: true
+
+  - trigger: ";bf"
+    replace: "\\mathbf{}"
+    word: true
+
+  - trigger: ";cal"
+    replace: "\\mathcal{}"
+    word: true
+
+  - trigger: ";rm"
+    replace: "\\mathrm{}"
+    word: true
+
+  - trigger: ";txt"
+    replace: "\\text{}"
+    word: true
+
+  # ============================================================
+  #  12. 常用数集
+  # ============================================================
+
+  - trigger: ";RR"
+    replace: "\\mathbb{R}"
+    word: true
+
+  - trigger: ";NN"
+    replace: "\\mathbb{N}"
+    word: true
+
+  - trigger: ";ZZ"
+    replace: "\\mathbb{Z}"
+    word: true
+
+  - trigger: ";QQ"
+    replace: "\\mathbb{Q}"
+    word: true
+
+  - trigger: ";CC"
+    replace: "\\mathbb{C}"
+    word: true
+
+  # ============================================================
+  #  13. 线性代数
+  # ============================================================
+
+  - trigger: ";otimes"
+    replace: "\\otimes"
+    word: true
+
+  - trigger: ";perp"
+    replace: "\\perp"
+    word: true
+
+  - trigger: ";ang"
+    replace: "\\langle  \\rangle"
+    word: true
+
+  - trigger: ";det"
+    replace: "\\det"
+    word: true
+
+  - trigger: ";tr"
+    replace: "\\text{Tr}"
+    word: true
+
+  # ============================================================
+  #  14. 概率论与统计
+  # ============================================================
+
+  - trigger: ";EE"
+    replace: "\\mathbb{E}"
+    word: true
+
+  - trigger: ";var"
+    replace: "\\mathrm{Var}"
+    word: true
+
+  - trigger: ";cov"
+    replace: "\\mathrm{Cov}"
+    word: true
+
+  - trigger: ";binom"
+    replace: "\\binom{}{}"
+    word: true
+
+  - trigger: ";indep"
+    replace: "\\perp\\!\\!\\!\\perp"
+    word: true
+
+  # ============================================================
+  #  15. 大型结构（矩阵、分段函数、对齐）
+  # ============================================================
+
+  - trigger: ";pmat"
+    replace: "\\begin{pmatrix}  \\\\  \\end{pmatrix}"
+    word: true
+
+  - trigger: ";bmat"
+    replace: "\\begin{bmatrix}  \\\\  \\end{bmatrix}"
+    word: true
+
+  - trigger: ";vmat"
+    replace: "\\begin{vmatrix}  \\\\  \\end{vmatrix}"
+    word: true
+
+  - trigger: ";case"
+    replace: "\\begin{cases}  \\\\  \\end{cases}"
+    word: true
+
+  - trigger: ";align"
+    replace: "\\begin{aligned}  \\\\  \\end{aligned}"
+    word: true
+
+  # ============================================================
+  #  16. 三角函数与常用函数
+  # ============================================================
+
+  - trigger: ";sin"
+    replace: "\\sin"
+    word: true
+
+  - trigger: ";cos"
+    replace: "\\cos"
+    word: true
+
+  - trigger: ";tan"
+    replace: "\\tan"
+    word: true
+
+  - trigger: ";log"
+    replace: "\\log"
+    word: true
+
+  - trigger: ";ln"
+    replace: "\\ln"
+    word: true
+
+  - trigger: ";exp"
+    replace: "\\exp"
+    word: true
+
+  - trigger: ";max"
+    replace: "\\max"
+    word: true
+
+  - trigger: ";min"
+    replace: "\\min"
+    word: true
+
+  # ============================================================
+  #  17. 省略号与其他
+  # ============================================================
+
+  - trigger: ";cd3"
+    replace: "\\cdots"
+    word: true
+
+  - trigger: ";ld3"
+    replace: "\\ldots"
+    word: true
+
+  - trigger: ";vd3"
+    replace: "\\vdots"
+    word: true
+
+  - trigger: ";dd3"
+    replace: "\\ddots"
+    word: true
+
+  - trigger: ";und"
+    replace: "\\underbrace{}_{}"
+    word: true
+
+  - trigger: ";ovb"
+    replace: "\\overbrace{}^{}"
+    word: true
+```
+
+### Bottom
+
