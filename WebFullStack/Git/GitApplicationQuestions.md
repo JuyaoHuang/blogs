@@ -707,3 +707,22 @@ To https://github.com/JuyaoHuang/BUPTDeepLearning.git
    ```bash
    git push -u origin main
    ```
+
+## 10. 设置流量代理
+
+如果本地有代理工具，例如mihomo，直接配置 Git 进行VPN代理。
+
+设置全局代理：
+
+```bash
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+```
+
+取消代理：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+

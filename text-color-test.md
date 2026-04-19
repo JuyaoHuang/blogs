@@ -61,4 +61,6 @@ This is normal text with {pink}pink words{/pink} in the middle of a sentence.
 
 ~~GFM strikethrough still works~~
 
+<del>aaaDADAWaaaa</del>
+
 $E = mc^2$ (math still works)
