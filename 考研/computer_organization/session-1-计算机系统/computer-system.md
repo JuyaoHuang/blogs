@@ -4,7 +4,7 @@ publishDate: 2026-03-14
 description: "计算机组成原理：计算机系统层次结构和性能指标"
 tags: ['computer-organization']
 language: 'Chinese'
-first_level_category: "知识库"
+first_level_category: "考研"
 second_level_category: "计算机组成原理"
 draft: false
 ---
