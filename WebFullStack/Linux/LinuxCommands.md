@@ -806,6 +806,6 @@ pm2 save               # 保存当前进程列表
 ```
 ping: freevipa1.freecatnodles.com: Name or service not known
 ```
-本地电脑也找不到该主机。oh，我似乎找到了问题，官方提示：”本站不再支持订阅链接请查看教程下载安装自由猫客户端/“，难怪我今天PC使用clash verge导入订阅时全部都是 error
+本地电脑也找不到该主机。oh，我似乎找到了问题，官方提示：”本站不再支持订阅链接请查看教程下载安装自由猫客户端/“，难怪我今天 PC 使用 clash verge 导入订阅时全部都是 error
 ````
 

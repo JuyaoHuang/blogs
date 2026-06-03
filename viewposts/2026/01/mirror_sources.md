@@ -128,7 +128,7 @@ https://mirrors.aliyun.com/pypi/simple/
 3. 腾讯云 / 华为云
 4. 中科大 → https://pypi.mirrors.ustc.edu.cn/simple/
 
-## GitHub镜像源
+## GitHub 镜像源
 
 - KGitHub: `https://kgithub.com`，支持网页浏览、代码下载和 `git clone`
 - GitClone: `https://gitclone.com`，专门用于加速 `git clone`，通过缓存技术提高克隆速度
