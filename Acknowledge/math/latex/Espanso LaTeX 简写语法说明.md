@@ -73,6 +73,9 @@ draft: false
 | `;prod` | `\prod_{i=1}^{n}` | 连乘 $\prod_{i=1}^{n}$ |
 | `;lim` | `\lim_{x \to }` | 极限 $\lim_{x \to}$ |
 | `;liminf` | `\lim_{x \to \infty}` | 趋于无穷极限 $\lim_{x \to \infty}$ |
+| `oiint` | $\oiint$ | 闭合曲面积分 |
+| `oint` | $\oint$ | 闭合曲线积分 |
+| `we` | $\wedge$ | 向量 |
 
 #### 4. 括号（自适应大小）
 
@@ -180,7 +183,7 @@ draft: false
 | 触发词 | 展开结果 | 含义 |
 |--------|----------|------|
 | `;bb` | `\mathbb{}` | 黑板粗体 |
-| `;bf` | `\mathbf{}` | 粗体 |
+| `;bf` | `\mathbf{}` | 加粗正体 |
 | `;cal` | `\mathcal{}` | 花体 |
 | `;rm` | `\mathrm{}` | 正体 |
 | `;txt` | `\text{}` | 文本 |
@@ -199,6 +202,9 @@ draft: false
 | `;ang` | `\langle  \rangle` | 内积尖括号 $\langle x, y \rangle$ |
 | `;det` | `\det` | 行列式 $\det$ |
 | `;tr` | `\text{Tr}` | 矩阵的迹 $\text{Tr}$ |
+| `;bf` | `\mathbf{}` | 加粗正体 |
+| `;vec` | `\vec{}` | 向量 $\vec{a}$ |
+| `bsm` | $\boldsymbol{2a}$ | 加粗斜体 |
 
 #### 13. 概率论与统计
 
@@ -239,6 +245,10 @@ draft: false
 | `;dd3` | `\ddots` | 对角省略号 $\ddots$ |
 | `;und` | `\underbrace{}_{}` | 下括号标注 |
 | `;ovb` | `\overbrace{}^{}` | 上括号标注 |
+
+#### 17. 新增
+
+
 
 ### 使用示例
 
